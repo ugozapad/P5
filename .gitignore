@@ -1,0 +1,16 @@
+*.recipe
+/Source/P5/.vs
+/Source/P5/Projects/Main/Exe_Win32/Intermediate
+/Source/P5/Projects/Main/Exe_Win32/Output
+/Source/P5/Projects/Main/GameClasses/Intermediate
+/Source/P5/Projects/Main/GameClasses/Output
+/Source/P5/Projects/Main/GameWorld/Intermediate
+/Source/P5/Projects/Main/GameWorld/Output
+/Source/P5/Shared/MCC/Intermediate
+/Source/P5/Shared/MCC/Output
+/Source/P5/Shared/MOS/Libs/XRClasses/Intermediate
+/Source/P5/Shared/MOS/Libs/XRClasses/Output
+/Source/P5/Shared/MOS/XR/Intermediate
+/Source/P5/Shared/MOS/XR/Output
+/Source/P5/Shared/MOS/MSystem/Intermediate
+/Source/P5/Shared/MOS/MSystem/Output
