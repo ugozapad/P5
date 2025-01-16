@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PreComp">
+      <UniqueIdentifier>{6b9ecbfc-a94b-47c5-807c-88cd6632ab93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{31253f0f-aad9-44cb-a587-6d8901de7979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI Shared">
+      <UniqueIdentifier>{897def23-d666-44af-8cd1-a566fd0b4f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI Shared\Controls">
+      <UniqueIdentifier>{7ceda545-6c8d-4ffc-9550-78ec2fe2c817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI">
+      <UniqueIdentifier>{43d04e88-3dba-40c3-984c-cfb47faf675f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI\FrontEnd">
+      <UniqueIdentifier>{2f56124e-50ff-46fe-a15a-f58ee241f2aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI\WinCtrl">
+      <UniqueIdentifier>{cf3358a8-bb7d-4655-bbcd-72edc640f81d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI\ClientWnd">
+      <UniqueIdentifier>{be429923-aee8-4341-af5b-1dd8541c2d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld">
+      <UniqueIdentifier>{71494f9a-2f0e-424a-92a2-05487ac7125d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\BlockNav">
+      <UniqueIdentifier>{59e046b4-fb4e-4129-bb2a-052c00905550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\BlockNav\WNavGraph">
+      <UniqueIdentifier>{d8ee8813-a224-4172-aa58-4c2875f456b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\Resource Manager">
+      <UniqueIdentifier>{0c797a24-b4bb-4bc5-a01b-a7eb5f03f1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\Resource Manager\Resource classes">
+      <UniqueIdentifier>{1c434319-7efe-4819-8367-3e85ed19b2fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\FrontEnd">
+      <UniqueIdentifier>{0fcb3aba-a02c-4c20-ac56-c1d149cbad6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\PhysState">
+      <UniqueIdentifier>{f53fa26a-17dd-4c63-8175-27f2309ca09f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\PhysState\DynamicsEngine">
+      <UniqueIdentifier>{afe76f77-a868-4bab-8856-2ea388d12ba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\Server">
+      <UniqueIdentifier>{3bc30e15-c748-44d9-9ff4-c1055bbcd381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\Client">
+      <UniqueIdentifier>{51be8e95-944d-47b3-b037-3bc55ca5ebdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameWorld\AnimGraphInstance2">
+      <UniqueIdentifier>{ce0bd767-3ea8-43b0-a096-bbf93ab2dc68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRClasses">
+      <UniqueIdentifier>{0ec2695b-f373-4edb-840b-d582aeb66db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MRTC">
+      <UniqueIdentifier>{6c2a40e1-03c3-42ab-901b-1d68e6bf39bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Gameclasses">
+      <UniqueIdentifier>{332e1c09-ac88-4267-bca8-96cdc3ee8a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Gameclasses\WObj_Shared">
+      <UniqueIdentifier>{d203e533-95f3-41c6-ae36-10a2a7ed0523}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="WClient_P6.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientMod.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientMod_DV.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WServer_P6.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WServerMod.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Render\MRenderUtil.cpp">
+      <Filter>Source\GUI Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWindows.cpp">
+      <Filter>Source\GUI Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinGrph.cpp">
+      <Filter>Source\GUI Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinMovieController.cpp">
+      <Filter>Source\GUI Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinCtrl.cpp">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinCtrl3D.cpp">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinCtrlGfx.cpp">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWndCtrlEdit.cpp">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="WFrontEnd_Menues_P6.cpp">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WFrontEnd_P6.cpp">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WFrontEndMod.cpp">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WFrontEndMod_Cube.cpp">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WFrontEndMod_Menus.cpp">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WFrontEndMod_Options.cpp">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="MWinCtrlMod.cpp">
+      <Filter>Source\GUI\WinCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientModWnd.cpp">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientModWnd_Briefing.cpp">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientModWnd_Dialogue.cpp">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientModWnd_Journal.cpp">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientModWnd_Map.cpp">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WClientModWnd_P6.cpp">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WClass.cpp">
+      <Filter>Source\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WClassCmd.cpp">
+      <Filter>Source\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDeltaGameState.cpp">
+      <Filter>Source\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WEvilTemplate.cpp">
+      <Filter>Source\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjCore.cpp">
+      <Filter>Source\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WRegReplicator.cpp">
+      <Filter>Source\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WBlockNavGrid.cpp">
+      <Filter>Source\GameWorld\BlockNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WNavGraph\WNavGraph_PathFinder.cpp">
+      <Filter>Source\GameWorld\BlockNav\WNavGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\Miscellaneous\MFileContainer.cpp">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WData.cpp">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataCore.cpp">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WMapData.cpp">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Anim.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_AnimGraph2.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Core.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_FacialSetup.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_MiscMedia.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Models.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Sound.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_XW.cpp">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\FrontEnd\WFrontEnd.cpp">
+      <Filter>Source\GameWorld\FrontEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Render\MWireContainer.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamics.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsSupport.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WHash.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WListener.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Debug.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WPhysState_Dynamics.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Hash.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Move.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Obj.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Selection.cpp">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamics2.cpp">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsConstraint.cpp">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngine2.cpp">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngineUtil.cpp">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Client.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Cmd.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Core.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Dump.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_IO.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Net.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Obj.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Phys.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Player.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Script.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Simulate.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_World.cpp">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Cmd.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Core.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Demo.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Net.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Obj.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Phys.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Precache.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Render.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Sound.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClientClass.cpp">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2_ClientData.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_ClientUpdate.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Context.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Interface.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Resources.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_StateInst.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Token.cpp">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnim.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimCompressed.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimDataKey.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimOptimizer.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRCloth.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRSkeleton.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRSurf.cpp">
+      <Filter>Source\XRClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_SimpleMessage.cpp">
+      <Filter>Source Gameclasses\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AnimUtils.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_VoCap.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WBlockNavGrid_VPU.cpp">
+      <Filter>Source\GameWorld\BlockNav</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="WClient_P6.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientMod.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientMod_Defines.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="WServer_P6.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="WServerMod.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Render\MRenderUtil.h">
+      <Filter>Source\GUI Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWindows.h">
+      <Filter>Source\GUI Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinGrph.h">
+      <Filter>Source\GUI Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Win\MWinMovieController.h">
+      <Filter>Source\GUI Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinCtrl.h">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinCtrl3D.h">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinCtrlGfx.h">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Win\MWndCtrlEdit.h">
+      <Filter>Source\GUI Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEnd_Menues_P6.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEnd_P6.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEndInfo.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEndMod.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEndMod_Cube.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEndMod_Menus.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WFrontEndMod_Options.h">
+      <Filter>Source\GUI\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="MWinCtrlMod.h">
+      <Filter>Source\GUI\WinCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientModWnd.h">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientModWnd_Briefing.h">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientModWnd_Journal.h">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientModWnd_Map.h">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WClientModWnd_P6.h">
+      <Filter>Source\GUI\ClientWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WClass.h">
+      <Filter>Source\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WClassCmd.h">
+      <Filter>Source\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDeltaGameState.h">
+      <Filter>Source\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WEvilTemplate.h">
+      <Filter>Source\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjCore.h">
+      <Filter>Source\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WPackets.h">
+      <Filter>Source\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\vpuworkernavgrid.h">
+      <Filter>Source\GameWorld\BlockNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WBlockNavGrid.h">
+      <Filter>Source\GameWorld\BlockNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WNavGraph\WNavGraph_Pathfinder.h">
+      <Filter>Source\GameWorld\BlockNav\WNavGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Miscellaneous\MFileContainer.h">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WData.h">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataCore.h">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WMapData.h">
+      <Filter>Source\GameWorld\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Anim.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_AnimGraph2.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_Core.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_FacialSetup.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_MiscMedia.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_Models.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Sound.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_XW.h">
+      <Filter>Source\GameWorld\Resource Manager\Resource classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\FrontEnd\WFrontEnd.h">
+      <Filter>Source\GameWorld\FrontEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Render\MWireContainer.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamics.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsConvexCollision.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsSupport.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WListener.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WPhysState.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Hash.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_NavGridHash.h">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamics2.h">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsConstraint.h">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngine2.h">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngineBase.h">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngineUtil.h">
+      <Filter>Source\GameWorld\PhysState\DynamicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Server\WServer.h">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Core.h">
+      <Filter>Source\GameWorld\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Client\WClient.h">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Client\WClient_Core.h">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Sound.h">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Client\WClientClass.h">
+      <Filter>Source\GameWorld\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2_ClientData.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Context.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Defs.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_SIID.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_StateInst.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Token.h">
+      <Filter>Source\GameWorld\AnimGraphInstance2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC.h">
+      <Filter>MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC_String.h">
+      <Filter>MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AnimUtils.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_PhysCluster.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_VoCap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Shared\MOS\Classes\GameWorld\WHash.inl">
+      <Filter>Source\GameWorld\PhysState</Filter>
+    </None>
+  </ItemGroup>
+</Project>

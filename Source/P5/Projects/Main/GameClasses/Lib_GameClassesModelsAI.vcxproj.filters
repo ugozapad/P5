@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PreComp">
+      <UniqueIdentifier>{9e259b82-f817-4332-b24f-a72420bd81f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{ef9728d5-a21a-4c34-b18e-15b13a71e1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_AI">
+      <UniqueIdentifier>{2e13d1d1-3f2a-4e96-bde0-f623cafc75c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_AI\AI_Custom">
+      <UniqueIdentifier>{10372f82-9424-405b-905b-540808e3cb4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_AI\WObj_Aux">
+      <UniqueIdentifier>{324126d0-c3a2-442e-b343-eb04eadc77d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_AI\AI_Action">
+      <UniqueIdentifier>{25f68ecc-2882-43c7-81a1-235b8ebdf08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_AI\AI_Action\AI_Action_Custom">
+      <UniqueIdentifier>{59224744-efed-4153-958e-5a43df54de36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Models">
+      <UniqueIdentifier>{269144aa-152f-4f96-a9ed-935e417939a1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Auxiliary.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_DeviceHandler.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_EventHandler.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_ItemHandler.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_KnowledgeBase.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Pathfinder.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Personality.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_ResourceHandler.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_ScriptHandler.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AICore.cpp">
+      <Filter>Source\WObj_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Custom\AICore_Darkling.cpp">
+      <Filter>Source\WObj_AI\AI_Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Custom\AICore_Turret.cpp">
+      <Filter>Source\WObj_AI\AI_Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\WObj_Aux\WObj_AreaInfo.cpp">
+      <Filter>Source\WObj_AI\WObj_Aux</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\WObj_Aux\WObj_NavNode.cpp">
+      <Filter>Source\WObj_AI\WObj_Aux</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\WObj_Aux\WObj_Team.cpp">
+      <Filter>Source\WObj_AI\WObj_Aux</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Action\AI_Action.cpp">
+      <Filter>Source\WObj_AI\AI_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AI\AI_Action\AI_Action_Custom\AI_Action_Custom.cpp">
+      <Filter>Source\WObj_AI\AI_Action\AI_Action_Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\CDynamicVB.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\CEnvelope.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\CModelHistory.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\CModelHistory2.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\CSinRandTable.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\CSurfaceKey.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\MSIMDTemp.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_BloodEffect.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_Chain.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_Debris.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_Drain.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_EffectSystem.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_ExplosionSystem.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_FocusFrame.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_GlassSystem.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_InstantTrail.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_LaserBeam.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_ParticlesOpt.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_Primitives.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_Sprite2.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WModel_WirePath.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\WPartcls.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Auxiliary.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Def.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_DeviceHandler.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_EventHandler.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_ItemHandler.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_KnowledgeBase.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Pathfinder.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Personality.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_ResourceHandler.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_ScriptHandler.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AICore.h">
+      <Filter>Source\WObj_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Custom\AICore_Darkling.h">
+      <Filter>Source\WObj_AI\AI_Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Custom\AICore_Turret.h">
+      <Filter>Source\WObj_AI\AI_Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\WObj_Aux\WObj_AreaInfo.h">
+      <Filter>Source\WObj_AI\WObj_Aux</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\WObj_Aux\WObj_NavNode.h">
+      <Filter>Source\WObj_AI\WObj_Aux</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\WObj_Aux\WObj_Team.h">
+      <Filter>Source\WObj_AI\WObj_Aux</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Action\AI_Action.h">
+      <Filter>Source\WObj_AI\AI_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AI\AI_Action\AI_Action_Custom\AI_Action_Custom.h">
+      <Filter>Source\WObj_AI\AI_Action\AI_Action_Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CDynamicVB.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CEnvelope.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CModelHistory.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CModelHistory2.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CPropertyControl.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CSinRandTable.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\CSurfaceKey.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\ModelsMisc.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_BloodEffect.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_Chain.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_Debris.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_Drain.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_EffectSystem.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_ExplosionSystem.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_GlassSystem.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_ParticlesOpt.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WModel_Primitives.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\WPartcls.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

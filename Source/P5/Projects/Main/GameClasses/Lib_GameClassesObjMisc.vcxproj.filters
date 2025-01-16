@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PreComp">
+      <UniqueIdentifier>{a6de1cde-396b-4e5f-815f-c176d0e4ed3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{edb3e76f-5a28-45d3-bf9b-12941a46cfb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Misc">
+      <UniqueIdentifier>{73785aac-efaa-4d61-88f9-36ccdd425a45}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="WNameHash.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_ActionCutscene.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_ActionCutscenecamera.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_ActionCutscenePickup.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_AngelusChain.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_AnimEventListener.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_AutoFire.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_BlackHole.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_BloodEffects.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Burnable.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_CameraUtil.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_ChainEffect.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Cloth.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_CreepingDark.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Critter.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_DarklingSpawn.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Destructable.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_EffectSystem.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Explosion.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Follower.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_GibSystem.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_HealthStation.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_ImpulseContainer.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_InputEntity.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Ledge.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_LightSwitch.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Model_Anim.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Model_Ladder.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Model_Moth.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_MusicFader.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Object.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Object_Lamp.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_RigidBody.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Room.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_ScenePoint.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Shell.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Spawner_P6.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_SwingDoor.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Sync.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_TelePhone.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Television.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_TentacleSystem.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_TentacleSystem_ClientData.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_TentacleSystem_Render.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Turret.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Wallmark.cpp">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="WNameHash.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_ActionCutscene.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_ActionCutscenecamera.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_ActionCutscenePickup.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_AngelusChain.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_AnimEventListener.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_BlackHole.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_BloodEffects.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Burnable.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_CameraUtil.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_ChainEffect.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Cloth.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_CreepingDark.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Critter.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_DarklingSpawn.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Destructable.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_EffectSystem.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Explosion.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_GibSystem.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_HealthStation.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_ImpulseContainer.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_InputEntity.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Ledge.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Model_Anim.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Model_Ladder.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Model_Moth.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_MusicFader.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Object.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_RigidBody.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Room.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_ScenePoint.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Shell.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Spawner_P6.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_SwingDoor.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_TelePhone.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Television.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_TentacleSystem.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_TentacleSystem_ClientData.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Misc\WObj_Turret.h">
+      <Filter>Source\WObj_Misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

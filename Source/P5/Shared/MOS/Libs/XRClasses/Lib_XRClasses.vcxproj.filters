@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{36badb23-dae5-408a-8a52-c1fcb17be8f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRSolids">
+      <UniqueIdentifier>{37adf027-741e-4de2-b2f4-cd919eb25d6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PreComp">
+      <UniqueIdentifier>{5eb54481-e0b5-4da9-ad10-892b1f76fb74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Phys">
+      <UniqueIdentifier>{b5277164-0575-41ff-85be-0e0abe1231c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRAnimGraph2">
+      <UniqueIdentifier>{7d9819aa-c8ea-403f-a51a-b6d8661441e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Nav">
+      <UniqueIdentifier>{febe1886-0263-4de2-a901-5b810375a578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRShader">
+      <UniqueIdentifier>{faf2dcd3-8024-40b3-8356-063702617498}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Xr\CollisionInfo.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRClass.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRMediumDesc.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRUtil.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRVBContainer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRVBMHelper.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRVBUtil.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRVertexBuffer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRVertexBuffer_VPUShared.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Solids\MCSolid.h">
+      <Filter>Source\XRSolids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\Solids\XRIndexedSolid.h">
+      <Filter>Source\XRSolids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Solids\XRThinSolid.h">
+      <Filter>Source\XRSolids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Solids\XWSolid.h">
+      <Filter>Source\XRSolids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\PCH\PCH.h">
+      <Filter>Source\PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\Phys\GjkCollision.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\Phys\GjkSupport.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Phys\SeparatingAxis.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Phys\WPhys.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Phys\WPhysCapsule.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\Phys\WPhysCollision.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Phys\WPhysOBB.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\Phys\WPhysPCS.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\Phys\WPhysPCS_Enable.h">
+      <Filter>Source\Phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2_Action.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2_AnimLayer.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2_GraphBlock.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2_Reaction.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2_State.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AGCompiler2\AnimGraph2Compiler.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRAnimGraph2\AnimGraph2Defs.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRBlockNav.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRBlockNavGrid.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRBlockNavGrid_Shared.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRBlockNavInst.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRBlockNavParam.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRNavGraph.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Xr\XRNavGraphBuilder.h">
+      <Filter>Source\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRShader.h">
+      <Filter>Source\XRShader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\XR\XRVBEContext.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\XR\XRClass.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRLight.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRMediumDesc.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRUtil.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRUtilRS.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRUtilSubdivSurf.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRVBContainer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRVBMHelper.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRVertexBuffer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Solids\MCSolid.cpp">
+      <Filter>Source\XRSolids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\Solids\XRIndexedSolid.cpp">
+      <Filter>Source\XRSolids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Solids\XRThinSolid.cpp">
+      <Filter>Source\XRSolids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Solids\XWSolid.cpp">
+      <Filter>Source\XRSolids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\PCH\PCH.cpp">
+      <Filter>Source\PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Phys\WPhysCapsule.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\Phys\WPhysCollision.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\Phys\WPhysCollisionObsolete.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\Phys\WPhysColllisionPolyOBB.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Phys\WPhysOBB.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Phys\WPhysPCS.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\Phys\WPhysPolyOBB_fp4.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Phys\WPhysTriLine.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\Phys\WPhysTriOBB_fp4.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Phys\WPhysTriSphere.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\Phys\WPhysTT.cpp">
+      <Filter>Source\Phys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_Action.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_AnimLayer.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_CCheck.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_GraphBlock.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_IO.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_LogDump.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_Reaction.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AnimGraph2_State.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AGCompiler2\AnimGraph2Compiler.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AGCompiler2\AnimGraph2Compiler_GraphBlock.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AGCompiler2\AnimGraph2Compiler_Reactions.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRAnimGraph2\AGCompiler2\AnimGraph2Compiler_State.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRBlockNav.cpp">
+      <Filter>Source\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRBlockNavGrid.cpp">
+      <Filter>Source\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRBlockNavResult.cpp">
+      <Filter>Source\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRNavGraph.cpp">
+      <Filter>Source\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRNavGraphBuilder.cpp">
+      <Filter>Source\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRShader.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_Def.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_FP14.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_FP20.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_FP20Def.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_FP20Def_LightField.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_LightField.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_NV20.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Xr\XRShader_TexEnvCombine.cpp">
+      <Filter>Source\XRShader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\XR\XRVBEContext.cpp" />
+  </ItemGroup>
+</Project>

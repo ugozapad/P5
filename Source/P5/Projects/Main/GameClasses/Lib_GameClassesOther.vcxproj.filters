@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PreComp">
+      <UniqueIdentifier>{347b6d00-53fd-424e-bcb7-f6c54f1abbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{9de1ef1d-e6fb-44f7-bcbe-1a85e3ce4c07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Shared">
+      <UniqueIdentifier>{0c831130-c263-416e-8afe-7e87da0df07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Game">
+      <UniqueIdentifier>{c50dd68e-1dba-4d22-8a5e-16e779085c77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Sys">
+      <UniqueIdentifier>{fdd6c3a2-6305-49bd-9b61-6758fd0a9356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WRPG">
+      <UniqueIdentifier>{1cd24c0f-dcf1-472b-826b-b2396a895bfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WRPG\Weapons">
+      <UniqueIdentifier>{2a93e327-bc09-498f-af67-c45eaf3443ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WRPG\Items">
+      <UniqueIdentifier>{2ce4dfef-db55-44a2-9d43-63ee90683238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WRPG\Inventory">
+      <UniqueIdentifier>{9847cbac-3d2e-4778-8eb3-441f270de357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Weapons">
+      <UniqueIdentifier>{0fecad05-ce29-4d14-b8e8-71e74ee4e55b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_AutoVar.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Damage.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_DialogueCamera.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Game.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Hook.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Lights.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_PosHistory.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Primitives.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_Rail.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_SimpleMessage.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_SoundVolume.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_System.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_VoCap.cpp">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Game\WObj_Game_P6.cpp">
+      <Filter>Source\WObj_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Game\WObj_GameCore.cpp">
+      <Filter>Source\WObj_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Game\WObj_GameMod.cpp">
+      <Filter>Source\WObj_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Sys\WObj_Cutscene.cpp">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Sys\WObj_Detector.cpp">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Sys\WObj_Emitter.cpp">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Sys\WObj_Physical.cpp">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Misc\WObj_Prefab.cpp">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Sys\WObj_Trigger.cpp">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGChar.cpp">
+      <Filter>Source\WRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGCore.cpp">
+      <Filter>Source\WRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGInitParams.cpp">
+      <Filter>Source\WRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGItem.cpp">
+      <Filter>Source\WRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrpg\WRPGAngelusChain.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrpg\WRPGCreature.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGFist.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrpg\WRPGFlashbang.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGGun.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGMiniGun.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrpg\WRPGPhysControl.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGRifle.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGShotGun.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGSummon.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGWeapon.cpp">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGAmmo.cpp">
+      <Filter>Source\WRPG\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGMisc.cpp">
+      <Filter>Source\WRPG\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="WRPG\WRPGInventory.cpp">
+      <Filter>Source\WRPG\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Weapons\WObj_ClientDebris.cpp">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Weapons\WObj_Params.cpp">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Weapons\WObj_Projectile_SE.cpp">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Weapons\WObj_Rocket.cpp">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Weapons\WObj_Spells.cpp">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Weapons\WObj_TranquillizerDart.cpp">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AutoVar.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Damage.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_DialogueCamera.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjects\WObj_Game.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjects\WObj_Hook.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_LightIntens.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_Lights.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_Packer.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_PosHistory.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjects\WObj_Primitives.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_Rail.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_RailSystem.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_SimpleMessage.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_SoundVolume.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjects\WObj_System.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WObjects\WObj_VoCap.h">
+      <Filter>Source\WObj_Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Game\WObj_Game_P6.h">
+      <Filter>Source\WObj_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Game\WObj_GameCore.h">
+      <Filter>Source\WObj_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Game\WObj_GameMessages.h">
+      <Filter>Source\WObj_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Game\WObj_GameMod.h">
+      <Filter>Source\WObj_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Sys\WObj_Detector.h">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Sys\WObj_Emitter.h">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Sys\WObj_Physical.h">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Sys\WObj_Trigger.h">
+      <Filter>Source\WObj_Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrpg\WRPGChar.h">
+      <Filter>Source\WRPG</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrpg\WRPGCore.h">
+      <Filter>Source\WRPG</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrpg\WRPGDef.h">
+      <Filter>Source\WRPG</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGInitParams.h">
+      <Filter>Source\WRPG</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGItem.h">
+      <Filter>Source\WRPG</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrpg\WRPGCreature.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGFist.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGGun.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGMiniGun.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGRifle.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGShotGun.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGSummon.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGWeapon.h">
+      <Filter>Source\WRPG\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGAmmo.h">
+      <Filter>Source\WRPG\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGMisc.h">
+      <Filter>Source\WRPG\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="WRPG\WRPGInventory.h">
+      <Filter>Source\WRPG\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Weapons\WObj_ClientDebris.h">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Weapons\WObj_Params.h">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Weapons\WObj_Projectile_SE.h">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Weapons\WObj_Rocket.h">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Weapons\WObj_Spells.h">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Weapons\WObj_TranquillizerDart.h">
+      <Filter>Source\WObj_Weapons</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

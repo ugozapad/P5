@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{04016219-0742-452d-838a-aec894b82988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PreComp">
+      <UniqueIdentifier>{e6bf2605-bc91-46ab-9b9a-3f8548f0e316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_BSP">
+      <UniqueIdentifier>{9a61f3d0-7d36-41c8-9a0f-08105fe9cf44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_BSP2">
+      <UniqueIdentifier>{da28bfe6-85d9-4a73-8c30-021ba70f43eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_TriMesh">
+      <UniqueIdentifier>{4fcfb01b-f037-4b8e-9ccd-b9185e286e66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_Sky">
+      <UniqueIdentifier>{0c4e4c2d-98dd-4d7d-9f38-c5feab7e6d81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_Flare">
+      <UniqueIdentifier>{a21a81b1-4d27-4806-bafe-22db583797be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_Multi">
+      <UniqueIdentifier>{6d17be6f-4fcb-4ace-a87c-0b966f6d80ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRAnim">
+      <UniqueIdentifier>{38ea3c72-00c4-4b7c-8a43-515ecb14ae0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRMain">
+      <UniqueIdentifier>{4f8fe542-ea3e-4040-81fa-868821000f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRVB">
+      <UniqueIdentifier>{1ed7f44f-7ac3-4098-af3c-52517797d71b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Misc">
+      <UniqueIdentifier>{9832bda4-ad80-4f40-96d7-e17a6ee2c2a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_BSPCommon">
+      <UniqueIdentifier>{b841da82-eb7a-49f4-aa3e-b5114c51fed0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_BSP4">
+      <UniqueIdentifier>{6bcadea3-d441-4a7a-b73b-92f53dc77e0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_BSP3">
+      <UniqueIdentifier>{3c3f70e2-85cf-4be6-af86-ccfd8097a94b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XRAnimGraph2">
+      <UniqueIdentifier>{43c2a175-8181-47cf-8fee-c87a76505657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_BSP4Glass">
+      <UniqueIdentifier>{870a8847-f8ab-4244-91e9-6e5fc2e5b4cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_SolidPhys">
+      <UniqueIdentifier>{c4edd5aa-4295-4616-8feb-ea04fcc8ffd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model_MultiTriMesh">
+      <UniqueIdentifier>{04b00692-ae89-40bb-a1a9-9e30442a6f6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dynamic Create">
+      <UniqueIdentifier>{d014ab72-57c1-4c19-9359-31b53f3ad095}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>Source\PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPFog.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPLight.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPLoader.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPMisc.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPModel.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPPhys.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPPortal.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPSceneGraph.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPSpline.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\WBSPWallmark.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\XWCommon.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP\XWCommon_OctAABB.cpp">
+      <Filter>Source\Model_BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Fog.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Light.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Loader.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Misc.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Model.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Phys.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Portal.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2SceneGraph.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\WBSP2Wallmark.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP2\XW2Common.cpp">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_TriMesh\WTriMesh.cpp">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_TriMesh\WTriMeshDC.cpp">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_TriMesh\XMDCommn.cpp">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_Sky\WSky.cpp">
+      <Filter>Source\Model_Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_Flare\WModel_Flare.cpp">
+      <Filter>Source\Model_Flare</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_Multi\WModel_Multi.cpp">
+      <Filter>Source\Model_Multi</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnim.cpp">
+      <Filter>Source\XRAnim</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimCompressed.cpp">
+      <Filter>Source\XRAnim</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimDataKey.cpp">
+      <Filter>Source\XRAnim</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimOptimizer.cpp">
+      <Filter>Source\XRAnim</Filter>
+    </ClCompile>
+    <ClCompile Include="XRCloth.cpp">
+      <Filter>Source\XRAnim</Filter>
+    </ClCompile>
+    <ClCompile Include="XRSkeleton.cpp">
+      <Filter>Source\XRAnim</Filter>
+    </ClCompile>
+    <ClCompile Include="XREngine.cpp">
+      <Filter>Source\XRMain</Filter>
+    </ClCompile>
+    <ClCompile Include="XRFog.cpp">
+      <Filter>Source\XRMain</Filter>
+    </ClCompile>
+    <ClCompile Include="XRPContainer.cpp">
+      <Filter>Source\XRMain</Filter>
+    </ClCompile>
+    <ClCompile Include="XRSurf.cpp">
+      <Filter>Source\XRMain</Filter>
+    </ClCompile>
+    <ClCompile Include="XRSurfaceContext.cpp">
+      <Filter>Source\XRMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Render\MRenderVPGen.cpp">
+      <Filter>Source\XRVB</Filter>
+    </ClCompile>
+    <ClCompile Include="XRVBContext.cpp">
+      <Filter>Source\XRVB</Filter>
+    </ClCompile>
+    <ClCompile Include="XRVBManager.cpp">
+      <Filter>Source\XRVB</Filter>
+    </ClCompile>
+    <ClCompile Include="XRVBOperators.cpp">
+      <Filter>Source\XRVB</Filter>
+    </ClCompile>
+    <ClCompile Include="XRVBOperators_GC.cpp">
+      <Filter>Source\XRVB</Filter>
+    </ClCompile>
+    <ClCompile Include="XRVBOperators_NVidia.cpp">
+      <Filter>Source\XRVB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BitString\MBitString.cpp">
+      <Filter>Source\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSPCommon.cpp">
+      <Filter>Source\Model_BSPCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4\WBSP4Loader.cpp">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4\WBSP4Misc.cpp">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4\WBSP4Model.cpp">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4\WBSP4Phys.cpp">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4\XW4Common.cpp">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Fog.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Light.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Loader.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Misc.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Model.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Phys.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Portal.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3SceneGraph.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\WBSP3Wallmark.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP3\XW3Common.cpp">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_Action.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_AnimLayer.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_CCheck.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_GraphBlock.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_IO.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_LogDump.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_Reaction.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AnimGraph2_State.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AGCompiler2\AnimGraph2Compiler.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AGCompiler2\AnimGraph2Compiler_GraphBlock.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AGCompiler2\AnimGraph2Compiler_Reactions.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="XRAnimGraph2\AGCompiler2\AnimGraph2Compiler_State.cpp">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4Glass.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassCommon.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassCrush.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassDelaunay2D.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassLoader.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\wBSP4GlassPhys.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassPhys_Box.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassPhys_Line.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_BSP4Glass\WBSP4GlassPhys_Sphere.cpp">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_SolidPhys\XRModel_SolidPhys.cpp">
+      <Filter>Source\Model_SolidPhys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_SolidPhys\XRModel_SolidPhysLoader.cpp">
+      <Filter>Source\Model_SolidPhys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\XRModels\Model_MultiTriMesh\WModel_MultiTriMesh.cpp">
+      <Filter>Source\Model_MultiTriMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="XR_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>Source\PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP\WBSPDef.h">
+      <Filter>Source\Model_BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP\WBSPModel.h">
+      <Filter>Source\Model_BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP\XWCommon.h">
+      <Filter>Source\Model_BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP\XWCommon_OctAABB.h">
+      <Filter>Source\Model_BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP\XWCommon_VPUShared.h">
+      <Filter>Source\Model_BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP2\WBSP2Def.h">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP2\WBSP2Model.h">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP2\XW2Common.h">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP2\XW2Common_VPUShared.h">
+      <Filter>Source\Model_BSP2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_TriMesh\WTriMesh.h">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_TriMesh\WTriMeshDC.h">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_TriMesh\WTriMeshRIP.h">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_TriMesh\XMDCommn.h">
+      <Filter>Source\Model_TriMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_Sky\WSky.h">
+      <Filter>Source\Model_Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_Flare\WModel_Flare.h">
+      <Filter>Source\Model_Flare</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_Multi\WModel_Multi.h">
+      <Filter>Source\Model_Multi</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnim.h">
+      <Filter>Source\XRAnim</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimCompressed.h">
+      <Filter>Source\XRAnim</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimData.h">
+      <Filter>Source\XRAnim</Filter>
+    </ClInclude>
+    <ClInclude Include="XRCloth.h">
+      <Filter>Source\XRAnim</Filter>
+    </ClInclude>
+    <ClInclude Include="XRClothCommon.h">
+      <Filter>Source\XRAnim</Filter>
+    </ClInclude>
+    <ClInclude Include="XRSkeleton.h">
+      <Filter>Source\XRAnim</Filter>
+    </ClInclude>
+    <ClInclude Include="XR.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XREngine.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XREngineImp.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XREngineVar.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XRFog.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XRPContainer.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XRSurf.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="XRSurfaceContext.h">
+      <Filter>Source\XRMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Render\MRenderVPGen.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="XRVBContext.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="XRVBManager.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="XRVBOperators.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="XRVBOperators_GC.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="XRVBOperators_NVidia.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="XRVBPrior.h">
+      <Filter>Source\XRVB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MCC\MRTC.h">
+      <Filter>Source\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP4\WBSP4Def.h">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP4\WBSP4Model.h">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP4\XW4Common.h">
+      <Filter>Source\Model_BSP4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP3\WBSP3Def.h">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP3\WBSP3Model.h">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP3\XW3Common.h">
+      <Filter>Source\Model_BSP3</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2_Action.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2_AnimLayer.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2_GraphBlock.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2_Reaction.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2_State.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AGCompiler2\AnimGraph2Compiler.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="XRAnimGraph2\AnimGraph2Defs.h">
+      <Filter>Source\XRAnimGraph2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP4Glass\WBSP4Glass.h">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP4Glass\WBSP4GlassCommon.h">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_BSP4Glass\WBSP4GlassDelaunay2D.h">
+      <Filter>Source\Model_BSP4Glass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_SolidPhys\XRModel_SolidPhys.h">
+      <Filter>Source\Model_SolidPhys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\XRModels\Model_MultiTriMesh\WModel_MultiTriMesh.h">
+      <Filter>Source\Model_MultiTriMesh</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

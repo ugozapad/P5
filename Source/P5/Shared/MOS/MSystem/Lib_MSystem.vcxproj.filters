@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{ce554968-ad73-471d-9dd4-639565d6feed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PreComp">
+      <UniqueIdentifier>{3ec880b8-d926-448f-bfd0-1bd99cfeb837}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PreComp\Script">
+      <UniqueIdentifier>{debcbd12-f78f-4095-8ebe-3f13cb7eb582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster">
+      <UniqueIdentifier>{d13fb3d7-9ec9-4147-a916-2525c70d56c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster\JPGLib">
+      <UniqueIdentifier>{802bca3a-458e-4a3e-878d-5c570df54334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster\Video Containers">
+      <UniqueIdentifier>{fc1fc4b2-128c-4a10-8e0b-60f651cc99c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster\PNGlib">
+      <UniqueIdentifier>{a2aedfce-5d71-4106-bf5a-376befde7a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster\PNGlib\Headers">
+      <UniqueIdentifier>{48929977-f76b-4598-aa61-b1370fa33798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster\Neuquant">
+      <UniqueIdentifier>{7ca79366-b8c0-4bda-a977-3f04076eee33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Raster\NVidiaDXT">
+      <UniqueIdentifier>{763ed875-3452-4e05-b93e-e6896ca0fd60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Miscellaneous">
+      <UniqueIdentifier>{209d7392-2b43-4a89-a3a7-594798ca9450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound">
+      <UniqueIdentifier>{7377aa94-6891-4521-afa2-237be57578c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codec">
+      <UniqueIdentifier>{12bb796d-0d35-421d-a3ce-5addd94fa83b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codecs">
+      <UniqueIdentifier>{238e52b3-0b4e-4f63-8545-67bffe0d281a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codecs\Vorbis">
+      <UniqueIdentifier>{62832fab-1e00-46ee-8326-19843032177f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codecs\Vorbis\Encoder">
+      <UniqueIdentifier>{a82c8f0d-7ad1-4cca-bd26-e0c083f27e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codecs\Vorbis\Ogg">
+      <UniqueIdentifier>{a8eb9ca9-5c68-4d32-a4e0-5ed304ed1494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codecs\Vorbis\VorbisFile">
+      <UniqueIdentifier>{7c23bac7-2cb5-4724-a0ec-8e482e46fa27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Codecs\Vorbis\General Lib">
+      <UniqueIdentifier>{2d3deefe-322a-4535-b2ad-6841ef475295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Contexts">
+      <UniqueIdentifier>{5ff67e26-ed46-44d0-bb78-f6970de7bc9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Contexts\Mixer">
+      <UniqueIdentifier>{0fd3b1d6-a900-4c5f-9a47-2d6576ec17f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Contexts\PS3">
+      <UniqueIdentifier>{631624bc-205b-43e4-bfc9-4558bb2bbdb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Contexts\Vorbis">
+      <UniqueIdentifier>{048cfe2a-6e50-4b89-80bd-fee921f7ce0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Contexts\ASIO">
+      <UniqueIdentifier>{defa4498-d9f2-4889-8d2e-784d61afead2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Contexts\ASIO\SDK">
+      <UniqueIdentifier>{f63b030d-ea8f-4de3-93a1-728ce3091fee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\LipSync">
+      <UniqueIdentifier>{dd740d40-f0f3-4de0-8cfa-48ec22624c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Engine">
+      <UniqueIdentifier>{23edf994-bf2b-41bb-b4c1-3d8838208d3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Engine\DSP">
+      <UniqueIdentifier>{5b11bc20-1885-4445-bff2-28fc5ecbf3d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Engine\DSP\Internal">
+      <UniqueIdentifier>{bde78a57-85b0-48bc-abb8-385cc6b5e99c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sound\Sound Engine\DSP\Normal">
+      <UniqueIdentifier>{91b6dbad-78bd-4790-81ee-49843bcc2fd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Input">
+      <UniqueIdentifier>{64a167dc-7630-455c-8862-7d046d314d46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Input\PS3">
+      <UniqueIdentifier>{0d965b53-5187-4b76-b263-22aa9bde456f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\System">
+      <UniqueIdentifier>{ffa387a3-34fc-484d-b924-40c76142abc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Main">
+      <UniqueIdentifier>{de898434-bab2-42c3-965d-08811ced752c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Task distribution">
+      <UniqueIdentifier>{0ef97652-4e44-4bab-9c0b-085ec93aeee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dynamic Create">
+      <UniqueIdentifier>{7df4ee85-6930-4cc8-b475-4b2edd78250c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>Source\PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript_ConstantParsers.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript_Convert.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript_Language.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript_MultiType.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript_RegisterContext.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\MScript_Syntax.cpp">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MDisplay.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImage.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCompress3DC.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCompressCTX.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCompressJPG.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCompressS3TC.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCompressSound.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCompressVQ.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageCubemapSampler.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageIO.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImagePalette.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageQuantize.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageScaler.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MRender.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTexture.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainers.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainersPostFilter.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerXTC2.cpp">
+      <Filter>Source\Raster</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcapimin.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcapistd.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jccoefct.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jccolor.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcdctmgr.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcfileread.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jchuff.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcinit.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcmainct.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcmarker.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcmaster.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcomapi.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcparam.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcphuff.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcprepct.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jcsample.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jctrans.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdapimin.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdapistd.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdatadst.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdatasrc.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdcoefct.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdcolor.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jddctmgr.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdhuff.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdinput.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdmainct.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdmarker.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdmaster.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdmerge.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdphuff.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdpostct.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdsample.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jdtrans.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jerror.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jfdctflt.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jfdctfst.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jfdctint.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jidctflt.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jidctfst.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jidctint.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jidctred.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jmemmgr.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jmemnobs.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jquant1.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jquant2.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\JPGLib\jutils.cpp">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerBink.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerBinkDummy.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerMPEG.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerTheora.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerVideoPS3.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerWMV.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MTextureContainerXMV.cpp">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\png.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngerror.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pnggccrd.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngget.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngmem.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngpread.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngread.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngrio.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngrtran.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngrutil.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngset.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngtrans.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngvcrd.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngwio.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngwrite.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngwtran.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\Png\pngwutil.c">
+      <Filter>Source\Raster\PNGlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sdk\NeuQuant\Neuquant.c">
+      <Filter>Source\Raster\Neuquant</Filter>
+    </ClCompile>
+    <ClCompile Include="Raster\MImageDxtLibWrappper.cpp">
+      <Filter>Source\Raster\NVidiaDXT</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MConsole.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MLocalizer.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Miscellaneous\MMd5.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MPerfGraph.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MRegistry.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MRegistry_Compiled.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MRegistry_Dynamic.cpp">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound.cpp">
+      <Filter>Source\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Core.cpp">
+      <Filter>Source\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_CoreDualStream.cpp">
+      <Filter>Source\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_SFXDesc.cpp">
+      <Filter>Source\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_WaveContainer_Plain.cpp">
+      <Filter>Source\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Waveform.cpp">
+      <Filter>Source\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Codec.cpp">
+      <Filter>Source\Sound\Codec</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\Codecs\MSound_Codec_PS3.cpp">
+      <Filter>Source\Sound\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\vorbisenc.c">
+      <Filter>Source\Sound\Codecs\Vorbis\Encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\ogg\src\bitwise.c">
+      <Filter>Source\Sound\Codecs\Vorbis\Ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\ogg\src\framing.c">
+      <Filter>Source\Sound\Codecs\Vorbis\Ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\vorbisfile.c">
+      <Filter>Source\Sound\Codecs\Vorbis\VorbisFile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\analysis.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\bitrate.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\block.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\codebook.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\envelope.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\floor0.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\floor1.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\info.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\lpc.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\lsp.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\mapping0.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\mdct.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\psy.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\registry.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\res0.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\sharedbook.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\smallft.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\synthesis.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\Vorbis\vorbis\lib\window.c">
+      <Filter>Source\Sound\Codecs\Vorbis\General Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\SCMixer\MSound_SCMixer.cpp">
+      <Filter>Source\Sound\Sound Contexts\Mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\PS3\MSound_PS3.cpp">
+      <Filter>Source\Sound\Sound Contexts\PS3</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\Vorbis\MSound_Vorbis.cpp">
+      <Filter>Source\Sound\Sound Contexts\Vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\ASIO\MSound_ASIO.cpp">
+      <Filter>Source\Sound\Sound Contexts\ASIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\ASIO\asio.cpp">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\ASIO\asiodrivers.cpp">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\ASIO\asiolist.cpp">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\LipSync\LipSync.cpp">
+      <Filter>Source\Sound\LipSync</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\LipSync\LipSyncAnno.cpp">
+      <Filter>Source\Sound\LipSync</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\LipSync\LipSyncFaceFX.cpp">
+      <Filter>Source\Sound\LipSync</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\LipSync\LipSyncTalkBack.cpp">
+      <Filter>Source\Sound\LipSync</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\LipSync\LipSyncTalkbackAndFaceFX.cpp">
+      <Filter>Source\Sound\LipSync</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Mixer.cpp">
+      <Filter>Source\Sound\Sound Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Mixer_Worker_CPUVPUAccess.cpp">
+      <Filter>Source\Sound\Sound Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Mixer_DSPEffects.cpp">
+      <Filter>Source\Sound\Sound Engine\DSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MInput.cpp">
+      <Filter>Source\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MInputEnvelope.cpp">
+      <Filter>Source\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MInputScankey.cpp">
+      <Filter>Source\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\Ps3\MInput_PS3.cpp">
+      <Filter>Source\Input\PS3</Filter>
+    </ClCompile>
+    <ClCompile Include="MSystem_Core.cpp">
+      <Filter>Source\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MSystem_PS3.cpp">
+      <Filter>Source\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MSystem_Win32.cpp">
+      <Filter>Source\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MSystem_Xenon.cpp">
+      <Filter>Source\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMain.cpp">
+      <Filter>Source\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMain_PS3.cpp">
+      <Filter>Source\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMain_Win32.cpp">
+      <Filter>Source\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\MRTC_Task.cpp">
+      <Filter>Source\Task distribution</Filter>
+    </ClCompile>
+    <ClCompile Include="MSystem_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MSound_Mixer_Worker.cpp">
+      <Filter>Source\Sound\Sound Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>Source\PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\MScript.h">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\MScript_Convert.h">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\MScript_MultiType.h">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\MScript_RegisterContext.h">
+      <Filter>Source\PreComp\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MDisplay.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MImage.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MImageCompressVQ.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MImageCubemapSampler.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MImageIO.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MRCCore.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MRender.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MRender_Classes.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MRender_Classes_VPUShared.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MRender_NVidia.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTexture.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainers.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerXTC2.h">
+      <Filter>Source\Raster</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\cderror.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\cdjpeg.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jchuff.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\JConfig.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jdct.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jdhuff.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jerror.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jinclude.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jmemsys.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jmorecfg.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jpegint.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jpeglib.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\JPGLib\jversion.h">
+      <Filter>Source\Raster\JPGLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerBink.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerBinkDummy.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerMPEG.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerTheora.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerVideoPS3.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerWMV.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MTextureContainerXMV.h">
+      <Filter>Source\Raster\Video Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sdk\Png\png.h">
+      <Filter>Source\Raster\PNGlib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sdk\Png\pngasmrd.h">
+      <Filter>Source\Raster\PNGlib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sdk\Png\pngconf.h">
+      <Filter>Source\Raster\PNGlib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sdk\NeuQuant\Neuquant.h">
+      <Filter>Source\Raster\Neuquant</Filter>
+    </ClInclude>
+    <ClInclude Include="Raster\MImageDxtLibWrapper.h">
+      <Filter>Source\Raster\NVidiaDXT</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MConsole.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MLocalizer.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Miscellaneous\MMd5.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MPerfGraph.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MRegistry.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MRegistry_Compiled.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MRegistry_Dynamic.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MRegistry_Shared.h">
+      <Filter>Source\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound.h">
+      <Filter>Source\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Core.h">
+      <Filter>Source\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_CoreDualStream.h">
+      <Filter>Source\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Codec.h">
+      <Filter>Source\Sound\Codec</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SCMixer\MSound_SCMixer.h">
+      <Filter>Source\Sound\Sound Contexts\Mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\PS3\MSound_PS3.h">
+      <Filter>Source\Sound\Sound Contexts\PS3</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\Vorbis\MSound_Vorbis.h">
+      <Filter>Source\Sound\Sound Contexts\Vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\ASIO\MSound_ASIO.h">
+      <Filter>Source\Sound\Sound Contexts\ASIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDK\ASIO\asio.h">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDK\ASIO\asiodrivers.h">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDK\ASIO\asiolist.h">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDK\ASIO\ginclude.h">
+      <Filter>Source\Sound\Sound Contexts\ASIO\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\LipSync\LipSync.h">
+      <Filter>Source\Sound\LipSync</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer.h">
+      <Filter>Source\Sound\Sound Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Worker.h">
+      <Filter>Source\Sound\Sound Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSPEffects.h">
+      <Filter>Source\Sound\Sound Engine\DSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Master.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Master.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Master.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Router.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Router.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Router.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_SilenceGen.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_SilenceGen.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_SilenceGen.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Voice.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Voice.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_Voice.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_VolumeMatrix.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_VolumeMatrix.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_Internal_DSP_VolumeMatrix.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_BiQuad.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_BiQuad.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_BiQuad.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Copy.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Copy.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Copy.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Reverb.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Reverb.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Reverb.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Volume.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Volume.imp.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MSound_Mixer_DSP_Volume.impvpu.h">
+      <Filter>Source\Sound\Sound Engine\DSP\Normal</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MInput.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MInputCore.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MInputEnvelope.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MInputScankey.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\Ps3\MInput_PS3.h">
+      <Filter>Source\Input\PS3</Filter>
+    </ClInclude>
+    <ClInclude Include="MContentContext.h">
+      <Filter>Source\System</Filter>
+    </ClInclude>
+    <ClInclude Include="MSystem.h">
+      <Filter>Source\System</Filter>
+    </ClInclude>
+    <ClInclude Include="MSystem_Core.h">
+      <Filter>Source\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SysInc.h">
+      <Filter>Source\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMain.h">
+      <Filter>Source\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc\MRTC_Task.h">
+      <Filter>Source\Task distribution</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MSystem.def">
+      <Filter>Source\System</Filter>
+    </None>
+  </ItemGroup>
+</Project>

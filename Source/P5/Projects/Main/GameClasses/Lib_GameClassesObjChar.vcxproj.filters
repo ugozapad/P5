@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PreComp">
+      <UniqueIdentifier>{b9d62b2e-72be-4a20-a46c-0156d3b2b4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{f51f5e60-afe0-4479-950c-a5ce3b5818f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char">
+      <UniqueIdentifier>{17f384c6-0231-473f-87ee-d3b90a876d1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\AnimGraph">
+      <UniqueIdentifier>{af7fcdec-25a7-4a86-bda3-c25b1acc2992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\WObj_Interface_AI">
+      <UniqueIdentifier>{2f79fdcb-dcf0-424a-b34d-7fffb23fe808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\CharPlayer">
+      <UniqueIdentifier>{c47d2b00-438a-44e7-9e04-7b1cbc1d9eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\CharNPC">
+      <UniqueIdentifier>{feca97bc-d4ea-41ea-a48c-ef4d38176777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\CharDarkling">
+      <UniqueIdentifier>{d6da53f3-d4e1-4e0d-ae64-a8ce09f82b50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\CharAngelus">
+      <UniqueIdentifier>{9f01f5e2-ae62-4911-9b92-331293de29f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WObj_Char\CharShapeshifter">
+      <UniqueIdentifier>{cad98ac1-911f-42fc-b918-88608f48ff43}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="CConstraintSystem.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="CIKSystem.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="CPostAnimSystem.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WAnimPositioning.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WFixedCharMovement.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AnimUtils.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_AutoVar_AttachModel.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharAnim.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharBlink.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharCamera.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharClientData.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharCreate.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharDialogue.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharIO.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharMechanics.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharMisc.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharMsg.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharPhys.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharPredict.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharRagdoll.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharRender.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharSpectator.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Player.cpp">
+      <Filter>Source\WObj_Char</Filter>
+    </ClCompile>
+    <ClCompile Include="WAG2_ClientData_Game.cpp">
+      <Filter>Source\WObj_Char\AnimGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_CharControlModeAnim.cpp">
+      <Filter>Source\WObj_Char\AnimGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Interface_AI.cpp">
+      <Filter>Source\WObj_Char\WObj_Interface_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharPlayer.cpp">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharPlayer_ClientData.cpp">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharPlayer_ClientData_P6.cpp">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharPlayer_P6.cpp">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharNPC.cpp">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharNPC_ClientData.cpp">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharNPC_ClientData_P6.cpp">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharNPC_P6.cpp">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharDarkling.cpp">
+      <Filter>Source\WObj_Char\CharDarkling</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharDarkling_Camera.cpp">
+      <Filter>Source\WObj_Char\CharDarkling</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharDarkling_ClientData.cpp">
+      <Filter>Source\WObj_Char\CharDarkling</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharDarkling_Phys.cpp">
+      <Filter>Source\WObj_Char\CharDarkling</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharAngelus.cpp">
+      <Filter>Source\WObj_Char\CharAngelus</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharAngelus_ClientData.cpp">
+      <Filter>Source\WObj_Char\CharAngelus</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharShapeshifter.cpp">
+      <Filter>Source\WObj_Char\CharShapeshifter</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_Char\WObj_CharShapeshifter_ClientData.cpp">
+      <Filter>Source\WObj_Char\CharShapeshifter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="CConstraintSystem.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="CIKSystem.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="CPostAnimSystem.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WAnimPositioning.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WFixedCharMovement.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AnimUtils.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AutoVar_AttachModel.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_AutoVar_Mod.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharBlink.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_CharClientData.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_CharDialogue.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_CharMsg.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharRagdoll.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_CharSpectator.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Player.h">
+      <Filter>Source\WObj_Char</Filter>
+    </ClInclude>
+    <ClInclude Include="WAG2_ClientData_Game.h">
+      <Filter>Source\WObj_Char\AnimGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Interface_AI.h">
+      <Filter>Source\WObj_Char\WObj_Interface_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharPlayer.h">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharPlayer_ClientData.h">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharPlayer_ClientData_P6.h">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharPlayer_P6.h">
+      <Filter>Source\WObj_Char\CharPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharNPC.h">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharNPC_ClientData.h">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharNPC_ClientData_P6.h">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharNPC_P6.h">
+      <Filter>Source\WObj_Char\CharNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharDarkling.h">
+      <Filter>Source\WObj_Char\CharDarkling</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharDarkling_ClientData.h">
+      <Filter>Source\WObj_Char\CharDarkling</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharAngelus.h">
+      <Filter>Source\WObj_Char\CharAngelus</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharAngelus_ClientData.h">
+      <Filter>Source\WObj_Char\CharAngelus</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharShapeshifter.h">
+      <Filter>Source\WObj_Char\CharShapeshifter</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Char\WObj_CharShapeshifter_ClientData.h">
+      <Filter>Source\WObj_Char\CharShapeshifter</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

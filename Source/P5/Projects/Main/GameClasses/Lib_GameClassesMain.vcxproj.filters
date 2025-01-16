@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PreComp">
+      <UniqueIdentifier>{dd88818a-81d1-4fcd-80cd-4b1d432bc40d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MRTC">
+      <UniqueIdentifier>{15bcc582-047d-4028-8d65-8a0c3d26f398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{77c53fa7-e8e7-4d57-a942-83fc18c505f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XR">
+      <UniqueIdentifier>{a2335779-a7e3-4ae2-b7c7-2822fbbd5d08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source GameWorld">
+      <UniqueIdentifier>{a53112b7-562d-4d1e-ac10-7dbf424bffda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source GameWorld\GameWorld">
+      <UniqueIdentifier>{a3e0e245-700c-4609-8659-e3bbfd9836c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source GameWorld\GameWorld\AnimGraph2Instance">
+      <UniqueIdentifier>{e805f27c-5e41-45d4-a531-8b85c6323f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source XR">
+      <UniqueIdentifier>{9afdeb7e-3257-484b-8079-6e2fc1c2ce6c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>PreComp</Filter>
+    </ClCompile>
+    <ClCompile Include="WObj_RPG.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\XR\XRCustomModel.cpp">
+      <Filter>Source\XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WClass.cpp">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WClassCmd.cpp">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjCore.cpp">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2_ClientData.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_ClientUpdate.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Context.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Interface.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Resources.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_SIID.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_StateInst.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Token.cpp">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnim.cpp">
+      <Filter>Source XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimCompressed.cpp">
+      <Filter>Source XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimDataKey.cpp">
+      <Filter>Source XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimOptimizer.cpp">
+      <Filter>Source XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRCloth.cpp">
+      <Filter>Source XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRSkeleton.cpp">
+      <Filter>Source XR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Video\MAVI.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\Render\MRenderUtil.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\Win\MWinGrph.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClientClass.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameContext\WGameContext.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.h">
+      <Filter>PreComp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC.h">
+      <Filter>MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC_String.h">
+      <Filter>MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_Messages.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="WObj_RPG.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\XR\XRCustomModel.h">
+      <Filter>Source\XR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WClass.h">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WClassCmd.h">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjCore.h">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WPackets.h">
+      <Filter>Source GameWorld\GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2_ClientData.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Context.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Defs.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_SIID.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_StateInst.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Token.h">
+      <Filter>Source GameWorld\GameWorld\AnimGraph2Instance</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

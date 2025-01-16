@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{9f1c6cce-05a1-48a2-8e17-a2684efa57ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{465837df-72b8-4ebb-a11e-4be10d9dca48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dynamic Create">
+      <UniqueIdentifier>{9b6323e7-a72d-4d22-86a8-29bdf3cade69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameContext\WGameContext.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Registry\MRegistryNavigator.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Render\MRenderCapture.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mcc\Mrtc.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MCC\MCC_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mcc\MRTC_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\MSystem\MSystem_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\XR\XR_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameClasses\GameClasses_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameWorld\GameWorld_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRUtil.cpp" />
+    <ClCompile Include="..\Exe\PCH\PCH.cpp" />
+    <ClCompile Include="..\Exe\WGameContextMain.cpp" />
+    <ClCompile Include="..\Exe\WGameContext_P6.cpp" />
+    <ClCompile Include="..\Exe\WGameMultiplayerHandler.cpp" />
+    <ClCompile Include="..\Exe\XRApp.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\MMain.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win32\MWin32Registry.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win32\MWin32.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameContext\WGameContext.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Registry\MRegistryNavigator.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\Render\MRenderCapture.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC_String.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Exe\PCH\PCH.h" />
+    <ClInclude Include="..\Exe\WGameContextMain.h" />
+    <ClInclude Include="..\Exe\WGameContext_P6.h" />
+    <ClInclude Include="..\Exe\WGameMultiplayerHandler.h" />
+  </ItemGroup>
+</Project>

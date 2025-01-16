@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{3b7b8d42-aba9-41b5-b2ca-4cd0a9993905}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Pre Comp">
+      <UniqueIdentifier>{ac854d68-2bdc-4e60-a8f3-a9f61df61796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Main">
+      <UniqueIdentifier>{b10dc6bd-875a-4469-9747-7200c45941ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Data Structures">
+      <UniqueIdentifier>{f0c414d1-b371-4093-9946-c2d49c557388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\File Management">
+      <UniqueIdentifier>{6175ba80-b399-4b37-9e5e-a0122e551f86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\File Management\Streams">
+      <UniqueIdentifier>{27736459-2084-4bf4-8062-8fb394e29902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\File Management\Stream Management">
+      <UniqueIdentifier>{ccfea9f9-b4b3-4ab3-8df6-4e8cf0f9ac35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Math">
+      <UniqueIdentifier>{3ebe450b-bdb2-42e7-8d35-71afecf024f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Compression">
+      <UniqueIdentifier>{3d05a666-35e3-4854-b217-a77566b8ae95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Compression\ZLib">
+      <UniqueIdentifier>{34a8e974-de1e-451c-90ca-9ed3c26d72b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Compression\ZLib\Headers">
+      <UniqueIdentifier>{01adc5f2-8d3f-4bde-bc2a-0eeeb03f8b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Other">
+      <UniqueIdentifier>{7a04dc26-34ad-46f9-b9b7-f1bdf7c01252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Memory management">
+      <UniqueIdentifier>{f329fb9f-5b60-4f39-9ea4-44ce77433f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MRTC">
+      <UniqueIdentifier>{0880e23c-7067-4248-aa96-55e2e9fe1a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MRTC\Platform">
+      <UniqueIdentifier>{a12e1618-9cbd-4faa-a827-baefb8c78497}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MRTC\Platform\Targets">
+      <UniqueIdentifier>{f50dce9a-961a-413e-b5a5-cbea1f2573aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VPU">
+      <UniqueIdentifier>{a829172a-6ff4-4302-9b55-ffed416f8144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VPU\Shared">
+      <UniqueIdentifier>{77477c7b-11c6-4606-8721-5758616a5a95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PS3">
+      <UniqueIdentifier>{170620ff-0b81-4982-9d85-b476e06dc93b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dynamic Create">
+      <UniqueIdentifier>{7fee9718-555a-4652-afd9-52c180f5b3fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MRTC\Network">
+      <UniqueIdentifier>{1fc694ed-14bd-42f8-8077-5beb1688ba7a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\PCH.cpp">
+      <Filter>Source\Pre Comp</Filter>
+    </ClCompile>
+    <ClCompile Include="Mda.cpp">
+      <Filter>Source\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="MDA_3D.CPP">
+      <Filter>Source\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="MDA_Hash.cpp">
+      <Filter>Source\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="MDataFile.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_AsyncCopy.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_DiskUtil.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_MegaFile.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Misc.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_RAM.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_XDF.cpp">
+      <Filter>Source\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_Compressed.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_Disk.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_MegaFile.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_Memory.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_RAM.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_SubFile.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_Stream_XDF.cpp">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClCompile>
+    <ClCompile Include="MFile_StreamMgr.cpp">
+      <Filter>Source\File Management\Stream Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MFloat.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MMath.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MMath_fp2.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MMath_MIPS.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MMath_SSE_M4.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MMath_SSE_V3.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MSIMD.cpp">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Mcomp.cpp">
+      <Filter>Source\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\adler32.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\compress.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\crc32.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\deflate.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\gzio.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\infback.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\inffast.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\inflate.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\inftrees.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\trees.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\uncompr.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sdk\ZLib\zutil.c">
+      <Filter>Source\Compression\ZLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MMisc.cpp">
+      <Filter>Source\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="MMemMgrHeap.cpp">
+      <Filter>Source\Memory management</Filter>
+    </ClCompile>
+    <ClCompile Include="MMemMgrOverride.cpp">
+      <Filter>Source\Memory management</Filter>
+    </ClCompile>
+    <ClCompile Include="MMemMgrPool.cpp">
+      <Filter>Source\Memory management</Filter>
+    </ClCompile>
+    <ClCompile Include="Mrtc.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_CallGraph.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_Exception.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_FStrBase.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_Misc.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_RemoteDebug.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_Str.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_StrBase.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_System.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_System_PS3.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_System_Win32.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_Thread.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_VPUManager.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_VPUManager_PS3.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="Mrtc_XboxInit.cpp">
+      <Filter>Source\MRTC</Filter>
+    </ClCompile>
+    <ClCompile Include="MNetwork.cpp">
+      <Filter>Source\MRTC\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="VPU\MRTC_VPU_Win32_Helper.cpp">
+      <Filter>Source\VPU</Filter>
+    </ClCompile>
+    <ClCompile Include="PS3\spu_printf_server.ppu.c">
+      <Filter>Source\PS3</Filter>
+    </ClCompile>
+    <ClCompile Include="MCC_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="MRTC_Dyn.cpp">
+      <Filter>Dynamic Create</Filter>
+    </ClCompile>
+    <ClCompile Include="MMath_MIPSVU.s">
+      <Filter>Source\Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Pch\PCH.h">
+      <Filter>Source\Pre Comp</Filter>
+    </ClInclude>
+    <ClInclude Include="MCC.h">
+      <Filter>Source\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MCCInc.h">
+      <Filter>Source\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MDA.h">
+      <Filter>Source\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="MDA_3D.h">
+      <Filter>Source\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="MDA_Hash.h">
+      <Filter>Source\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="MDA_IDS_TreeAVL.h">
+      <Filter>Source\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="MDA_PQueue.h">
+      <Filter>Source\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="MdaCListVectorCoreImp.h">
+      <Filter>Source\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="MDataFile.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_AsyncCopy.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_DiskUtil.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_MegaFile.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Misc.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_RAM.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_XDF.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileDef.h">
+      <Filter>Source\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_Compressed.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_Disk.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_MegaFile.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_Memory.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_RAM.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_SubFile.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_Stream_XDF.h">
+      <Filter>Source\File Management\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_StreamMgr.h">
+      <Filter>Source\File Management\Stream Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFile_StreamMgrImp.h">
+      <Filter>Source\File Management\Stream Management</Filter>
+    </ClInclude>
+    <ClInclude Include="MFloat.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MFloat_PS3.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MFloat_Undef.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MFloat_X86.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MFloat_Xenon.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_fp2.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_PS2.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_PS3.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_SSE.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Vec128.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Vec128_Emu.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Vec128_SPU.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Vec128_SSE3.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Vec128_TemplateSpec.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Vec128_VMX.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MMath_Xenon.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MSIMD.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Mcomp.h">
+      <Filter>Source\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\crc32.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\deflate.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\inffast.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\inffixed.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\inflate.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\inftrees.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\trees.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\zconf.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\zconf.in.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\zlib.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sdk\ZLib\zutil.h">
+      <Filter>Source\Compression\ZLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MMisc.h">
+      <Filter>Source\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="MMemMgrHeap.h">
+      <Filter>Source\Memory management</Filter>
+    </ClInclude>
+    <ClInclude Include="MMemMgrPool.h">
+      <Filter>Source\Memory management</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_Bit.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_RemoteDebug.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_StringHash.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_System_PS3.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_Time.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_VPUCommonDefs.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="MRTC_VPUManager.h">
+      <Filter>Source\MRTC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Platform.h">
+      <Filter>Source\MRTC\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Targets\Target_PS3.h">
+      <Filter>Source\MRTC\Platform\Targets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Targets\Target_Win32_x86.h">
+      <Filter>Source\MRTC\Platform\Targets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Targets\Target_Win32_x86_SSE.h">
+      <Filter>Source\MRTC\Platform\Targets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Targets\Target_Win32_x86_SSE2.h">
+      <Filter>Source\MRTC\Platform\Targets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Targets\Target_Win64_AMD64.h">
+      <Filter>Source\MRTC\Platform\Targets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Platform\Targets\Target_Xenon.h">
+      <Filter>Source\MRTC\Platform\Targets</Filter>
+    </ClInclude>
+    <ClInclude Include="MNetwork.h">
+      <Filter>Source\MRTC\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="VPU\MRTC_System_VPU.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\MRTC_VPU.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\MRTC_VPU_PS3.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\MRTC_VPU_Win32.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="VPU\MRTC_VPU_Win32_Helper.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\MRTC_VPU_Xenon.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\VPU_Platform.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\VPUTarget_SPU.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="VPU\VPUWorkerBspShadow.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="VPU\VPUWorkerCloth.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\VPUWorkerShadow.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\VPUWorkerTransform.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\VPUWorkerTransformBone.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vpu\VPUWorkerVec128Test.h">
+      <Filter>Source\VPU</Filter>
+    </ClInclude>
+    <ClInclude Include="VPUShared\MCC_VPUShared.h">
+      <Filter>Source\VPU\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="VPUShared\MDA_VPUShared.h">
+      <Filter>Source\VPU\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="VPUShared\MRTC_VPUShared.h">
+      <Filter>Source\VPU\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="VPUShared\MRTC_VPUShared_Thread.h">
+      <Filter>Source\VPU\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="PS3\spu_printf_server.h">
+      <Filter>Source\PS3</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MFile.inl">
+      <Filter>Source\File Management</Filter>
+    </None>
+    <None Include="MFile_StreamMgr.inl">
+      <Filter>Source\File Management\Stream Management</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Mrtc.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MRTC_CallGraph.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MRTC_Exception.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MRTC_Misc.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MRTC_String.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MRTC_System.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MRTC_Thread.h">
+      <Filter>Source\MRTC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Vpu\VPUWorkers.cpp">
+      <Filter>Source\VPU</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

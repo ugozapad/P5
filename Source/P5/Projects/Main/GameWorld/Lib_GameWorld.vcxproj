@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Mixed|Win32">
+      <Configuration>Debug Mixed</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Optimized|Win32">
+      <Configuration>Debug Optimized</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug RTM|Win32">
+      <Configuration>Debug RTM</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3 Debug RTM|Win32">
+      <Configuration>PS3 Debug RTM</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3 Debug|Win32">
+      <Configuration>PS3 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3 Release|Win32">
+      <Configuration>PS3 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3 RTMD Profile|Win32">
+      <Configuration>PS3 RTMD Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3 RTMD|Win32">
+      <Configuration>PS3 RTMD</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3 RTM|Win32">
+      <Configuration>PS3 RTM</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RTMD|Win32">
+      <Configuration>RTMD</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RTM|Win32">
+      <Configuration>RTM</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{391E0574-83D5-4F51-81EB-5591AAF56EF3}</ProjectGuid>
+    <RootNamespace>Lib_GameWorld</RootNamespace>
+    <SccProjectName>Perforce Project</SccProjectName>
+    <SccLocalPath>..\..\..</SccLocalPath>
+    <SccProvider>MSSCCI:Perforce SCM</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Optimized|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD Profile|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug RTM|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTM|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RTM|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RTMD|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RTM|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Optimized|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug RTM|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTM|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug RTM|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RTMD|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RTM|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35527.80</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RTM|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RTMD|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RTM|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.d%3b*.map%3b*.lst%3b*.pch%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Release|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.d%3b*.map%3b*.lst%3b*.pch%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTM|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.d%3b*.map%3b*.lst%3b*.pch%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.d%3b*.map%3b*.lst%3b*.pch%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug RTM|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.d%3b*.map%3b*.lst%3b*.pch%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD Profile|Win32'">
+    <OutDir>.\Output\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>.\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.d%3b*.map%3b*.lst%3b*.pch%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Optimized|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Yl$(ProjectName) /Oy- %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;TARGET_WIN32_X86;MRTC_DLL;WIN32;_WINDOWS;DLLEXPORT_GAMEWORLD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RTM|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/YlLib_GameWorld %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>TARGET_WIN32_X86;MRTC_DLL;M_RTM;WIN32;NDEBUG;_WINDOWS;DLLEXPORT_GAMEWORLD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/YlLib_GameWorld %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;TARGET_WIN32_X86;WIN32;_WINDOWS;DLLEXPORT_GAMEWORLD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/YlLib_GameWorld %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;TARGET_WIN32_X86;MRTC_DLL;WIN32;_WINDOWS;DLLEXPORT_GAMEWORLD;M_MIXEDDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RTMD|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/YlLib_GameWorld %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>TARGET_WIN32_X86;MRTC_DLL;M_RTM;WIN32;NDEBUG;_WINDOWS;DLLEXPORT_GAMEWORLD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug RTM|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/YlLib_GameWorld %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>TARGET_WIN32_X86;MRTC_DLL;M_RTM;WIN32;NDEBUG;_WINDOWS;DLLEXPORT_GAMEWORLD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-g -Wall -fno-exceptions $(MAdditionalPS3Compile) -fno-strict-aliasing -maltivec %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(ProjectDir)PCH;$(ProjectDir)..\..\..\Shared\MCC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;_DEBUG;__GCC__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-g -Wall -fno-exceptions -O2 $(MAdditionalPS3Compile) -fno-strict-aliasing -maltivec %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(ProjectDir)PCH;$(ProjectDir)..\..\..\Shared\MCC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__GCC__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTM|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-Wall -fno-exceptions -O3 $(MAdditionalPS3Compile) -fno-strict-aliasing -maltivec %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(ProjectDir)PCH;$(ProjectDir)..\..\..\Shared\MCC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__GCC__;M_RTM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-g -Wall -fno-exceptions -O3 $(MAdditionalPS3Compile) -fno-strict-aliasing -maltivec
+ %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(ProjectDir)PCH;$(ProjectDir)..\..\..\Shared\MCC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__GCC__;M_RTM;M_Profile;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PS3 Debug RTM|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-g -Wall -fno-exceptions $(MAdditionalPS3Compile) -fno-strict-aliasing -maltivec %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(ProjectDir)PCH;$(ProjectDir)..\..\..\Shared\MCC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__GCC__;M_RTM;M_Profile;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PS3 RTMD Profile|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-g -Wall -fno-exceptions -O3 $(MAdditionalPS3Compile) -fno-strict-aliasing -maltivec  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(ProjectDir)PCH;$(ProjectDir)..\..\..\Shared\MCC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SN_TARGET_PS3;NDEBUG;__GCC__;M_RTM;M_Profile;MRTC_ENABLE_MSCOPE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Optimized|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/YlLib_GameWorld %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Shared\MCC;PCH\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;TARGET_WIN32_X86;MRTC_DLL;WIN32;_WINDOWS;DLLEXPORT_GAMEWORLD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x041d</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClientClass.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Cmd.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Core.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Demo.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Net.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Obj.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Phys.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Precache.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Render.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Sound.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\FrontEnd\WFrontEnd.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Client.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Cmd.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Core.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Dump.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_IO.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Net.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Obj.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Phys.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Player.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Script.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Simulate.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_World.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_ClientUpdate.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Context.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Interface.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Resources.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_StateInst.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Token.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2_ClientData.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WBlockNavGrid.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WBlockNavGrid_VPU.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Optimized|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug RTM|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RTMD|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RTM|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WClass.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WClassCmd.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WData.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataCore.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Anim.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_AnimGraph2.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Core.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_FacialSetup.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_MiscMedia.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Models.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Sound.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_XW.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WDeltaGameState.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamics.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamics2.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsConstraint.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngine2.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngineUtil.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsSupport.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">AnySuitable</InlineFunctionExpansion>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WEvilTemplate.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WHash.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WListener.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WMapData.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WNavGraph\WNavGraph_PathFinder.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjCore.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AnimUtils.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_SimpleMessage.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_VoCap.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Debug.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\GameWorld\WPhysState_Dynamics.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Hash.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Move.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Obj.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Selection.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\GameWorld\WRegReplicator.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Classes\Miscellaneous\MFileContainer.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Render\MRenderUtil.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Render\MWireContainer.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinCtrl.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinCtrl3D.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinCtrlGfx.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWindows.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinGrph.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWinMovieController.cpp" />
+    <ClCompile Include="..\..\..\Shared\MOS\Classes\Win\MWndCtrlEdit.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnim.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimCompressed.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimDataKey.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRAnimOptimizer.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRCloth.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRSkeleton.cpp" />
+    <ClCompile Include="..\..\..\Shared\Mos\Xr\XRSurf.cpp" />
+    <ClCompile Include="MWinCtrlMod.cpp" />
+    <ClCompile Include="PCH\PCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Mixed|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Optimized|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug RTM|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RTMD|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RTM|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WClientMod.cpp" />
+    <ClCompile Include="WClientModWnd.cpp" />
+    <ClCompile Include="WClientModWnd_Briefing.cpp" />
+    <ClCompile Include="WClientModWnd_Dialogue.cpp" />
+    <ClCompile Include="WClientModWnd_Journal.cpp" />
+    <ClCompile Include="WClientModWnd_Map.cpp" />
+    <ClCompile Include="WClientModWnd_P6.cpp" />
+    <ClCompile Include="WClientMod_DV.cpp" />
+    <ClCompile Include="WClient_P6.cpp" />
+    <ClCompile Include="WFrontEndMod.cpp" />
+    <ClCompile Include="WFrontEndMod_Cube.cpp" />
+    <ClCompile Include="WFrontEndMod_Menus.cpp" />
+    <ClCompile Include="WFrontEndMod_Options.cpp" />
+    <ClCompile Include="WFrontEnd_Menues_P6.cpp" />
+    <ClCompile Include="WFrontEnd_P6.cpp" />
+    <ClCompile Include="WServerMod.cpp" />
+    <ClCompile Include="WServer_P6.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC.h" />
+    <ClInclude Include="..\..\..\SHARED\MCC\MRTC_String.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Client\WClient.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Client\WClientClass.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Client\WClient_Core.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\Client\WClient_Sound.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\FrontEnd\WFrontEnd.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\Server\WServer.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\Server\WServer_Core.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\vpuworkernavgrid.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Context.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Defs.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_SIID.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_StateInst.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2I_Token.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WAnimGraph2Instance\WAG2_ClientData.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WBlockNavGrid.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WClass.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WClassCmd.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WData.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataCore.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Anim.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_AnimGraph2.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_Core.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDataRes_FacialSetup.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_MiscMedia.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_Models.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDataRes_Sound.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WDataRes_XW.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WDeltaGameState.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamics.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsConvexCollision.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamics2.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsConstraint.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngine2.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngineBase.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsEngine\WDynamicsEngineUtil.h" />
+    <ClInclude Include="..\..\..\Shared\Mos\Classes\GameWorld\WDynamicsSupport.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WEvilTemplate.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WListener.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WMapData.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WNavGraph\WNavGraph_Pathfinder.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WObjCore.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_AnimUtils.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_PhysCluster.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WObjects\WObj_VoCap.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WPackets.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\GameWorld\WPhysState.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_Hash.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\GameWorld\WPhysState_NavGridHash.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Miscellaneous\MFileContainer.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Render\MRenderUtil.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Render\MWireContainer.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinCtrl.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinCtrl3D.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinCtrlGfx.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWindows.h" />
+    <ClInclude Include="..\..\..\SHARED\MOS\Classes\Win\MWinGrph.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Win\MWinMovieController.h" />
+    <ClInclude Include="..\..\..\Shared\MOS\Classes\Win\MWndCtrlEdit.h" />
+    <ClInclude Include="MWinCtrlMod.h" />
+    <ClInclude Include="PCH\PCH.h" />
+    <ClInclude Include="WClientMod.h" />
+    <ClInclude Include="WClientModWnd.h" />
+    <ClInclude Include="WClientModWnd_Briefing.h" />
+    <ClInclude Include="WClientModWnd_Journal.h" />
+    <ClInclude Include="WClientModWnd_Map.h" />
+    <ClInclude Include="WClientModWnd_P6.h" />
+    <ClInclude Include="WClientMod_Defines.h" />
+    <ClInclude Include="WClient_P6.h" />
+    <ClInclude Include="WFrontEndInfo.h" />
+    <ClInclude Include="WFrontEndMod.h" />
+    <ClInclude Include="WFrontEndMod_Cube.h" />
+    <ClInclude Include="WFrontEndMod_Menus.h" />
+    <ClInclude Include="WFrontEndMod_Options.h" />
+    <ClInclude Include="WFrontEnd_Menues_P6.h" />
+    <ClInclude Include="WFrontEnd_P6.h" />
+    <ClInclude Include="WServerMod.h" />
+    <ClInclude Include="WServer_P6.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Shared\MOS\Classes\GameWorld\WHash.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
