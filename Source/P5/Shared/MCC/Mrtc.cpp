@@ -3250,69 +3250,7 @@ void MCC_TPtrError(char* _pLocation, char* _pMsg)
 #include "MRTC_Misc.cpp"
 #include "MRTC_Thread.cpp"
 
-// i dont know why it's broke so
-
-#if defined(PLATFORM_DOLPHIN) && defined(USE_VIRTUAL_MEMORY)
-# define MACRO_GetDefaultMemoryManager() MRTC_GetVirtualHeap()
-#else
-# define MACRO_GetDefaultMemoryManager() MRTC_GetMemoryManager()
-#endif
-
-#ifndef M_RTM
-void* operator new(size_t _Size, int _Block, int Dummy, int Dummy2)
-{
-# ifdef M_SUPPORTMEMORYDEBUG
-	return MACRO_GetDefaultMemoryManager()->AllocDebug(_Size, _Block, NULL, 0);
-# else
-	return MACRO_GetDefaultMemoryManager()->Alloc(_Size);
-# endif
-}
-
-void* operator new[](size_t _Size, int _Block, int Dummy, int Dummy2)
-{
-# ifdef M_SUPPORTMEMORYDEBUG
-	return MACRO_GetDefaultMemoryManager()->AllocDebug(_Size, _Block, NULL, 0);
-# else
-	return MACRO_GetDefaultMemoryManager()->Alloc(_Size);
-# endif
-}
-
-# ifdef COMPILER_NEEDOPERATORDELETE
-void operator delete(void* Block, int _Block, int Dummy, int Dummy2)
-{
-	MACRO_GetDefaultMemoryManager()->Free(Block);
-}
-# endif
-
-void* operator new(size_t _Size, int _Block, const char* _File, int _FileNumber, SDA_Defraggable* _MakeThisUnique)
-{
-# ifdef M_SUPPORTMEMORYDEBUG
-	return MACRO_GetDefaultMemoryManager()->AllocDebug(_Size, _Block, _File, _FileNumber);
-# else
-	return MACRO_GetDefaultMemoryManager()->Alloc(_Size);
-# endif
-}
-
-void* operator new[](size_t _Size, int _Block, const char* _File, int _FileNumber, SDA_Defraggable* _MakeThisUnique)
-{
-# ifdef M_SUPPORTMEMORYDEBUG
-	return MACRO_GetDefaultMemoryManager()->AllocDebug(_Size, _Block, _File, _FileNumber);
-# else
-	return MACRO_GetDefaultMemoryManager()->Alloc(_Size);
-# endif
-}
-
-# ifdef COMPILER_NEEDOPERATORDELETE
-void operator delete(void* Block, int _Block, const char* _File, int _FileNumber, SDA_Defraggable* _MakeThisUnique)
-{
-	MACRO_GetDefaultMemoryManager()->Free(Block);
-}
-# endif
-
-#endif
-
-
-//#include "MMemMgrOverride.cpp"
+#include "MMemMgrOverride.cpp"
 
 #ifdef M_SUPPORTMEMORYDEBUG
 

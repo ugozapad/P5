@@ -284,7 +284,7 @@
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <OmitFramePointers>false</OmitFramePointers>
-      <AdditionalIncludeDirectories>..\..\mcc\;.\;PCH\;..\..\..\SDK\Include;..\..\..\SDK\DirectX\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\mcc\;.\;PCH\;..\..\..\SDK\Include;..\..\..\SDK\DirectX\Include;..\..\..\SDK\Vorbis\ogg\include;..\..\..\SDK\Vorbis\vorbis\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;MRTC_DLL;TARGET_WIN32_X86;SYSTEMDLL;MSYSTEM_PCH;MRTC_IGNORE_DYNAMIC;SYSTEMDLLINTERFACE;WIN32;_WINDOWS;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -297,7 +297,7 @@
       <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
