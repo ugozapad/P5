@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{f78e330a-cdef-4674-a10a-b4b1bff85818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{bf11a05a-7f77-4673-aa7c-4bb7f30fbdc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\MCC">
+      <UniqueIdentifier>{4edbfb31-ea9b-41f7-b558-c22fad468245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\MOS">
+      <UniqueIdentifier>{5307498f-4e45-4d2a-9d9d-41483f00dfc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\MOS\Misc">
+      <UniqueIdentifier>{27c9250a-acce-4d18-baf6-5a1cadcffb28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\MOS\File">
+      <UniqueIdentifier>{5022da28-6889-439c-b95b-82e3e2c54ff3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{903d2de2-a672-432f-8867-2160b11e72aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PCH\Pch.cpp">
+      <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCC\Mrtc.cpp">
+      <Filter>Shared\MCC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCC\MFile.cpp">
+      <Filter>Shared\MOS\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCC\MFile_StreamMgr.cpp">
+      <Filter>Shared\MOS\File</Filter>
+    </ClCompile>
+    <ClCompile Include="MDisplayGL.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL.cpp" />
+    <ClCompile Include="MRenderGL_DynInit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PCH\PCH.H">
+      <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="MDisplayGL.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="MRenderGL.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

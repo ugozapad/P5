@@ -2867,7 +2867,7 @@ public:
 #ifndef M_STATICINIT
 	int m_bInitialized;
 
-	void* m_hLock;
+	void* m_hLock
 
 	void Lock()
 	{
@@ -2883,8 +2883,8 @@ public:
 extern MRTC_ObjectManager_Container g_ObjectManagerContainer;
 
 #ifdef M_STATICINIT
-	M_INLINE static MRTC_ObjectManager* MRTC_GetObjectManager() {return g_ObjectManagerContainer.m_pManager;}
-	M_INLINE static class CDA_MemoryManager* MRTC_GetMemoryManager(){return g_ObjectManagerContainer.m_pMemoryManager;}
+	M_INLINE static MRTC_ObjectManager* MRTC_GetObjectManager() { extern void MRTC_CreateObjectManager(); MRTC_CreateObjectManager(); return g_ObjectManagerContainer.m_pManager;}
+	M_INLINE static class CDA_MemoryManager* MRTC_GetMemoryManager() { extern void MRTC_CreateObjectManager(); MRTC_CreateObjectManager(); return g_ObjectManagerContainer.m_pMemoryManager; }
 #	ifdef PLATFORM_XBOX1
 		M_INLINE static CDA_MemoryManager* MRTC_GetGraphicsHeap(){return g_ObjectManagerContainer.m_pGraphicsHeap;}
 		/*
