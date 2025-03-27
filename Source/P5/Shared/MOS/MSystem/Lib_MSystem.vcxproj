@@ -2021,6 +2021,7 @@
     <ClCompile Include="Input\MInputEnvelope.cpp" />
     <ClCompile Include="Input\MInputScankey.cpp" />
     <ClCompile Include="Input\Ps3\MInput_PS3.cpp" />
+    <ClCompile Include="Input\Win32\MInputWin32.cpp" />
     <ClCompile Include="Misc\MConsole.cpp" />
     <ClCompile Include="Misc\MLocalizer.cpp" />
     <ClCompile Include="Misc\MPerfGraph.cpp" />
@@ -2423,6 +2424,7 @@
     <ClInclude Include="Input\MInputEnvelope.h" />
     <ClInclude Include="Input\MInputScankey.h" />
     <ClInclude Include="Input\Ps3\MInput_PS3.h" />
+    <ClInclude Include="Input\Win32\MInputWin32.h" />
     <ClInclude Include="MContentContext.h" />
     <ClInclude Include="Misc\MConsole.h" />
     <ClInclude Include="Misc\MLocalizer.h" />

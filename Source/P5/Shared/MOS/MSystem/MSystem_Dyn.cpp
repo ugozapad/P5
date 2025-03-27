@@ -49,11 +49,12 @@ public:
 
 		#ifdef PLATFORM_WIN_PC
 			// Whole DInput is missing
-			//MRTC_REFERENCE(CDI_Device_Keyboard);
+			MRTC_REFERENCE(CDI_Device_Keyboard);
 			//MRTC_REFERENCE(CDI_Device_Mouse);
 			//MRTC_REFERENCE(CDI_Device_MousePad);
 			//MRTC_REFERENCE(CDI_Device_Joystick);
-			//MRTC_REFERENCE(CInputContext_DInput);
+			MRTC_REFERENCE(CInputContext_DInput);
+			MRTC_REFERENCE(CInputContext_Win32);
 //			MRTC_REFERENCE(CSoundContext_DSound);
 			//MRTC_REFERENCE(CSoundContext_DSound2); DSound2 is missing
 			MRTC_REFERENCE(CSoundContext_ASIO);
