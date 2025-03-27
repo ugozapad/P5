@@ -525,6 +525,12 @@ XNetStartupParams xnsp;
 	else
 		m_ExePath = CDiskUtil::GetDir();
 
+	char CurrentDir[260];
+	GetCurrentDirectory(260, CurrentDir);
+
+	m_ExePath = CurrentDir;
+	m_ExePath += "\\";
+
 	m_SystemPath = m_ExePath;
 	// System parsing
 #ifdef PLATFORM_WIN

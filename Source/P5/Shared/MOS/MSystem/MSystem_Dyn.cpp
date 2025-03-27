@@ -114,6 +114,7 @@ public:
 			MRTC_REFERENCE(CSystemXenon);
 		#elif defined PLATFORM_WIN
 			MRTC_REFERENCE(CSystemWin32);
+			MRTC_REFERENCE(CDisplayContextNULL);
 		#elif defined PLATFORM_PS2
 			MRTC_REFERENCE(CSystemPS2);
 		#elif defined PLATFORM_PS3

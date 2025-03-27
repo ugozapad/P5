@@ -489,7 +489,7 @@ void CWorldDataCore::ScanTextureContainers(CStr _Path)
 		{ // Scan as usual
 			uint iFirstNew = m_lspTC.Len();
 			ReadTextureContainers(lFileNames);
-#ifndef PLATFORM_CONSOLE
+#if 0//ndef PLATFORM_CONSOLE
 			uint nNew = m_lspTC.Len() - iFirstNew;
 			if (nNew && !D_MXDFCREATE)
 			{ // Write cache file

@@ -1291,6 +1291,8 @@ void CSystemCore::DC_Set(int _nr)
 			MRTC_GOM()->GetClassRegistry()->LoadClassLibrary(m_lspDC[m_iCurrentDC]->m_FileName);
 	}
 
+#define INPACE_RENDERLIB
+
 #if defined(PLATFORM_XENON)
 	spCReferenceCount spObj = gf_CreateDisplayContextStatic();
 #elif defined(PLATFORM_PS3)
@@ -1299,6 +1301,8 @@ void CSystemCore::DC_Set(int _nr)
 	#elif defined(PS3_RENDERER_PSGL)
 		spCReferenceCount spObj = gf_CreateDisplayContextPS3Static();
 	#endif
+#elif defined(INPACE_RENDERLIB)
+	spCReferenceCount spObj = (CReferenceCount*)MRTC_GOM()->CreateObject("CDisplayContextNULL");
 #else
 	spCReferenceCount spObj = (CReferenceCount*) MRTC_GOM()->CreateObject(m_lspDC[m_iCurrentDC]->m_DCClass);
 #endif

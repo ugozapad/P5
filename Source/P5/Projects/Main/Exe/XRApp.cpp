@@ -54,8 +54,8 @@ extern int g_bSavedVertexPrograms;
 #define FAKEOVERBRIGHT 1
 #endif
 
-//#define MiniFont "MINIFONT2"
-#define MiniFont "MONOPRO"
+#define MiniFont "MINIFONT2"
+//#define MiniFont "MONOPRO"
 //#define Floor(x) (((x) < 0.0f) ? fp32(RoundToInt(x-0.5f)) : fp32(RoundToInt(x-0.5f)))
 //#define Floor(x) fp32(RoundToInt(x-0.5f))
 //#define Ceil(x) fp32(RoundToInt(x+0.5f))
@@ -3921,7 +3921,7 @@ void CXRealityApp::InitWorld()
 
 	
 	CStr Path = m_pSystem->GetEnvironment()->GetValue("DEFAULTGAMEPATH", "Content\\");
-	CStr Game = m_pSystem->GetEnvironment()->GetValue("DEFAULTGAME", "P5");
+	CStr Game = m_pSystem->GetEnvironment()->GetValue("DEFAULTGAME", "PB");
 
 	if(Game == "P6")
 		m_spGame = MNew(CGameContext_P6);
