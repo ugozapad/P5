@@ -109,6 +109,9 @@
     <Filter Include="Dynamic Create">
       <UniqueIdentifier>{7df4ee85-6930-4cc8-b475-4b2edd78250c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Input\Win32">
+      <UniqueIdentifier>{6d8a6cae-2c48-4355-858d-2f7538e62464}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCH\PCH.cpp">
@@ -567,9 +570,6 @@
     <ClCompile Include="Sound\MSound_Mixer_DSPEffects.cpp">
       <Filter>Source\Sound\Sound Engine\DSP</Filter>
     </ClCompile>
-    <ClCompile Include="Input\MInput.cpp">
-      <Filter>Source\Input</Filter>
-    </ClCompile>
     <ClCompile Include="Input\MInputEnvelope.cpp">
       <Filter>Source\Input</Filter>
     </ClCompile>
@@ -608,6 +608,12 @@
     </ClCompile>
     <ClCompile Include="Sound\MSound_Mixer_Worker.cpp">
       <Filter>Source\Sound\Sound Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\Win32\MInputWin32.cpp">
+      <Filter>Source\Input\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MInput.cpp">
+      <Filter>Source\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -925,6 +931,9 @@
     </ClInclude>
     <ClInclude Include="Misc\MRTC_Task.h">
       <Filter>Source\Task distribution</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\Win32\MInputWin32.h">
+      <Filter>Source\Input\Win32</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
