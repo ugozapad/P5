@@ -14,7 +14,7 @@
 		030505:		Added Comments
 \*_____________________________________________________________________________________________*/
 
-
+#if 0
 #ifdef PLATFORM_WIN
 	#include <crtdbg.h>
 #endif
@@ -1095,11 +1095,11 @@ namespace std
 		
 #endif
 	
-	MemDeclNaR void * M_CDECL malloc(size_t);
-	MemDeclNa void M_CDECL free(void *);
-	MemDeclNaR void * M_CDECL realloc(void *, size_t);
-	MemDeclNaR void * M_CDECL calloc(size_t, size_t);
-	MemDeclNaR void * M_CDECL memalign(size_t, size_t);
+	//MemDeclNaR void * M_CDECL malloc(size_t);
+	//MemDeclNa void M_CDECL free(void *);
+	//MemDeclNaR void * M_CDECL realloc(void *, size_t);
+	//MemDeclNaR void * M_CDECL calloc(size_t, size_t);
+	//MemDeclNaR void * M_CDECL memalign(size_t, size_t);
 
 //	MemDeclNaR void * M_CDECL malloc(size_t );
 //	MemDeclNa void M_CDECL free(void *);
@@ -1113,29 +1113,29 @@ namespace std
 	|__________________________________________________________________________________________________
 	\*************************************************************************************************/
 	
-	MemDeclNaR void * M_CDECL malloc (size_t sz)
-	{		
-		void * addr = M_ALLOC(sz);		
-		return addr;
-	}
+	//MemDeclNaR void * M_CDECL malloc (size_t sz)
+	//{		
+	//	void * addr = M_ALLOC(sz);		
+	//	return addr;
+	//}
 
-	void * M_CDECL _malloc_base (size_t sz)
-	{		
-		void * addr = M_ALLOC(sz);		
-		return addr;
-	}
+	//void * M_CDECL _malloc_base (size_t sz)
+	//{		
+	//	void * addr = M_ALLOC(sz);		
+	//	return addr;
+	//}
 
 #ifndef M_RTM
-	void * M_CDECL _malloc_dbg (size_t sz, int BlockType, const char *Filename, int Line) 
-	{
-		CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
-#ifdef M_SUPPORTMEMORYDEBUG
-		void * addr = MemMan->AllocDebug(sz, BlockType, Filename, Line);
-#else
-		void * addr = MemMan->Alloc(sz);
-#endif
-		return addr;
-	}
+//	void * M_CDECL _malloc_dbg (size_t sz, int BlockType, const char *Filename, int Line) 
+//	{
+//		CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
+//#ifdef M_SUPPORTMEMORYDEBUG
+//		void * addr = MemMan->AllocDebug(sz, BlockType, Filename, Line);
+//#else
+//		void * addr = MemMan->Alloc(sz);
+//#endif
+//		return addr;
+//	}
 #endif
 
 
@@ -1570,23 +1570,23 @@ int __cdecl _CrtGetCheckCount(
 |__________________________________________________________________________________________________
 \*************************************************************************************************/
 
-	void M_CDECL free (void * ptr)
-	{
-		CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
-		MemMan->Free(ptr);
-	}
+	//void M_CDECL free (void * ptr)
+	//{
+	//	CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
+	//	MemMan->Free(ptr);
+	//}
 
-	void M_CDECL _free_base (void * ptr)
-	{
-		CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
-		MemMan->Free(ptr);
-	}
+	//void M_CDECL _free_base (void * ptr)
+	//{
+	//	CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
+	//	MemMan->Free(ptr);
+	//}
 
-	void M_CDECL _free_dbg (void * ptr, int) 
-	{
-		CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
-		MemMan->Free(ptr);
-	}	
+	//void M_CDECL _free_dbg (void * ptr, int) 
+	//{
+	//	CDA_MemoryManager * MemMan = MACRO_GetDefaultMemoryManager();
+	//	MemMan->Free(ptr);
+	//}	
 	
 	
 /*************************************************************************************************\
@@ -1609,7 +1609,7 @@ int __cdecl _CrtGetCheckCount(
 |__________________________________________________________________________________________________
 \*************************************************************************************************/
 
-	void * M_CDECL realloc (void * ptr, size_t sz)
+	/*void * M_CDECL realloc (void * ptr, size_t sz)
 	{
 		return M_REALLOC(ptr, sz);
 	}
@@ -1618,20 +1618,20 @@ int __cdecl _CrtGetCheckCount(
 	{
 		return M_REALLOC(ptr, sz);
 	}
+	*/
 	
-	
-#ifndef M_RTM
-	void * M_CDECL _realloc_dbg (void * ptr, size_t sz, int BlockType, const char *Filename, int Line) 
-	{
-		CDA_MemoryManager *MemMan = MACRO_GetDefaultMemoryManager();
-
-#ifdef M_SUPPORTMEMORYDEBUG
-		return MemMan->ReallocDebug(ptr, sz, BlockType, Filename, Line);
-#else
-		return MemMan->Realloc(ptr, sz);
-#endif
-	}
-#endif
+//#ifndef M_RTM
+//	void * M_CDECL _realloc_dbg (void * ptr, size_t sz, int BlockType, const char *Filename, int Line) 
+//	{
+//		CDA_MemoryManager *MemMan = MACRO_GetDefaultMemoryManager();
+//
+//#ifdef M_SUPPORTMEMORYDEBUG
+//		return MemMan->ReallocDebug(ptr, sz, BlockType, Filename, Line);
+//#else
+//		return MemMan->Realloc(ptr, sz);
+//#endif
+//	}
+//#endif
 	
 /*************************************************************************************************\
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
@@ -1639,7 +1639,7 @@ int __cdecl _CrtGetCheckCount(
 |__________________________________________________________________________________________________
 \*************************************************************************************************/
 	
-	size_t M_CDECL _msize(void *mem)
+	/*size_t M_CDECL _msize(void *mem)
 	{
 		CDA_MemoryManager *MemMan = MACRO_GetDefaultMemoryManager();
 		return MemMan->MemorySize(mem);
@@ -1655,7 +1655,7 @@ int __cdecl _CrtGetCheckCount(
 	{
 		CDA_MemoryManager *MemMan = MACRO_GetDefaultMemoryManager();
 		return MemMan->MemorySize(ptr);
-	}
+	}*/
 
 /*************************************************************************************************\
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
@@ -2158,3 +2158,43 @@ size_t __crtDebugFillThreshold = 0xFFFFFFFF;
 
 #endif
 //#endif
+#else
+
+
+#ifndef M_RTM
+void* operator new(size_t _Size, int _Block, int Dummy, int Dummy2)
+{
+	return malloc(_Size);
+}
+
+void* operator new[](size_t _Size, int _Block, int Dummy, int Dummy2)
+{
+	return malloc(_Size);
+}
+
+# ifdef COMPILER_NEEDOPERATORDELETE
+void operator delete(void *Block, int _Block, int Dummy, int Dummy2)
+{
+	free(Block);
+}
+# endif
+
+void* operator new(size_t _Size, int _Block, const char *_File, int _FileNumber, SDA_Defraggable *_MakeThisUnique)
+{
+	return malloc(_Size);
+}
+
+void* operator new[](size_t _Size, int _Block, const char *_File, int _FileNumber, SDA_Defraggable *_MakeThisUnique)
+{
+	return malloc(_Size);
+}
+
+# ifdef COMPILER_NEEDOPERATORDELETE
+void operator delete(void *Block, int _Block, const char *_File, int _FileNumber, SDA_Defraggable *_MakeThisUnique)
+{
+	free(Block);
+}
+# endif
+
+#endif
+#endif
