@@ -1,7 +1,7 @@
 #include "PCH.h"
 
 #include "MDisplayGL.h"
-#include "MRenderGL.h"
+#include "MRenderGL_Context.h"
 #include "MRenderGL_Def.h"
 
 void CRenderContextGL::Con_ChangePicMip(int _Level, int _iPicMip)
@@ -38,12 +38,12 @@ void CRenderContextGL::Con_gl_reloadprograms()
 	m_bPendingProgramReload = 1;
 }
 
-/*void CRenderContextPS3::Con_gl_vpalways(int _Value)
+/*void CRenderContextGL::Con_gl_vpalways(int _Value)
 {
 	m_VP_bUseAlways = _Value != 0;
 }*/
 
-void CRenderContextGL::Con_gl_anisotropy(fp4 _Value)
+void CRenderContextGL::Con_gl_anisotropy(fp32 _Value)
 {
 	if (m_Anisotropy == _Value)
 		return;

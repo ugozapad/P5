@@ -6,7 +6,7 @@
 #pragma warning(disable:4756)
 #endif
 
-#if defined(TARGET_PS2) || defined(TARGET_PS3)	// Should be COMPILER_GNU but that hasn't been defined yet
+#if defined(TARGET_PS2) || defined(TARGET_GL)	// Should be COMPILER_GNU but that hasn't been defined yet
 	#include <new>
 #else
 	#include <new.h>
@@ -57,7 +57,7 @@ class CStream;
 		#define MRTC_MEMMANAGEROVERRIDE_MEMDEBUG	//Enables SCB memory statistics
 	#endif
 
-#elif defined PLATFORM_PS3
+#elif defined PLATFORM_GL
 //	#define MRTC_MEMMANAGEROVERRIDE		//Enables SCB memory manager
 	#ifdef _DEBUG
 		#define MRTC_MEMMANAGEROVERRIDE_MEMDEBUG	//Enables SCB memory statistics
@@ -200,7 +200,7 @@ size_t MRTC_MemSize(void* _pMem)
 
 void* M_CDECL operator new(mint _nSize)
 {
-#if defined(MRTC_MEMORYDEBUG) && !defined(PLATFORM_PS3)
+#if defined(MRTC_MEMORYDEBUG) && !defined(PLATFORM_GL)
 	if (!MRTC_GetObjectManager()->ForgiveDebugNew())
 		M_BREAKPOINT; // Use DNew to allocate memory 
 #endif
@@ -213,7 +213,7 @@ void M_CDECL operator delete(void* p)
 }
 
 
-#ifdef PLATFORM_PS3
+#ifdef PLATFORM_GL
 void* M_CDECL operator new(mint _nSize, const std::nothrow_t&)
 {
 	return M_ALLOC(_nSize);
@@ -1800,7 +1800,7 @@ int MRTC_ThreadPoolThread::Thread_Main()
 			if(Thread_IsTerminating())
 				return 0;
 		}
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 		{
 #ifdef THREADPOOL_NAMEDEVENTS
 			M_NAMEDEVENT("ThreadPool_VpuJob",0xff00cc00);
@@ -1861,7 +1861,7 @@ while(!Thread_IsTerminating())
 m_Event.Wait();
 if(Thread_IsTerminating())
 break;
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 if (m_pManager->m_Job.m_nObj)
 {
 #endif
@@ -1875,7 +1875,7 @@ if(nState == -1)
 m_pManager->SignalJobDone();
 
 
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 }
 else
 {
@@ -1899,7 +1899,7 @@ uint16 MRTC_ThreadPoolManager::VPU_AddTask(const CVPU_JobDefinition& _JobDefinit
 {
 	MRTC_VPUManager& pVPUMgr = MRTC_GetObjectManager()->m_pThreadPoolManagerInternal->m_VPUManager;
 	uint16 TaskId = pVPUMgr.AddTask(_JobDefinition,_Async,_ContextId,_LinkTaskId);
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 	MRTC_ThreadPoolManagerInternal* pMgr = MRTC_GetObjectManager()->m_pThreadPoolManagerInternal;
 	pMgr->WakeUpThread();
 #endif
@@ -1925,7 +1925,7 @@ bool MRTC_ThreadPoolManager::VPU_TryBlockUntilIdle(VpuContextId _ContextId)
 	return false;
 }
 
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 void MRTC_ThreadPoolManager::VPU_RegisterContext(VpuContextId _ContextId, VpuWorkerFunction _pfnVpuWorker)
 {
 	MRTC_VPUManager& pVPUMgr = MRTC_GetObjectManager()->m_pThreadPoolManagerInternal->m_VPUManager;
@@ -2106,7 +2106,7 @@ void MRTC_ObjectManager::SetDllLoading(bool LoadDlls)
 
 void MRTC_ObjectManager::ForgiveDebugNew(int32 _iAdd)
 {
-#ifndef	PLATFORM_PS3
+#ifndef	PLATFORM_GL
 	if (m_pForgiveContextInternal)
 	{
 		m_pForgiveContextInternal->m_ForgiveDebugNew->m_ForgiveNew += _iAdd;
@@ -2116,7 +2116,7 @@ void MRTC_ObjectManager::ForgiveDebugNew(int32 _iAdd)
 
 int32 MRTC_ObjectManager::ForgiveDebugNew()
 {
-#ifndef	PLATFORM_PS3
+#ifndef	PLATFORM_GL
 	if (!this)
 		return NULL;
 	if (m_pForgiveContextInternal)
@@ -2169,7 +2169,7 @@ MRTC_ObjectManager::MRTC_ObjectManager()
 
 	m_pRand = new (MDA_NEW_DEBUG_NOLEAK uint8 [sizeof(CRand_MersenneTwister)]) CRand_MersenneTwister;
 
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 	m_pForgiveContextInternal = new (MDA_NEW_DEBUG_NOLEAK uint8[sizeof(MRTC_ForgiveDebugNewInternal)]) MRTC_ForgiveDebugNewInternal;
 #endif
 
@@ -2214,7 +2214,7 @@ MRTC_ObjectManager::~MRTC_ObjectManager()
 	if(m_pRand)
 		delete m_pRand;
 
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 	if(m_pForgiveContextInternal)
 	{
 		delete m_pForgiveContextInternal;
@@ -2843,7 +2843,7 @@ void MRTC_CreateMemManager()
 #endif
 #endif
 
-#ifdef PLATFORM_PS3
+#ifdef PLATFORM_GL
 
 #ifdef _DEBUG
 	int GlobalHeap = 192 * 0x100000;
@@ -3191,7 +3191,7 @@ void MRTC_CreateObjectManager()
 		{		
 			MRTC_SystemInfo::MRTC_GetSystemInfo().PostCreate();
 
-#ifndef PLATFORM_PS3
+#ifndef PLATFORM_GL
 			MRTC_GetObjectManager()->ForgiveDebugNew(1);
 #endif
 		}
@@ -3273,7 +3273,7 @@ NMemMgr::CMemTrack_Class::~CMemTrack_Class()
 
 #endif
 
-#if defined(PLATFORM_WIN_PC) || defined(PLATFORM_XBOX) || defined(PLATFORM_PS3)
+#if defined(PLATFORM_WIN_PC) || defined(PLATFORM_XBOX) || defined(PLATFORM_GL)
 
 void File_WriteLE(CCFile* _pFile, fp64 _Value)
 {

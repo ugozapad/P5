@@ -27,20 +27,48 @@
     <ClCompile Include="PCH\Pch.cpp">
       <Filter>PCH</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\MCC\Mrtc.cpp">
-      <Filter>Shared\MCC</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\MCC\MFile.cpp">
-      <Filter>Shared\MOS\File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\MCC\MFile_StreamMgr.cpp">
-      <Filter>Shared\MOS\File</Filter>
-    </ClCompile>
+    <ClCompile Include="..\..\MCC\MFile.cpp" />
+    <ClCompile Include="..\..\MCC\MFile_StreamMgr.cpp" />
+    <ClCompile Include="..\..\MCC\Mrtc.cpp" />
     <ClCompile Include="MDisplayGL.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="MRenderGL.cpp" />
-    <ClCompile Include="MRenderGL_DynInit.cpp" />
+    <ClCompile Include="MRenderGL_Attrib.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_Cmd.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_Context.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_Dyn.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_FragmentProgram.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_Image.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_OcclusionQuery.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_Render.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_RenderVA.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_Texture.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_VBO.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderGL_VertexProgram.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PCH\PCH.H">
@@ -49,7 +77,16 @@
     <ClInclude Include="MDisplayGL.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="MRenderGL.h">
+    <ClInclude Include="MGLGlobalFunctions.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="MRenderGL_Context.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="MRenderGL_Def.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="MRenderGL_Image.h">
       <Filter>Render</Filter>
     </ClInclude>
   </ItemGroup>

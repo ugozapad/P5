@@ -1,6 +1,5 @@
+
 #include "MRTC.h"
-#include "MDisplayGL.h"
-#include "MRenderGL.h"
 
 class CRegisterRenderGL
 {
@@ -12,4 +11,4 @@ public:
 	}
 };
 
-CRegisterRenderGL g_RegisterRenderGL;
+CRegisterRenderGL g_RenderGLDyn;

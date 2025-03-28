@@ -46,8 +46,8 @@
 // -------------------------------------------------------------------
 //#define MACRO_GLCOLOR_PIXEL32(col) glnColor3ub(col.GetR(), col.GetG(), col.GetB())
 //#define MACRO_GLCOLOR_INT(color) glnColor3ub((color >> 16) & 0xff, (color >> 8) & 0xff, color & 0xff)
-//#define MACRO_GLCOLOR_PIXEL32(col) glnColor4f((fp4)col.GetR()/255.0, (fp4)col.GetG()/255.0, (fp4)col.GetB()/255.0)
-//#define MACRO_GLCOLOR_PIXEL32(col) glnColor4f((fp4)col.GetR()/255.0f, (fp4)col.GetG()/255.0f, (fp4)col.GetB()/255.0f, (fp4((uint32)col >> 24))/255.0f)
+//#define MACRO_GLCOLOR_PIXEL32(col) glnColor4f((fp32)col.GetR()/255.0, (fp32)col.GetG()/255.0, (fp32)col.GetB()/255.0)
+//#define MACRO_GLCOLOR_PIXEL32(col) glnColor4f((fp32)col.GetR()/255.0f, (fp32)col.GetG()/255.0f, (fp32)col.GetB()/255.0f, (fp32((uint32)col >> 24))/255.0f)
 
 /*#define MACRO_GLCOLOR4F_INT32(_Col)				\
 	glnColor4ub(									\
@@ -57,17 +57,17 @@
 		(_Col >> 24) & 0xff)*/
 
 #define MACRO_GLCOLOR4F_INT32(_Col)				\
-	glColor4f(									\
-		(1.0f/255.0f)*fp4((_Col >> 16) & 0xff),	\
-		(1.0f/255.0f)*fp4((_Col >> 8) & 0xff),	\
-		(1.0f/255.0f)*fp4(_Col & 0xff),			\
-		(1.0f/255.0f)*fp4((_Col >> 24) & 0xff))
+	glnColor4f(									\
+		(1.0f/255.0f)*fp32((_Col >> 16) & 0xff),	\
+		(1.0f/255.0f)*fp32((_Col >> 8) & 0xff),	\
+		(1.0f/255.0f)*fp32(_Col & 0xff),			\
+		(1.0f/255.0f)*fp32((_Col >> 24) & 0xff))
 
 #define MACRO_GLSECONDARYCOLOR3F_INT32(_Col)		\
-	glSecondaryColor3f(						\
-		(1.0f/255.0f)*fp4((_Col >> 16) & 0xff),	\
-		(1.0f/255.0f)*fp4((_Col >> 8) & 0xff),	\
-		(1.0f/255.0f)*fp4(_Col & 0xff))
+	gleSecondaryColor3f(						\
+		(1.0f/255.0f)*fp32((_Col >> 16) & 0xff),	\
+		(1.0f/255.0f)*fp32((_Col >> 8) & 0xff),	\
+		(1.0f/255.0f)*fp32(_Col & 0xff))
 
 
 #define CRC_RIP_STREAM		-1

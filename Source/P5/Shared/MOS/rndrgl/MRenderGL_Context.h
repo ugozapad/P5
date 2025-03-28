@@ -7,8 +7,8 @@
 	Author:			Magnus Högdahl
 
 	Copyright:		Copyright 1996-2002 Starbreeze Studios AB
-
-	History:
+					
+	History:		
 		9610xx:		Created File
 \*____________________________________________________________________________________________*/
 
@@ -18,8 +18,13 @@
 | Includes
 |__________________________________________________________________________________________________
 \*************************************************************************************************/
-#include "../../MSystem/Raster/MRender.h"
+#include "MGLGlobalFunctions.h"
+#include "MRenderGL_Image.h"
+#include "MRenderGL_Def.h"
 #include "../../MSystem/Raster/MRCCore.h"
+
+#include "../../Classes/Render/MRenderVPGen.h"
+
 
 #ifdef _DEBUG
 #define CRCGL_VADEBUG_ENABLE
@@ -31,13 +36,13 @@
 \*************************************************************************************************/
 enum
 {
-	CRCGL_TEXTUREBLOCKSIZE = 256 * 4,
-	CRCGL_TEXTUREBLOCKSHIFT = 8 + 2,
+	CRCGL_TEXTUREBLOCKSIZE = 256*4,
+	CRCGL_TEXTUREBLOCKSHIFT = 8+2,
 	CRCGL_TEXTUREBLOCKAND = (CRCGL_TEXTUREBLOCKSIZE - 1),
 
 	CRCGL_DEFAULTVAMINVERTEXCOUNT = 25,				// That's the number of vertices on a sorcery landscape tile.
 
-	CRCGLES_MAX_TEXTURESIZE = 2048,
+	CRCGLES_MAX_TEXTURESIZE	= 2048,
 
 	CRCGLES_MAX_VPPROGRAMCONSTANTS = 256,
 };
@@ -48,40 +53,40 @@ enum
 
 enum
 {
-	CRCGL_EXT_MULTITEXTURE = 0x00000001,
-	CRCGL_EXT_NV_COPYDEPTHTOCOLOR = 0x00000002,
-	CRCGL_EXT_WINDOWPOS = 0x00000004,
-	CRCGL_ARB_TEXTURE_NON_POWER_OF_TWO = 0x00000008,
-	CRCGL_EXT_BGRA = 0x00000010,
-	CRCGL_EXT_SECONDARYCOLOR = 0x00000020,
-	CRCGL_EXT_TEXTURE_COMPRESSION_3DC = 0x00000040,
-	CRCGL_EXT_TEXTURECOMPRESSION = 0x00000080,
-	CRCGL_SHARPENMIPMAPS = 0x00000100,
-	CRCGL_ARB_PBUFFER = 0x00000200,
-	CRCGL_EXT_NV_REGCOMBINERS = 0x00000400,
-	CRCGL_EXT_CUBEMAP = 0x00000800,
-	CRCGL_EXT_S3TC = 0x00001000,
-	CRCGL_EXT_ANISOTROPIC = 0x00002000,
-	CRCGL_EXT_NV_VERTEXPROGRAM = 0x00004000,
-	CRCGL_EXT_NV_TEXTURESHADER = 0x00008000,
-	CRCGL_EXT_NV_OCCLUSIONQUERY = 0x00010000,
-	CRCGL_RESIDENTVB = 0x00020000,
-	CRCGL_EXT_TEXTURE_LOD_BIAS = 0x00040000,
-	CRCGL_EXT_VERTEXPROGRAM = 0x00080000,
-	//	CRCGL_EXT_ATI_VERTEXARRAYOBJECT			= 0x00100000,
-	//	CRCGL_EXT_ATI_VERTEXATTRIBARRAYOBJECT	= 0x00200000,
-	CRCGL_ARB_TEXTURE_ENV_DOT3 = 0x00400000,
-	CRCGL_EXT_NV_REGCOMBINERS2 = 0x00800000,
-	CRCGL_EXT_FRAGMENTPROGRAM = 0x01000000,
-	CRCGL_EXT_ATI_SEPARATESTENCIL = 0x02000000,
-	CRCGL_EXT_STENCILTWOSIDE = 0x04000000,
-	CRCGL_EXT_ATI_FRAGMENTSHADER = 0x08000000,
-	CRCGL_EXT_VERTEXBUFFEROBJECT = 0x10000000,
-	CRCGL_EXT_NV_FRAGMENT_PROGRAM = 0x20000000,
-	CRCGL_EXT_NV_FRAGMENT_PROGRAM2 = 0x40000000,
-	CRCGL_EXT_FRAMEBUFFER_OBJECT = 0x80000000,
+	CRCGL_EXT_MULTITEXTURE					= 0x00000001,
+	CRCGL_EXT_NV_COPYDEPTHTOCOLOR			= 0x00000002,
+	CRCGL_EXT_WINDOWPOS						= 0x00000004,
+	CRCGL_ARB_TEXTURE_NON_POWER_OF_TWO		= 0x00000008,
+	CRCGL_EXT_BGRA							= 0x00000010,
+	CRCGL_EXT_SECONDARYCOLOR				= 0x00000020,
+	CRCGL_EXT_TEXTURE_COMPRESSION_3DC		= 0x00000040,
+	CRCGL_EXT_TEXTURECOMPRESSION			= 0x00000080,
+	CRCGL_SHARPENMIPMAPS					= 0x00000100,
+	CRCGL_ARB_PBUFFER						= 0x00000200,
+	CRCGL_EXT_NV_REGCOMBINERS				= 0x00000400,
+	CRCGL_EXT_CUBEMAP						= 0x00000800,
+	CRCGL_EXT_S3TC							= 0x00001000,
+	CRCGL_EXT_ANISOTROPIC					= 0x00002000,
+	CRCGL_EXT_NV_VERTEXPROGRAM				= 0x00004000,
+	CRCGL_EXT_NV_TEXTURESHADER				= 0x00008000,
+	CRCGL_EXT_NV_OCCLUSIONQUERY				= 0x00010000,
+	CRCGL_RESIDENTVB						= 0x00020000,
+	CRCGL_EXT_TEXTURE_LOD_BIAS				= 0x00040000,
+	CRCGL_EXT_VERTEXPROGRAM					= 0x00080000,
+//	CRCGL_EXT_ATI_VERTEXARRAYOBJECT			= 0x00100000,
+//	CRCGL_EXT_ATI_VERTEXATTRIBARRAYOBJECT	= 0x00200000,
+	CRCGL_ARB_TEXTURE_ENV_DOT3				= 0x00400000,
+	CRCGL_EXT_NV_REGCOMBINERS2				= 0x00800000,
+	CRCGL_EXT_FRAGMENTPROGRAM				= 0x01000000,
+	CRCGL_EXT_ATI_SEPARATESTENCIL			= 0x02000000,
+	CRCGL_EXT_STENCILTWOSIDE				= 0x04000000,
+	CRCGL_EXT_ATI_FRAGMENTSHADER			= 0x08000000,
+	CRCGL_EXT_VERTEXBUFFEROBJECT			= 0x10000000,
+	CRCGL_EXT_NV_FRAGMENT_PROGRAM			= 0x20000000,
+	CRCGL_EXT_NV_FRAGMENT_PROGRAM2			= 0x40000000,
+	CRCGL_EXT_FRAMEBUFFER_OBJECT			= 0x80000000,
 
-	CRCGL_EXT_ANYVERTEXPROGRAM = CRCGL_EXT_VERTEXPROGRAM + CRCGL_EXT_NV_VERTEXPROGRAM,
+	CRCGL_EXT_ANYVERTEXPROGRAM				= CRCGL_EXT_VERTEXPROGRAM + CRCGL_EXT_NV_VERTEXPROGRAM,
 };
 
 // -------------------------------------------------------------------
@@ -89,27 +94,27 @@ enum
 // -------------------------------------------------------------------
 enum
 {
-	CRCGL_VA_VERTEX = DBit(0),
-	CRCGL_VA_MATRIXWEIGHT = DBit(1),
-	CRCGL_VA_NORMAL = DBit(2),
-	CRCGL_VA_COLOR = DBit(3),
-	CRCGL_VA_SECONDARYCOLOR = DBit(4),
-	CRCGL_VA_FOGCOORD = DBit(5),
-	CRCGL_VA_PSIZE = DBit(6),
-	CRCGL_VA_MATRIXINDEX = DBit(7),
-	CRCGL_VA_TEXCOORD0 = DBit(8),
-	CRCGL_VA_TEXCOORD1 = DBit(9),
-	CRCGL_VA_TEXCOORD2 = DBit(10),
-	CRCGL_VA_TEXCOORD3 = DBit(11),
-	CRCGL_VA_TEXCOORD4 = DBit(12),
-	CRCGL_VA_TEXCOORD5 = DBit(13),
-	CRCGL_VA_TEXCOORD6 = DBit(14),
-	CRCGL_VA_TEXCOORD7 = DBit(15),
-	CRCGL_VA_CVA_LOCK = DBit(16),
-	CRCGL_VA_VBO_ENABLE = DBit(18),
+	CRCGL_VA_VERTEX			= M_Bit(0),
+	CRCGL_VA_MATRIXWEIGHT	= M_Bit(1),
+	CRCGL_VA_NORMAL			= M_Bit(2),
+	CRCGL_VA_COLOR			= M_Bit(3),
+	CRCGL_VA_SECONDARYCOLOR	= M_Bit(4),
+	CRCGL_VA_FOGCOORD		= M_Bit(5),
+	CRCGL_VA_PSIZE			= M_Bit(6),
+	CRCGL_VA_MATRIXINDEX	= M_Bit(7),
+	CRCGL_VA_TEXCOORD0		= M_Bit(8),
+	CRCGL_VA_TEXCOORD1		= M_Bit(9),
+	CRCGL_VA_TEXCOORD2		= M_Bit(10),
+	CRCGL_VA_TEXCOORD3		= M_Bit(11),
+	CRCGL_VA_TEXCOORD4		= M_Bit(12),
+	CRCGL_VA_TEXCOORD5		= M_Bit(13),
+	CRCGL_VA_TEXCOORD6		= M_Bit(14),
+	CRCGL_VA_TEXCOORD7		= M_Bit(15),
+	CRCGL_VA_CVA_LOCK		= M_Bit(16),
+	CRCGL_VA_VBO_ENABLE		= M_Bit(18),
 
-	CRCGL_VA_MATRIXWEIGHT2 = CRCGL_VA_FOGCOORD,
-	CRCGL_VA_MATRIXINDEX2 = CRCGL_VA_SECONDARYCOLOR,
+	CRCGL_VA_MATRIXWEIGHT2	= CRCGL_VA_FOGCOORD,
+	CRCGL_VA_MATRIXINDEX2	= CRCGL_VA_SECONDARYCOLOR,
 };
 
 
@@ -117,7 +122,7 @@ enum
 // -------------------------------------------------------------------
 #define MACRO_INDXGEOMARRAY_DECL(Name)		\
 	void Internal_IndxGeomArray_##Name(const uint16* _piV, int _nV);	\
-	friend void Internal_IndxVert_##Name(CRenderContextPS3* _pRC, const uint16* _piV, int _nV);
+	friend void Internal_IndxVert_##Name(CRenderContextGL* _pRC, const uint16* _piV, int _nV);
 
 
 #define Internal_VAIndxVert(_piV, _nV, _PrimType)	\
@@ -150,17 +155,17 @@ public:
 	public:
 		M_INLINE static int Compare(const CCGFPProgram* _pFirst, const CCGFPProgram* _pSecond, void* _pContext)
 		{
-			if (_pFirst->m_Hash != _pSecond->m_Hash)
+			if(_pFirst->m_Hash != _pSecond->m_Hash)
 			{
-				return (_pFirst->m_Hash < _pSecond->m_Hash) ? -1 : 1;
+				return (_pFirst->m_Hash<_pSecond->m_Hash)?-1:1;
 			}
 			return 0;
 		}
 		M_INLINE static int Compare(const CCGFPProgram* _pFirst, const uint32& _Key, void* _pContext)
 		{
-			if (_pFirst->m_Hash != _Key)
+			if(_pFirst->m_Hash != _Key)
 			{
-				return (_pFirst->m_Hash < _Key) ? -1 : 1;
+				return (_pFirst->m_Hash<_Key)?-1:1;
 			}
 			return 0;
 		}
@@ -265,35 +270,37 @@ class CRenderContextGL : public CRC_Core
 	MRTC_DECLARE;
 public:
 	static CRenderContextGL ms_This;
+	PSGLcontext*	m_pContext;
+	CGcontext	m_CGContext;
 
-	int m_bLog : 1;
-	int m_bLogUsage : 1;
-	int m_bLogVP : 1;
+	int m_bLog:1;
+	int m_bLogUsage:1;
+	int m_bLogVP:1;
 
 protected:
 
-	/*	class CRCGL_VBInfo
+/*	class CRCGL_VBInfo
+	{
+	public:
+		int m_nTri;
+		int m_nV;
+
+		void Clear()
 		{
-		public:
-			int m_nTri;
-			int m_nV;
+			m_nTri = 0;
+			m_nV = 0;
+		}
 
-			void Clear()
-			{
-				m_nTri = 0;
-				m_nV = 0;
-			}
-
-			CRCGL_VBInfo()
-			{
-				Clear();
-			}
-		};*/
+		CRCGL_VBInfo()
+		{
+			Clear();
+		}
+	};*/
 
 	TArray<TPtr<CRCGL_VBInfo> > m_lspVB;
 
-	virtual CDisplayContext* GetDC();
-
+	virtual CDisplayContext *GetDC();
+	
 	// -------------------------------------------------------------------
 	//  Statistics
 	int m_nBindTexture;
@@ -350,23 +357,23 @@ protected:
 
 
 #ifdef CRCGL_POLYGONOFFSETPROJECTIONMATRIX
-	fp4 m_CurrentProjectionPolygonOffset;
+	fp32 m_CurrentProjectionPolygonOffset;
 #endif
 	uint32 m_CurrentAttribGeomColor;
 	uint32 m_CurrentVPHeight;
 	uint32 m_CurrentVPWidth;
 	CPnt m_CurrentVPPos;
-	//	uint32 m_CurrentRenderTargetHeight;
-	//	uint32 m_CurrentRenderTargetWidth;
+//	uint32 m_CurrentRenderTargetHeight;
+//	uint32 m_CurrentRenderTargetWidth;
 	uint32 m_CurrentWindowHeight;
 	uint32 m_CurrentWindowWidth;
 
 	uint8 m_bInternalTexMatrixEnable[CRC_MAXTEXCOORDS];
-	CMat4Dfp4 m_lInternalTexMatrix[CRC_MAXTEXCOORDS];
+	CMat4Dfp32 m_lInternalTexMatrix[CRC_MAXTEXCOORDS];
 
-	CMat4Dfp4 m_Matrix_ProjectionGL;
-	CMat4Dfp4 m_Matrix_ProjectionTransposeGL;
-	CMat4Dfp4 m_Matrix_Unit;
+	CMat4Dfp32 m_Matrix_ProjectionGL;
+	CMat4Dfp32 m_Matrix_ProjectionTransposeGL;
+	CMat4Dfp32 m_Matrix_Unit;
 
 	int m_VACurrentVBID;
 	int m_VACurrentFmt;
@@ -377,7 +384,7 @@ protected:
 #ifdef CRCGL_VADEBUG_ENABLE
 	CRC_VertexBuffer m_VADebugState;
 #endif
-
+	
 	// -------------------------------------------------------------------
 	// Collect function data
 	static FCollect m_lGLCollectFunctionsAll[161];
@@ -415,16 +422,16 @@ protected:
 	// Vertex program
 	uint8 m_VP_liTexMatrixReg[CRC_MAXTEXCOORDS];
 	uint8 m_VP_iConstantColor;
-
+	
 	CRC_VPGenerator m_VP_ProgramGenerator;
 
 	DAVLAligned_Tree(CCGVPProgram, m_Link, const CRC_VPFormat::CProgramFormat, CCGVPProgram::CTreeCompare) m_ProgramTree;
 	DAVLAligned_Tree(CCGFPProgram, m_Link, const uint32, CCGFPProgram::CTreeCompare) m_FPProgramTree;
 	CCGVPProgram* m_pCurrentVPProgram;
 	CCGFPProgram* m_pCurrentFPProgram;
-	CVec4Dfp4 m_VPConstRegisters[256];
-	uint16 m_nUpdateVPConst : 15;
-	uint16 m_bUpdateVPConst : 1;
+	CVec4Dfp32 m_VPConstRegisters[256];
+	uint16 m_nUpdateVPConst:15;
+	uint16 m_bUpdateVPConst:1;
 
 	void VP_SaveCache();
 	void VP_LoadCache();
@@ -450,27 +457,27 @@ protected:
 
 	// -------------------------------------------------------------------
 	// EXT_TEXTURE_FILTER_ANISOTROPIC
-	fp4 m_Anisotropy;
-	fp4 m_MaxAnisotropy;
+	fp32 m_Anisotropy;
+	fp32 m_MaxAnisotropy;
 
 	// -------------------------------------------------------------------
 	// Vertex-array rendering
 	void Internal_VA_Disable();
 
-	void Internal_VA_NormalPtr(const CVec3Dfp4* _pN, int _Stride = 0);
+	void Internal_VA_NormalPtr(const CVec3Dfp32* _pN, int _Stride = 0);
 	void Internal_VA_ColorPtr(const CPixel32* _pCol, int _Stride = 0);
-	//	void Internal_VA_SpecPtr(const CPixel32* _pSpec, int _Stride = 0);
-	//	void Internal_VA_FogPtr(const fp4* _pFog, int _Stride = 0);
-	void Internal_VA_TexCoordPtr(const fp4* _pTV, int _nComp, int _iTxt, int _Stride = 0);
+//	void Internal_VA_SpecPtr(const CPixel32* _pSpec, int _Stride = 0);
+//	void Internal_VA_FogPtr(const fp32* _pFog, int _Stride = 0);
+	void Internal_VA_TexCoordPtr(const fp32* _pTV, int _nComp, int _iTxt, int _Stride = 0);
 	void Internal_VA_MatrixIndexPtr(const uint32* _piMatrices, int _nComp, int _Stride = 0);
-	void Internal_VA_MatrixWeightPtr(const fp4* _pMatrixWeights, int _nComp, int _Stride = 0);
-	void Internal_VA_VertexPtr(const CVec3Dfp4* _pV, int _Stride = 0);
+	void Internal_VA_MatrixWeightPtr(const fp32* _pMatrixWeights, int _nComp, int _Stride = 0);
+	void Internal_VA_VertexPtr(const CVec3Dfp32* _pV, int _Stride = 0);
 
 	void Internal_VA_SetArrays(int _VBID, int _VtxFmt, int _Stride, uint8* _pBase);
 	void Internal_VA_SetArrays(const CRC_VertexBuffer& _VB);
 
-	//	void Internal_VAIndxVert_Begin();
-	//	void Internal_VAIndxVert_End();
+//	void Internal_VAIndxVert_Begin();
+//	void Internal_VAIndxVert_End();
 
 	static int Internal_VAIndx(int _glPrimType, const uint16* _piVerts, int _nVerts, int _Offset);
 	void Internal_VAIndx(int _glPrimType, const uint16* _piVerts, int _nVerts, uint16 _Min, uint16 _Max);
@@ -508,9 +515,9 @@ protected:
 
 	// -------------------------------------------------------------------
 	// The universal render-polygon routine, used for clipped geometry and fall-back for any unimplemented overrides.
-	virtual void Internal_RenderPolygon(int _nV, const CVec3Dfp4* _pV, const CVec3Dfp4* _pN, const CVec4Dfp4* _pCol = NULL,
-		const CVec4Dfp4* _pSpec = NULL, //const fp4* _pFog = NULL,
-		const CVec4Dfp4* _pTV0 = NULL, const CVec4Dfp4* _pTV1 = NULL, const CVec4Dfp4* _pTV2 = NULL, const CVec4Dfp4* _pTV3 = NULL, int _Color = 0xffffffff);
+	virtual void Internal_RenderPolygon(int _nV, const CVec3Dfp32* _pV, const CVec3Dfp32* _pN, const CVec4Dfp32* _pCol = NULL, 
+		const CVec4Dfp32* _pSpec = NULL, //const fp32* _pFog = NULL,
+		const CVec4Dfp32* _pTV0 = NULL, const CVec4Dfp32* _pTV1 = NULL, const CVec4Dfp32* _pTV2 = NULL, const CVec4Dfp32* _pTV3 = NULL, int _Color = 0xffffffff);
 
 
 	void GL_DestroyAllPrograms();
@@ -527,7 +534,7 @@ private:
 public:
 	virtual void BeginScene(CRC_Viewport* _pVP);
 	virtual void EndScene();
-	virtual const char* GetRenderingStatus();
+	virtual const char * GetRenderingStatus();
 
 	virtual void Viewport_Update();
 
@@ -536,10 +543,10 @@ public:
 	virtual CRC_TextureMemoryUsage Texture_GetMem(int _TextureID);
 	virtual int Texture_GetPicmipFromGroup(int _iPicmip);
 	virtual void Texture_PrecacheFlush();
-	virtual void Texture_PrecacheBegin(int _Count);
+	virtual void Texture_PrecacheBegin( int _Count );
 	virtual void Texture_PrecacheEnd();
-
-	virtual void Flip_SetInterval(int _nFrames) {};
+		
+	virtual void Flip_SetInterval(int _nFrames){};
 
 	// Attribute overrides
 protected:
@@ -555,31 +562,31 @@ protected:
 	virtual void Attrib_GlobalUpdate();
 	virtual void Attrib_DeferredGlobalUpdate();
 #ifdef CRCGL_POLYGONOFFSETPROJECTIONMATRIX
-	void Attrib_SetPolygonOffset(fp4 _Offset);
+	void Attrib_SetPolygonOffset(fp32 _Offset);
 #endif
 
 	// Transform overrides
-	virtual void Matrix_SetRender(int _iMode, const CMat4Dfp4* _pMatrix);
+	virtual void Matrix_SetRender(int _iMode, const CMat4Dfp32* _pMatrix);
 
 public:
 	// Geometry overrides
 	virtual void Geometry_Color(CPixel32 _Col);
 
-	virtual void Geometry_PrecacheFlush();
-	virtual void Geometry_PrecacheBegin(int _Count);
+	virtual void Geometry_PrecacheFlush( );
+	virtual void Geometry_PrecacheBegin( int _Count );
 	virtual void Geometry_Precache(int _VBID);
 
 	// Rendering overrides
 	virtual void Render_IndexedTriangles(uint16* _pTriVertIndices, int _nTriangles);
 	virtual void Render_IndexedWires(uint16* _pIndices, int _Len);
-	virtual void Render_IndexedPrimitives(uint16* _pPrimStream, int _StreamLen);
+ 	virtual void Render_IndexedPrimitives(uint16* _pPrimStream, int _StreamLen);
 
 	virtual void Render_VertexBuffer(int _VBID);
 
 
-	virtual void Render_Wire(const CVec3Dfp4& _v0, const CVec3Dfp4& _v1, CPixel32 _Color);
-	virtual void Render_WireStrip(const CVec3Dfp4* _pV, const uint16* _piV, int _nVert, CPixel32 _Color);
-	virtual void Render_WireLoop(const CVec3Dfp4* _pV, const uint16* _piV, int _nVert, CPixel32 _Color);
+	virtual void Render_Wire(const CVec3Dfp32& _v0, const CVec3Dfp32& _v1, CPixel32 _Color);
+	virtual void Render_WireStrip(const CVec3Dfp32* _pV, const uint16* _piV, int _nVert, CPixel32 _Color);
+	virtual void Render_WireLoop(const CVec3Dfp32* _pV, const uint16* _piV, int _nVert, CPixel32 _Color);
 
 	// -------------------------------------------------------------------
 	// Occlusion query
@@ -613,7 +620,7 @@ protected:
 		int GetOCID(int _QueryID)
 		{
 			int ID = m_pHash[_QueryID & OCID_HASHMASK];
-			while (ID != -1)
+			while(ID != -1)
 			{
 				if (m_pIDInfo[ID].m_QueryID == _QueryID)
 					return ID;
@@ -632,14 +639,14 @@ protected:
 	void OcclusionQuery_PrepareFrame();
 	int OcclusionQuery_AddQueryID(int _QueryID);	// Returns GL OCid. if zero, no more OCid:s are available.
 	int OcclusionQuery_FindOCID(int _QueryID);		// Returns GL OCid, if -1, the id doesn't exist
-
+	
 public:
 	virtual void OcclusionQuery_Begin(int _QueryID);
 	virtual void OcclusionQuery_End();
 	virtual int OcclusionQuery_GetVisiblePixelCount(int _QueryID);
 
 	// -------------------------------------------------------------------
-	virtual bool ReadDepthPixels(int _x, int _y, int _w, int _h, fp4* _pBuffer);
+	virtual bool ReadDepthPixels(int _x, int _y, int _w, int _h, fp32* _pBuffer);
 
 	// Console commands:
 
@@ -648,27 +655,27 @@ public:
 
 	void Con_gl_reloadprograms();
 
-	void Con_gl_anisotropy(fp4 _Value);
+	void Con_gl_anisotropy(fp32 _Value);
 	void Con_gl_vsync(int _Value);
 
 	void Con_gl_logprograms(int _Value);
 
-	void Register(CScriptRegisterContext& _RegContext);
+	void Register(CScriptRegisterContext &_RegContext);
 
-	virtual void RenderTarget_Clear(CRct _ClearRect, int _WhatToClear, CPixel32 _Color, fp4 _ZBufferValue, int _StecilValue);
+	virtual void RenderTarget_Clear(CRct _ClearRect, int _WhatToClear, CPixel32 _Color, fp32 _ZBufferValue, int _StecilValue);
 	virtual void RenderTarget_Copy(CRct _SrcRect, CPnt _Dest, int _CopyType);
 	virtual void RenderTarget_CopyToTexture(int _TextureID, CRct _SrcRect, CPnt _Dest, bint _bContinueTiling, uint16 _Slice);
 
-	virtual int Texture_GetBackBufferTextureID() { return 0; }
-	virtual int Texture_GetFrontBufferTextureID() { return 0; }
-	virtual int Texture_GetZBufferTextureID() { return 0; }
+	virtual int Texture_GetBackBufferTextureID() {return 0;}
+	virtual int Texture_GetFrontBufferTextureID() {return 0;}
+	virtual int Texture_GetZBufferTextureID() {return 0;}
 
-	virtual int Geometry_GetVBSize(int _VBID) { return 0; }
+	virtual int Geometry_GetVBSize(int _VBID) {return 0;}
 
 	CMTime m_StartFrame;
 	CMTime m_LastFrame;
 	CRC_Statistics m_Stats;
-	CRC_Statistics Statistics_Get()
+	CRC_Statistics Statistics_Get() 
 	{
 		return m_Stats;
 	}

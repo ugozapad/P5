@@ -17,7 +17,7 @@
 
 
 // #define CRC_QUATMATRIXPALETTE
-// #define CRC_SUPPORTCUBEVP
+#define CRC_SUPPORTCUBEVP
 
 enum EMPFlags
 {

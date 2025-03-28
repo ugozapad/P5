@@ -1,5 +1,9 @@
 #include "MRTC.h"
-#include "MMath.h"
 
-#include <Windows.h>
-#include <gl/GL.h>
+
+
+#include "../../MSystem/Raster/MTexture.h"
+#include "../MDisplayGL.h"
+#include "../MRenderGL_Context.h"
+#include "../MRenderGL_Def.h"
+

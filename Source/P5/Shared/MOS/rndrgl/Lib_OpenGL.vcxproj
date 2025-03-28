@@ -59,11 +59,18 @@
     <ClCompile Include="..\..\MCC\MFile_StreamMgr.cpp" />
     <ClCompile Include="..\..\MCC\Mrtc.cpp" />
     <ClCompile Include="MDisplayGL.cpp" />
-    <ClCompile Include="MRenderGL.cpp" />
+    <ClCompile Include="MRenderGL_Attrib.cpp" />
     <ClCompile Include="MRenderGL_Cmd.cpp" />
-    <ClCompile Include="MRenderGL_DynInit.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="MRenderGL_Context.cpp" />
+    <ClCompile Include="MRenderGL_Dyn.cpp" />
+    <ClCompile Include="MRenderGL_FragmentProgram.cpp" />
+    <ClCompile Include="MRenderGL_Image.cpp" />
+    <ClCompile Include="MRenderGL_OcclusionQuery.cpp" />
+    <ClCompile Include="MRenderGL_Render.cpp" />
+    <ClCompile Include="MRenderGL_RenderVA.cpp" />
+    <ClCompile Include="MRenderGL_Texture.cpp" />
+    <ClCompile Include="MRenderGL_VBO.cpp" />
+    <ClCompile Include="MRenderGL_VertexProgram.cpp" />
     <ClCompile Include="PCH\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='PS3 Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -71,7 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MDisplayGL.h" />
-    <ClInclude Include="MRenderGL.h" />
+    <ClInclude Include="MGLGlobalFunctions.h" />
+    <ClInclude Include="MRenderGL_Context.h" />
+    <ClInclude Include="MRenderGL_Def.h" />
+    <ClInclude Include="MRenderGL_Image.h" />
     <ClInclude Include="PCH\PCH.H" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

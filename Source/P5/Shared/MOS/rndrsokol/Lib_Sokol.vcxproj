@@ -36,6 +36,7 @@
     <ClCompile Include="..\..\MCC\Mrtc.cpp" />
     <ClCompile Include="MDisplaySokol.cpp" />
     <ClCompile Include="MRenderSokol.cpp" />
+    <ClCompile Include="MTextureSokol.cpp" />
     <ClCompile Include="PCH\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
