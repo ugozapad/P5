@@ -3,6 +3,17 @@
 #include "MDisplayGL.h"
 #include "../../MOS.h"
 
+#define WGL_CONTEXT_DEBUG_BIT_ARB         0x00000001
+#define WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB 0x00000002
+#define WGL_CONTEXT_MAJOR_VERSION_ARB     0x2091
+#define WGL_CONTEXT_MINOR_VERSION_ARB     0x2092
+#define WGL_CONTEXT_LAYER_PLANE_ARB       0x2093
+#define WGL_CONTEXT_FLAGS_ARB             0x2094
+#define ERROR_INVALID_VERSION_ARB         0x2095
+typedef HGLRC(WINAPI* PFNWGLCREATECONTEXTATTRIBSARBPROC) (HDC hDC, HGLRC hShareContext, const int* attribList);
+
+#pragma comment(lib, "opengl32.lib")
+
 #ifdef GL_FUNCTIMING
 
 DIdsListLinkDA_List(CGLFunctionTimer, m_Link) g_GlobalTimers = {0, 0};
@@ -86,6 +97,10 @@ CDisplayContextGL::CDisplayContextGL()
 	m_bPendingResetMode = false;
 	m_BackBufferFormat = IMAGE_FORMAT_BGRA8;
 	m_pMainThread = MRTC_SystemInfo::OS_GetThreadID();
+	m_pRenderContext = NULL;
+
+	m_DefaultBackbufferContext.m_Setup.m_Width = 1024;
+	m_DefaultBackbufferContext.m_Setup.m_Height = 768;
 
 /*	// The following code snippet causes an assert in psgl (glCopyTexSubImage2D call)
 	{
@@ -174,6 +189,71 @@ void CDisplayContextGL::Create()
 
 	MACRO_AddSubSystem(this);
 }
+
+void CDisplayContextGL::InitRC()
+{
+	// Destroy previous context
+	if (m_pRenderContext)
+	{
+		delete m_pRenderContext;
+		m_pRenderContext = NULL;
+	}
+
+	m_pRenderContext = (CRenderContextGL*)MRTC_GOM()->CreateObject("CRenderContextGL");
+	if (!m_pRenderContext)
+		Error("CDisplayContextGL::Create", "Failed to create render-context.");
+
+	m_pRenderContext->Create(this, NULL);
+}
+
+void CDisplayContextGL::InitGLRC()
+{
+	PIXELFORMATDESCRIPTOR pfd =
+	{
+		sizeof(PIXELFORMATDESCRIPTOR),
+		1,
+		PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,    // Flags
+		PFD_TYPE_RGBA,        // The kind of framebuffer. RGBA or palette.
+		32,                   // Colordepth of the framebuffer.
+		0, 0, 0, 0, 0, 0,
+		0,
+		0,
+		0,
+		0, 0, 0, 0,
+		24,                   // Number of bits for the depthbuffer
+		8,                    // Number of bits for the stencilbuffer
+		0,                    // Number of Aux buffers in the framebuffer.
+		PFD_MAIN_PLANE,
+		0,
+		0, 0, 0
+	};
+
+	m_hDC = GetDC(m_Window.GethWnd());
+	int pixelFormat = ChoosePixelFormat(m_hDC, &pfd);
+	SetPixelFormat(m_hDC, pixelFormat, &pfd);
+
+	HGLRC tempContext = wglCreateContext(m_hDC);
+	wglMakeCurrent(m_hDC, tempContext);
+
+	PFNWGLCREATECONTEXTATTRIBSARBPROC wglCreateContextAttribsARB = (PFNWGLCREATECONTEXTATTRIBSARBPROC)wglGetProcAddress("wglCreateContextAttribsARB");
+	M_ASSERT(wglCreateContextAttribsARB, "Cannot load ARB context creation function.");
+
+	int attribs[] =
+	{
+		WGL_CONTEXT_MAJOR_VERSION_ARB, 3,
+		WGL_CONTEXT_MINOR_VERSION_ARB, 2,
+		WGL_CONTEXT_FLAGS_ARB, 0,
+		0
+	};
+
+	m_hGLRC = wglCreateContextAttribsARB(m_hDC, 0, attribs);
+	wglMakeCurrent(NULL, NULL);
+	wglDeleteContext(tempContext);
+	wglMakeCurrent(m_hDC, m_hGLRC);
+
+	gladLoadGL();
+}
+
 
 // -------------------------------------------------------------------
 
@@ -423,7 +503,8 @@ int CDisplayContextGL::PageFlip()
 	CMTime PreSwap;
 	PreSwap.Snapshot();
 
-	//psglSwap();
+	SwapBuffers(m_hDC);
+
 	CMTime PostSwap;
 	PostSwap.Snapshot();
 //	m_Stats.m_BlockTime.AddData((PostSwap - PreSwap).GetTime());
@@ -479,6 +560,20 @@ void CDisplayContextGL::InitSettings()
 	m_BackBufferFormat = pEnv->GetValuei("R_BACKBUFFERFORMAT", IMAGE_FORMAT_BGRX8);
 }
 
+int CDisplayContextGL::SpawnWindow(int _Flags)
+{
+	CRct Rect;
+	Rect.p0 = CPnt(0, 0);
+	Rect.p1.x = m_DefaultBackbufferContext.m_Setup.m_Width;
+	Rect.p1.y = m_DefaultBackbufferContext.m_Setup.m_Height;
+	m_Window.Create(Rect);
+
+	InitGLRC();
+	InitRC();
+
+	return 0;
+}
+
 int CDisplayContextGL::Win32_CreateFromWindow(void* _hWnd, int _Flags)
 {
 	return 0;
@@ -491,6 +586,7 @@ int CDisplayContextGL::Win32_CreateWindow(int _WS, void* _pWndParent, int _Flags
 
 void CDisplayContextGL::Win32_ProcessMessages()
 {
+	m_Window.ProcessMessages();
 }
 
 void* CDisplayContextGL::Win32_GethWnd(int _iWnd)
@@ -527,8 +623,7 @@ void CDisplayContextGL::ClearFrameBuffer(int _Buffers, int _Color)
 CRenderContext* CDisplayContextGL::GetRenderContext(CRCLock* _pLock)
 {
 	MSCOPE(CDisplayContextGL::GetRenderContext, RENDER_GL);
-	//return &CRenderContextGL::ms_This;
-	return nullptr;
+	return m_pRenderContext;
 };
 
 // --------------------------------
@@ -588,6 +683,9 @@ void CDisplayContextGL::Register(CScriptRegisterContext & _RegContext)
 
 void CDisplayContextGL::OnRefresh(int _Context)
 {
+	CDisplayContext::OnRefresh(_Context);
+
+	Win32_ProcessMessages();
 }
 
 void CDisplayContextGL::OnBusy(int _Context)

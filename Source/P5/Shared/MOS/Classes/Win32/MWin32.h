@@ -59,7 +59,7 @@ public:
 	virtual void RegisterWindowClass();
 
 	virtual void Create(CWin32_CreateStruct _Params);
-	virtual void Create(CRct _Pos, int _WS = WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_VISIBLE, int _ExWS = WS_EX_TOPMOST | WS_EX_APPWINDOW, HWND _hWndParent = NULL);
+	virtual void Create(CRct _Pos, int _WS = WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_VISIBLE, int _ExWS =/* WS_EX_TOPMOST |*/ WS_EX_APPWINDOW, HWND _hWndParent = NULL);
 	virtual void Destroy();
 
 	virtual void SetPosition(int _x, int _y);

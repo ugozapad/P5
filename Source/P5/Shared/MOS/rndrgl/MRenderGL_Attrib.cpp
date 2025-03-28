@@ -1257,7 +1257,9 @@ void CRenderContextGL::Attrib_SetStencil( CRC_Attributes* _pAttrib )
 			uint32 StencilFrontOpZFail = _pAttrib->m_StencilFrontOpZFail;
 			uint32 StencilFrontOpZPass = _pAttrib->m_StencilFrontOpZPass;
 
-			glActiveStencilFaceEXT(GL_FRONT);
+			if (glad_glActiveStencilFaceEXT)
+				glActiveStencilFaceEXT(GL_FRONT);
+
 			glStencilMask(StencilWriteMask);
 			GLErr("Attrib_Set (Stencil, 5)");
 			glStencilFunc(ConvertToGLCompare(StencilFrontFunc), StencilFuncRef, StencilFuncAnd);

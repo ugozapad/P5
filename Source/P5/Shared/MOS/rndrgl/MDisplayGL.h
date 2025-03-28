@@ -17,6 +17,10 @@ class				CDisplayContextGL				9703??  -				CDisplayContext for OpenGL
 #include "MRenderGL_Image.h"
 #include "MRenderGL_Context.h"
 
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+
+#include "../../Classes/Win32/MWin32.h"
 
 // -------------------------------------------------------------------
 //  CDisplayContextGL
@@ -88,9 +92,21 @@ protected:
 	CBackbufferContext m_DefaultBackbufferContext;
 	CImageGL m_BackbufferImage;
 
+	CWin32_Window m_Window;
+	
+	CRenderContextGL* m_pRenderContext;
+
+	HDC m_hDC = NULL;
+	HGLRC m_hGLRC = NULL;
+
 	void ResetMode();
 	CBackbufferContext SetRenderTarget(int _Width, int _Height, int _ColorBufferFormat, bool _bRetainZBuffer);
-	void RestoreRenderTarget(CBackbufferContext& _Context);
+	void RestoreRenderTarget(CBackbufferContext& _Context); 
+
+private:
+	void InitRC();
+	void InitGLRC();
+
 public:
 
 	// DisplayContext overrides
@@ -122,7 +138,7 @@ public:
 	void EnumModes();
 	void InitSettings();
 
-	int SpawnWindow(int _Flags){return 0;}
+	int SpawnWindow(int _Flags);
 	void DeleteWindow(int _iWnd){}
 	void SelectWindow(int _iWnd){}
 	void SetWindowPosition(int _iWnd, CRct _Rct){}

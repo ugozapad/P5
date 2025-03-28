@@ -5351,7 +5351,7 @@ void CXRealityApp::DoModal()
 	if (!m_pSystem->m_spDisplay)
 		return;
 
-#ifdef PLATFORM_WIN32_PC
+#if 0//def PLATFORM_WIN32_PC
 	{
 		CRCLock RCLock;
 		CRenderContext* pRC = m_pSystem->m_spDisplay->GetRenderContext(&RCLock);

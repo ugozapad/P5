@@ -117,6 +117,10 @@ void CRenderContextGL::Create(CObj* _pContext, const char* _pParams)
 
 	CRC_Core::Create(_pContext, _pParams);
 
+	m_pDC = TDynamicCast<CDisplayContextGL>(_pContext);
+	if (!m_pDC)
+		Error("CRenderContextGL::Create", "_pContext not a CDisplayContextGL object.");
+
 	MACRO_GetSystem;
 
 	m_Caps_TextureFormats = -1;
@@ -155,7 +159,9 @@ void CRenderContextGL::Create(CObj* _pContext, const char* _pParams)
 		m_lPicMips[i] = pEnv->GetValuei(CStrF("R_PICMIP%d", i), 2);
 	}
 
-	m_VP_ProgramGenerator.Create("System/GL/VP.xrg", "System/GL/VPDefines_GL.xrg", false, CRC_MAXTEXCOORDS);
+	m_VP_ProgramGenerator.Create("System/GL/VP.xrg", "System/GL/VPDefines_ARB.xrg", false, CRC_MAXTEXCOORDS);
+
+	GL_InitTextures();
 }
 
 extern const char* gs_TexEnvPrograms[9];
@@ -488,7 +494,7 @@ void CRenderContextGL::BeginScene(CRC_Viewport* _pVP)
 */
 	GLErr("BeginScene");
 
-	OcclusionQuery_PrepareFrame();
+	//OcclusionQuery_PrepareFrame();
 	GLErr("BeginScene (0)");
 
 //	glBindFramebufferOES(GL_FRAMEBUFFER_OES, CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_FBO);

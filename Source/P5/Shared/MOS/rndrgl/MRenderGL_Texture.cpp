@@ -139,8 +139,8 @@ bool CRenderContextGL::LoadTexture(int _GLImageTarget, int _TextureID, CTextureC
 			{
 			case IMAGE_FORMAT_BGR5: InternalFormat = GL_RGB5; GLFmt = GL_BGR; Size = GL_UNSIGNED_SHORT; break;
 			case IMAGE_FORMAT_BGR8: InternalFormat = GL_RGB8; GLFmt = GL_BGR; Size = GL_UNSIGNED_BYTE; break;
-			//case IMAGE_FORMAT_BGRA8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
-			//case IMAGE_FORMAT_BGRX8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+			case IMAGE_FORMAT_BGRA8: InternalFormat = GL_RGBA8; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+			case IMAGE_FORMAT_BGRX8: InternalFormat = GL_RGBA8; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_RGBA8: InternalFormat = GL_RGBA8; GLFmt = GL_RGBA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_A8: InternalFormat = GL_ALPHA8; GLFmt = GL_ALPHA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_I8A8: InternalFormat = GL_LUMINANCE8_ALPHA8; GLFmt = GL_LUMINANCE_ALPHA; Size = GL_UNSIGNED_BYTE; break;
@@ -183,8 +183,8 @@ bool CRenderContextGL::LoadTextureRender(int _GLImageTarget, int _TextureID, CTe
 	{
 	case IMAGE_FORMAT_ZBUFFER: InternalFormat = GL_DEPTH_COMPONENT24; GLFmt = GL_DEPTH_COMPONENT; Size = GL_UNSIGNED_SHORT; break;
 	case IMAGE_FORMAT_BGR8: InternalFormat = GL_RGB8; GLFmt = GL_BGR; Size = GL_UNSIGNED_BYTE; break;
-	//case IMAGE_FORMAT_BGRA8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
-	//case IMAGE_FORMAT_BGRX8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+	case IMAGE_FORMAT_BGRA8: InternalFormat = GL_RGBA8; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+	case IMAGE_FORMAT_BGRX8: InternalFormat = GL_RGBA8; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_RGBA8: InternalFormat = GL_RGBA8; GLFmt = GL_RGBA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_A8: InternalFormat = GL_ALPHA8; GLFmt = GL_ALPHA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_I8A8: InternalFormat = GL_LUMINANCE8_ALPHA8; GLFmt = GL_LUMINANCE_ALPHA; Size = GL_UNSIGNED_BYTE; break;
