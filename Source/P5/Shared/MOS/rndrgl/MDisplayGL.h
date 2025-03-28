@@ -43,7 +43,6 @@ class CDisplayContextGL : public CDisplayContext
 	MRTC_DECLARE;
 
 public:
-	static CDisplayContextGL ms_This;
 	void* m_pMainThread;
 protected:
 	class CBackbufferContext
@@ -72,7 +71,6 @@ protected:
 	};
 
 	// -------------------------------------------------------------------
-	PSGLdevice* m_pDevice;
 
 	virtual CPnt GetScreenSize()
 	{
@@ -133,11 +131,14 @@ public:
 
 #ifdef PLATFORM_WIN_PC
 	bool m_bLogUsage;
-	int Win32_CreateFromWindow(void* _hWnd, int _Flags = 0){return 0;}
-	int Win32_CreateWindow(int _WS, void* _pWndParent, int _Flags = 0){return 0;}
-	void Win32_ProcessMessages(){}
-	void* Win32_GethWnd(int _iWnd = 0){return 0;}
+	int Win32_CreateFromWindow(void* _hWnd, int _Flags = 0);
+	int Win32_CreateWindow(int _WS, void* _pWndParent, int _Flags = 0);
+	void Win32_ProcessMessages();
+	void* Win32_GethWnd(int _iWnd = 0);
 #endif
+
+	// Inherited via CDisplayContext
+	CPnt GetMaxWindowSize() override;
 };
 
 #endif // _INC_MOS_DispGL

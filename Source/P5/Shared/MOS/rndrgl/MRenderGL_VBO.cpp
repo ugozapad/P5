@@ -328,7 +328,7 @@ void CRenderContextGL::VBO_RenderVB(int _VBID)
 	switch(pVBI->m_VB.m_PrimType)
 	{
 	default:
-		DebugBreak();
+		//DebugBreak();
 		break;
 
 	case CRC_RIP_TRISTRIP:

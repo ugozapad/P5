@@ -1205,7 +1205,8 @@ CDisplayContext* gf_CreateDisplayContextPS3Static();
 CDisplayContext* gf_CreateDisplayContextPS3GCMStatic();
 #endif
 
-CDisplayContext* gf_CreateDisplayContextSokol();
+CDisplayContext* gf_CreateDisplayContextGLStatic();
+CDisplayContext* gf_CreateDisplayContextSokolStatic();
 
 void CSystemCore::DC_SetPtr(spCReferenceCount _spDisplayContext)
 {
@@ -1305,7 +1306,8 @@ void CSystemCore::DC_Set(int _nr)
 	#endif
 #elif defined(INPACE_RENDERLIB)
 	//spCReferenceCount spObj = (CReferenceCount*)MRTC_GOM()->CreateObject("CDisplayContextNULL");
-	spCReferenceCount spObj = gf_CreateDisplayContextSokol();
+	//spCReferenceCount spObj = gf_CreateDisplayContextSokolStatic();
+	spCReferenceCount spObj = gf_CreateDisplayContextGLStatic();
 #else
 	spCReferenceCount spObj = (CReferenceCount*) MRTC_GOM()->CreateObject(m_lspDC[m_iCurrentDC]->m_DCClass);
 #endif

@@ -55,6 +55,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\SDK\glad\src\glad.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\..\MCC\MFile.cpp" />
     <ClCompile Include="..\..\MCC\MFile_StreamMgr.cpp" />
     <ClCompile Include="..\..\MCC\Mrtc.cpp" />
@@ -62,7 +65,9 @@
     <ClCompile Include="MRenderGL_Attrib.cpp" />
     <ClCompile Include="MRenderGL_Cmd.cpp" />
     <ClCompile Include="MRenderGL_Context.cpp" />
-    <ClCompile Include="MRenderGL_Dyn.cpp" />
+    <ClCompile Include="MRenderGL_Dyn.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="MRenderGL_FragmentProgram.cpp" />
     <ClCompile Include="MRenderGL_Image.cpp" />
     <ClCompile Include="MRenderGL_OcclusionQuery.cpp" />
@@ -347,7 +352,7 @@
     <ClCompile>
       <AdditionalOptions>/YlLib_MSystem %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\mcc\;.\;PCH\;..\..\SDK\Include;..\..\SDK\DirectX\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\mcc\;.\;PCH\;..\..\..\SDK\Include;..\..\..\SDK\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;TARGET_WIN32_X86;MSYSTEM_PCH;MRTC_IGNORE_DYNAMIC;WIN32;_WINDOWS;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>

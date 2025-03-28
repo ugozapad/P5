@@ -104,6 +104,6 @@ public:
 	virtual void* Win32_GethWnd(int _iWnd = 0);
 };
 
-CDisplayContext* gf_CreateDisplayContextSokol();
+CDisplayContext* gf_CreateDisplayContextSokolStatic();
 
 #endif // _INC_MDisplaySokol

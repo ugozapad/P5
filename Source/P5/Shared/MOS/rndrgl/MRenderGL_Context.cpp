@@ -5,8 +5,6 @@
 
 #include "../../XR/XRVBContext.h"
 
-CRenderContextGL CRenderContextGL::ms_This;
-
 // 0x500 offsetted
 const char* aGLESErrorMessages[] = 
 {
@@ -46,8 +44,7 @@ CRenderContextGL::CRenderContextGL()
 	m_pCurrentFPProgram = NULL;
 	m_pCurrentVPProgram = NULL;
 	m_nUpdateVPConst = 0;
-	m_CGContext = 0;
-	m_pContext = NULL;
+	m_pDC = NULL;
 
 	m_VP_iConstantColor = 0;
 	FillChar(m_VP_liTexMatrixReg, sizeof(m_VP_liTexMatrixReg), 0);
@@ -190,9 +187,10 @@ void CRenderContextGL::GL_InitSettings()
 
 	glnFogi(GL_FOG_MODE, GL_LINEAR);
 
-	glPrimitiveRestartIndexNV(0xffff);
-	glEnableClientState(GL_PRIMITIVE_RESTART_NV);
-	GLErr("glEnableClientState(GL_PRIMITIVE_RESTART_NV)");
+	// RC TODO: GL_PRIMITIVE_RESTART_NV
+	//glPrimitiveRestartIndexNV(0xffff);
+	//glEnableClientState(GL_PRIMITIVE_RESTART_NV);
+	//GLErr("glEnableClientState(GL_PRIMITIVE_RESTART_NV)");
 
 	for(int i = 0; i < 9; i++)
 	{
@@ -352,6 +350,7 @@ void CRenderContextGL::GL_DestroyAllPrograms()
 {
 	FP_Disable();
 	VP_Disable();
+#if 0
 	{
 		CCGFPProgram* pProg = m_FPProgramTree.GetRoot();
 		while(pProg)
@@ -371,6 +370,7 @@ void CRenderContextGL::GL_DestroyAllPrograms()
 			pProg = m_ProgramTree.GetRoot();
 		}
 	}
+#endif
 }
 
 int NextPow2(int _Value);
@@ -600,7 +600,7 @@ void CRenderContextGL::Viewport_Update()
 
 	// Set viewport
 	CRct rectclipped(pVP->GetViewArea());
-	int h = CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Height;
+	int h = m_pDC->m_CurrentBackbufferContext.m_Setup.m_Height;
 	glnViewport(rectclipped.p0.x, h-rectclipped.p0.y-rectclipped.GetHeight(), rectclipped.GetWidth(), rectclipped.GetHeight());
 	CRct Viewport(rectclipped.p0.x, h-rectclipped.p0.y-rectclipped.GetHeight(), rectclipped.GetWidth(), rectclipped.GetHeight());
 	DebugNop(&Viewport);
@@ -629,27 +629,15 @@ void CRenderContextGL::Viewport_Update()
 	ProjMat.Transpose();
 	m_Matrix_ProjectionTransposeGL = ProjMat;
 
-	CRenderContextGL::ms_This.m_MatrixChanged |= 1 << CRC_MATRIX_MODEL;
+	m_MatrixChanged |= 1 << CRC_MATRIX_MODEL;
 };
 
 CDisplayContext* CRenderContextGL::GetDC()
 {
-	return &CDisplayContextGL::ms_This;
+	return m_pDC;
 }
 
 void CRenderContextGL::DebugNop(void* _pArg)
 {
 	int a = 0;
 }
-
-void ReportPSGL(GLenum _reportEnum, GLuint _reportClassMask, const char* _pString)
-{
-	MRTC_SystemInfo::OS_Trace(CStrF("GLERR: %s\n", _pString));
-}
-
-void ReportCG(void)
-{
-	CGerror err = cgGetError();
-	MRTC_SystemInfo::OS_Trace(CStrF("CGERR: %s\n", cgGetErrorString(err)));
-}
-

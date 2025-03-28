@@ -1,6 +1,6 @@
 #include "MRTC.h"
 
-
+#include <glad/glad.h>
 
 #include "../../MSystem/Raster/MTexture.h"
 #include "../MDisplayGL.h"

@@ -3,8 +3,6 @@
 #include "MDisplayGL.h"
 #include "../../MOS.h"
 
-CDisplayContextGL CDisplayContextGL::ms_This;
-
 #ifdef GL_FUNCTIMING
 
 DIdsListLinkDA_List(CGLFunctionTimer, m_Link) g_GlobalTimers = {0, 0};
@@ -145,13 +143,8 @@ CDisplayContextGL::~CDisplayContextGL()
 
 bool CDisplayContextGL::SetOwner(void* _pNewOwner)
 {
-	DebugBreak();
-
 	return true;
 }
-
-void ReportPSGL(GLenum _reportEnum, GLuint _reportClassMask, const char* _pString);
-void ReportCG(void);
 
 void CDisplayContextGL::Create()
 {
@@ -165,26 +158,19 @@ void CDisplayContextGL::Create()
 
 	// Do some proper options here later on
 //	GLErr("Create(0)");
-	psglInit(NULL);
+
 //	GLErr("Create(1)");
 
 	EnumModes();
 	InitSettings();
 	AddToConsole();
 	m_bAddedToConsole = true;
-	CRenderContextGL::ms_This.Create(this, "");
 
 	{
 		MACRO_GetRegisterObject(CSystem, pSys, "SYSTEM");
 		if (pSys && pSys->GetEnvironment()->Find("GL_LOG"))
 			m_bLog = pSys->GetEnvironment()->GetValuei("GL_LOG", 1) != 0;
 	}
-
-	psglSetReportFunction(ReportPSGL);
-	psglEnableReport(PSGL_REPORT_ALL);
-
-	// Initialize CG compiler
-	cgRTCgcInit();
 
 	MACRO_AddSubSystem(this);
 }
@@ -279,81 +265,81 @@ int GetStencilBits(int _Format)
 
 void CDisplayContextGL::ResetMode()
 {
-	if(CDisplayContextGL::ms_This.m_DisplayModeNr < 0)
-		return;
-
-	if(CDisplayContextGL::ms_This.m_pDevice)
-	{
-		glFinish();
-
-		// Delete all resources before destroying context
-		CRenderContextGL::ms_This.VB_DeleteAll();
-		CRenderContextGL::ms_This.GL_DestroyAllPrograms();
-		CRenderContextGL::ms_This.GL_DeleteTextures();
-
-		GLErr("ResetMode(0, 1)");
-		if(CRenderContextGL::ms_This.m_CGContext)
-			cgDestroyContext(CRenderContextGL::ms_This.m_CGContext);
-		GLErr("ResetMode(0, 2)");
-		if(CRenderContextGL::ms_This.m_pContext)
-			psglDestroyContext(CRenderContextGL::ms_This.m_pContext);
-		GLErr("ResetMode(0, 3)");
-		psglDestroyDevice(m_pDevice);
-		GLErr("ResetMode(0, 4)");
-		CRenderContextGL::ms_This.m_pContext = NULL;
-		CDisplayContextGL::ms_This.m_pDevice = NULL;
-	}
-
-	CDCGL_VideoMode* pMode = (CDCGL_VideoMode*)((CDC_VideoMode*)CDisplayContextGL::ms_This.m_lspModes[CDisplayContextGL::ms_This.m_DisplayModeNr]);
-
-	PSGLbufferParameters DeviceParams;
-	DeviceParams.width = pMode->m_Width;
-	DeviceParams.height = pMode->m_Height;
-	DeviceParams.colorBits = GetColorBits(pMode->m_FrontBufferMode);
-	DeviceParams.alphaBits = GetAlphaBits(pMode->m_FrontBufferMode);
-	DeviceParams.depthBits = GetDepthBits(pMode->m_ZBufferMode);
-	DeviceParams.stencilBits = GetStencilBits(pMode->m_ZBufferMode);
-	DeviceParams.deviceType = PSGL_DEVICE_TYPE_AUTO;
-	DeviceParams.TVStandard = PSGL_TV_STANDARD_NONE;
-	DeviceParams.TVFormat = PSGL_TV_FORMAT_AUTO;
-	DeviceParams.bufferingMode = PSGL_BUFFERING_MODE_DOUBLE;
-	DeviceParams.antiAliasing = m_bAntialias?GL_TRUE:GL_FALSE;
-	CDisplayContextGL::ms_This.m_pDevice = psglCreateDevice(&DeviceParams);
-
-//	GLErr("ResetMode(1)");
-#ifdef PLATFORM_GL
-	M_ASSERT(CDisplayContextGL::ms_This.m_pDevice, "Failed to create psgl device");
-#endif
-
-	CRenderContextGL::ms_This.m_pContext = psglCreateContext();
-#ifdef PLATFORM_GL
-	M_ASSERT(CRenderContextGL::ms_This.m_pContext, "Failed to create psgl context");
-#endif
-	psglMakeCurrent(CRenderContextGL::ms_This.m_pContext, CDisplayContextGL::ms_This.m_pDevice);
-//	GLErr("ResetMode(2)");
-
-//	psglLoadShaderLibrary("/app_home/System/GL/GL_Cache/shaders.bin");
-
-	SetRenderTarget(pMode->m_Width, pMode->m_Height, pMode->m_BackBufferMode, false);
-	CBackbufferContext TempContext;
-	TempContext.m_Setup.m_Width = pMode->m_Width;
-	TempContext.m_Setup.m_Height = pMode->m_Height;
-	TempContext.m_Setup.m_BackBufferFormat = IMAGE_FORMAT_BGRA8;
-	TempContext.m_Setup.m_bZBuffer = true;
-	TempContext.m_Setup.m_ZStartMem = 0x7fffffff;
-	m_CurrentBackbufferContext = TempContext;
-	CDisplayContextGL::ms_This.m_DefaultBackbufferContext = m_CurrentBackbufferContext;
-	CDisplayContextGL::ms_This.m_BackbufferImage.CreateVirtual(pMode->m_Width, pMode->m_Height, IMAGE_FORMAT_BGRA8, IMAGE_MEM_VIRTUAL);
-
-	CRenderContextGL::ms_This.m_CGContext = cgCreateContext();
-	GLErr("ResetMode(3)");
-	cgSetErrorCallback(ReportCG);
-	GLErr("ResetMode(3)");
-
-	glViewport(0, 0, m_CurrentBackbufferContext.m_Setup.m_Width,m_CurrentBackbufferContext.m_Setup.m_Height);
-	glScissor(0, 0, m_CurrentBackbufferContext.m_Setup.m_Width, m_CurrentBackbufferContext.m_Setup.m_Height);
-	CRenderContextGL::ms_This.GL_InitSettings();
-	CRenderContextGL::ms_This.GL_InitTextures();
+//	if(CDisplayContextGL::ms_This.m_DisplayModeNr < 0)
+//		return;
+//
+//	if(CDisplayContextGL::ms_This.m_pDevice)
+//	{
+//		glFinish();
+//
+//		// Delete all resources before destroying context
+//		CRenderContextGL::ms_This.VB_DeleteAll();
+//		CRenderContextGL::ms_This.GL_DestroyAllPrograms();
+//		CRenderContextGL::ms_This.GL_DeleteTextures();
+//
+//		GLErr("ResetMode(0, 1)");
+//		if(CRenderContextGL::ms_This.m_CGContext)
+//			cgDestroyContext(CRenderContextGL::ms_This.m_CGContext);
+//		GLErr("ResetMode(0, 2)");
+//		if(CRenderContextGL::ms_This.m_pContext)
+//			psglDestroyContext(CRenderContextGL::ms_This.m_pContext);
+//		GLErr("ResetMode(0, 3)");
+//		psglDestroyDevice(m_pDevice);
+//		GLErr("ResetMode(0, 4)");
+//		CRenderContextGL::ms_This.m_pContext = NULL;
+//		CDisplayContextGL::ms_This.m_pDevice = NULL;
+//	}
+//
+//	CDCGL_VideoMode* pMode = (CDCGL_VideoMode*)((CDC_VideoMode*)CDisplayContextGL::ms_This.m_lspModes[CDisplayContextGL::ms_This.m_DisplayModeNr]);
+//
+//	PSGLbufferParameters DeviceParams;
+//	DeviceParams.width = pMode->m_Width;
+//	DeviceParams.height = pMode->m_Height;
+//	DeviceParams.colorBits = GetColorBits(pMode->m_FrontBufferMode);
+//	DeviceParams.alphaBits = GetAlphaBits(pMode->m_FrontBufferMode);
+//	DeviceParams.depthBits = GetDepthBits(pMode->m_ZBufferMode);
+//	DeviceParams.stencilBits = GetStencilBits(pMode->m_ZBufferMode);
+//	DeviceParams.deviceType = PSGL_DEVICE_TYPE_AUTO;
+//	DeviceParams.TVStandard = PSGL_TV_STANDARD_NONE;
+//	DeviceParams.TVFormat = PSGL_TV_FORMAT_AUTO;
+//	DeviceParams.bufferingMode = PSGL_BUFFERING_MODE_DOUBLE;
+//	DeviceParams.antiAliasing = m_bAntialias?GL_TRUE:GL_FALSE;
+//	CDisplayContextGL::ms_This.m_pDevice = psglCreateDevice(&DeviceParams);
+//
+////	GLErr("ResetMode(1)");
+//#ifdef PLATFORM_GL
+//	M_ASSERT(CDisplayContextGL::ms_This.m_pDevice, "Failed to create psgl device");
+//#endif
+//
+//	CRenderContextGL::ms_This.m_pContext = psglCreateContext();
+//#ifdef PLATFORM_GL
+//	M_ASSERT(CRenderContextGL::ms_This.m_pContext, "Failed to create psgl context");
+//#endif
+//	psglMakeCurrent(CRenderContextGL::ms_This.m_pContext, CDisplayContextGL::ms_This.m_pDevice);
+////	GLErr("ResetMode(2)");
+//
+////	psglLoadShaderLibrary("/app_home/System/GL/GL_Cache/shaders.bin");
+//
+//	SetRenderTarget(pMode->m_Width, pMode->m_Height, pMode->m_BackBufferMode, false);
+//	CBackbufferContext TempContext;
+//	TempContext.m_Setup.m_Width = pMode->m_Width;
+//	TempContext.m_Setup.m_Height = pMode->m_Height;
+//	TempContext.m_Setup.m_BackBufferFormat = IMAGE_FORMAT_BGRA8;
+//	TempContext.m_Setup.m_bZBuffer = true;
+//	TempContext.m_Setup.m_ZStartMem = 0x7fffffff;
+//	m_CurrentBackbufferContext = TempContext;
+//	CDisplayContextGL::ms_This.m_DefaultBackbufferContext = m_CurrentBackbufferContext;
+//	CDisplayContextGL::ms_This.m_BackbufferImage.CreateVirtual(pMode->m_Width, pMode->m_Height, IMAGE_FORMAT_BGRA8, IMAGE_MEM_VIRTUAL);
+//
+//	CRenderContextGL::ms_This.m_CGContext = cgCreateContext();
+//	GLErr("ResetMode(3)");
+//	cgSetErrorCallback(ReportCG);
+//	GLErr("ResetMode(3)");
+//
+//	glViewport(0, 0, m_CurrentBackbufferContext.m_Setup.m_Width,m_CurrentBackbufferContext.m_Setup.m_Height);
+//	glScissor(0, 0, m_CurrentBackbufferContext.m_Setup.m_Width, m_CurrentBackbufferContext.m_Setup.m_Height);
+//	CRenderContextGL::ms_This.GL_InitSettings();
+//	CRenderContextGL::ms_This.GL_InitTextures();
 }
 
 void CDisplayContextGL::SetMode(int _Mode)
@@ -377,7 +363,7 @@ CDisplayContextGL::CBackbufferContext CDisplayContextGL::SetRenderTarget(int _Wi
 
 	NewContext.m_Setup.m_Width = _Width;
 	NewContext.m_Setup.m_Height = _Height;
-	NewContext.m_Setup.m_BackBufferFormat = GL_ARGB_SCE;
+	//NewContext.m_Setup.m_BackBufferFormat = GL_ARGB_SCE;
 	NewContext.m_Setup.m_bZBuffer = (_bRetainZBuffer == false);
 
 	RestoreRenderTarget(NewContext);
@@ -391,29 +377,29 @@ void CDisplayContextGL::RestoreRenderTarget(CBackbufferContext& _Context)
 		return;
 
 	GLuint fid;
-	glGenFramebuffersOES(1, &fid);
+	glGenFramebuffers(1, &fid);
 //	GLErr("RestoreRenderTarget(0, 1)");
-	glBindFramebufferOES(GL_FRAMEBUFFER_OES, fid);
+	glBindFramebuffer(GL_FRAMEBUFFER, fid);
 //	GLErr("RestoreRenderTarget(0, 2)");
 
 	GLuint rid;
-	glGenRenderbuffersOES(1, &rid);
+	glGenRenderbuffers(1, &rid);
 //	GLErr("RestoreRenderTarget(1)");
-	glBindRenderbufferOES(GL_RENDERBUFFER_OES, rid);
+	glBindRenderbuffer(GL_RENDERBUFFER, rid);
 //	GLErr("RestoreRenderTarget(2)");
-	glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_ARGB_SCE, _Context.m_Setup.m_Width, _Context.m_Setup.m_Height);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, _Context.m_Setup.m_Width, _Context.m_Setup.m_Height);
 //	GLErr("RestoreRenderTarget(3)");
-	glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_EXT, GL_RENDERBUFFER_OES, rid);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, rid);
 //	GLErr("RestoreRenderTarget(4)");
 	if(_Context.m_Setup.m_bZBuffer)
 	{
 		GLuint zid;
-		glGenRenderbuffersOES(1, &zid);
-		glBindRenderbufferOES(GL_RENDERBUFFER_OES, zid);
+		glGenRenderbuffers(1, &zid);
+		glBindRenderbuffer(GL_RENDERBUFFER, zid);
 //		GLErr("RestoreRenderTarget(5)");
-		glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT, _Context.m_Setup.m_Width, _Context.m_Setup.m_Height);
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, _Context.m_Setup.m_Width, _Context.m_Setup.m_Height);
 //		GLErr("RestoreRenderTarget(6)");
-		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, zid);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, zid);
 //		GLErr("RestoreRenderTarget(7)");
 	}
 	glViewport(0, 0, _Context.m_Setup.m_Width, _Context.m_Setup.m_Height);
@@ -437,10 +423,10 @@ int CDisplayContextGL::PageFlip()
 	CMTime PreSwap;
 	PreSwap.Snapshot();
 
-	psglSwap();
+	//psglSwap();
 	CMTime PostSwap;
 	PostSwap.Snapshot();
-	CRenderContextGL::ms_This.m_Stats.m_BlockTime.AddData((PostSwap - PreSwap).GetTime());
+//	m_Stats.m_BlockTime.AddData((PostSwap - PreSwap).GetTime());
 	GLErr("PageFlip(2)");
 
 	if(m_bPendingResetMode)
@@ -459,8 +445,8 @@ void CDisplayContextGL::EnumModes()
 
 	m_lspModes.Destroy();
 
-	const int aWidth[]  = { 720, 720, 1280, 1920, 0 };
-	const int aHeight[] = { 480, 576, 720,  1080 };
+	const int aWidth[]  = { 640, 720, 720, 1280, 1920, 0 };
+	const int aHeight[] = { 480, 480, 576, 720,  1080 };
 //	const uint32 aBackFormats[] = {IMAGE_FORMAT_BGRX8, IMAGE_FORMAT_RGBA16_F, IMAGE_FORMAT_RGBA32_F, 0 };
 	const uint32 aBackFormats[] = {IMAGE_FORMAT_BGRX8, 0 };
 
@@ -493,6 +479,30 @@ void CDisplayContextGL::InitSettings()
 	m_BackBufferFormat = pEnv->GetValuei("R_BACKBUFFERFORMAT", IMAGE_FORMAT_BGRX8);
 }
 
+int CDisplayContextGL::Win32_CreateFromWindow(void* _hWnd, int _Flags)
+{
+	return 0;
+}
+
+int CDisplayContextGL::Win32_CreateWindow(int _WS, void* _pWndParent, int _Flags)
+{
+	return 0;
+}
+
+void CDisplayContextGL::Win32_ProcessMessages()
+{
+}
+
+void* CDisplayContextGL::Win32_GethWnd(int _iWnd)
+{
+	return nullptr;
+}
+
+CPnt CDisplayContextGL::GetMaxWindowSize()
+{
+	return CPnt(800, 600);
+}
+
 // -------------------------------------------------------------------
 CImage* CDisplayContextGL::GetFrameBuffer()
 {
@@ -506,8 +516,8 @@ void CDisplayContextGL::ClearFrameBuffer(int _Buffers, int _Color)
 	MSCOPE(CDisplayContextGL::ClearFrameBuffer, RENDER_GL);
 
 	CPixel32 Pixel(_Color);
-	glClearDepthf(1.0f);
-	GLErr("glClearDepthf");
+	glClearDepth(1.0f);
+	GLErr("glClearDepth");
 	glClearColor(Pixel.GetR() * (1.0f / 255.0f), Pixel.GetG() * (1.0f / 255.0f), Pixel.GetB() * (1.0f / 255.0f), Pixel.GetA() * (1.0f / 255.0f));
 	GLErr("glClearColor");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -517,7 +527,8 @@ void CDisplayContextGL::ClearFrameBuffer(int _Buffers, int _Color)
 CRenderContext* CDisplayContextGL::GetRenderContext(CRCLock* _pLock)
 {
 	MSCOPE(CDisplayContextGL::GetRenderContext, RENDER_GL);
-	return &CRenderContextGL::ms_This;
+	//return &CRenderContextGL::ms_This;
+	return nullptr;
 };
 
 // --------------------------------
@@ -525,7 +536,7 @@ CRenderContext* CDisplayContextGL::GetRenderContext(CRCLock* _pLock)
 // --------------------------------
 void CDisplayContextGL::Con_SetDataPath(CStr _DataPath)
 {
-	DebugBreak();
+	//DebugBreak();
 }
 
 void CDisplayContextGL::Con_r_antialias(int _Antialias)
@@ -585,15 +596,14 @@ void CDisplayContextGL::OnBusy(int _Context)
 
 CDisplayContext* gf_CreateDisplayContextGLStatic()
 {
-#ifndef PLATFORM_GL
-	CRenderContextGL::ms_This.Render_PrecacheFlush();
-#endif
+	CDisplayContextGL* pDC = (CDisplayContextGL*)MRTC_GetObjectManager()->CreateObject("CDisplayContextGL");
+
 #ifndef PLATFORM_CONSOLE
 	MACRO_GetSystem;
-	CRenderContextGL::ms_This.m_bLogUsage = pSys->GetEnvironment()->GetValuei("RESOURCES_LOG") != 0;
+	pDC->m_bLogUsage = pSys->GetEnvironment()->GetValuei("RESOURCES_LOG") != 0;
 #endif
 
-	CDisplayContextGL::ms_This.m_pMainThread = MRTC_SystemInfo::OS_GetThreadID();
+	pDC->m_pMainThread = MRTC_SystemInfo::OS_GetThreadID();
 
-	return &CDisplayContextGL::ms_This;
+	return pDC;
 }

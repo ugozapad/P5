@@ -40,39 +40,39 @@ const char* aOutputType[] =
 
 enum
 {
-	CG_INPUT_POSITION = DBit(0),
-	CG_INPUT_NORMAL = DBit(1),
-	CG_INPUT_COLOR0 = DBit(2),
-	CG_INPUT_COLOR1 = DBit(3),
-	CG_INPUT_TEXCOORD0 = DBit(4),
-	CG_INPUT_TEXCOORD1 = DBit(5),
-	CG_INPUT_TEXCOORD2 = DBit(6),
-	CG_INPUT_TEXCOORD3 = DBit(7),
-	CG_INPUT_TEXCOORD4 = DBit(8),
-	CG_INPUT_TEXCOORD5 = DBit(9),
-	CG_INPUT_TEXCOORD6 = DBit(10),
-	CG_INPUT_TEXCOORD7 = DBit(11),
-	CG_INPUT_MATRIXINDICES = DBit(12),
-	CG_INPUT_MATRIXWEIGHT = DBit(13),
+	CG_INPUT_POSITION = M_Bit(0),
+	CG_INPUT_NORMAL = M_Bit(1),
+	CG_INPUT_COLOR0 = M_Bit(2),
+	CG_INPUT_COLOR1 = M_Bit(3),
+	CG_INPUT_TEXCOORD0 = M_Bit(4),
+	CG_INPUT_TEXCOORD1 = M_Bit(5),
+	CG_INPUT_TEXCOORD2 = M_Bit(6),
+	CG_INPUT_TEXCOORD3 = M_Bit(7),
+	CG_INPUT_TEXCOORD4 = M_Bit(8),
+	CG_INPUT_TEXCOORD5 = M_Bit(9),
+	CG_INPUT_TEXCOORD6 = M_Bit(10),
+	CG_INPUT_TEXCOORD7 = M_Bit(11),
+	CG_INPUT_MATRIXINDICES = M_Bit(12),
+	CG_INPUT_MATRIXWEIGHT = M_Bit(13),
 
-	CG_OUTPUT_POSITION = DBit(0),
-	CG_OUTPUT_COLOR0 = DBit(1),
-	CG_OUTPUT_COLOR1 = DBit(2),
-	CG_OUTPUT_TEXCOORD0 = DBit(3),
-	CG_OUTPUT_TEXCOORD1 = DBit(4),
-	CG_OUTPUT_TEXCOORD2 = DBit(5),
-	CG_OUTPUT_TEXCOORD3 = DBit(6),
-	CG_OUTPUT_TEXCOORD4 = DBit(7),
-	CG_OUTPUT_TEXCOORD5 = DBit(8),
-	CG_OUTPUT_TEXCOORD6 = DBit(9),
-	CG_OUTPUT_TEXCOORD7 = DBit(10),
-	CG_OUTPUT_FOG = DBit(11),
-	CG_OUTPUT_CLIP0 = DBit(12),
-	CG_OUTPUT_CLIP1 = DBit(13),
-	CG_OUTPUT_CLIP2 = DBit(14),
-	CG_OUTPUT_CLIP3 = DBit(15),
-	CG_OUTPUT_CLIP4 = DBit(16),
-	CG_OUTPUT_CLIP5 = DBit(17),
+	CG_OUTPUT_POSITION = M_Bit(0),
+	CG_OUTPUT_COLOR0 = M_Bit(1),
+	CG_OUTPUT_COLOR1 = M_Bit(2),
+	CG_OUTPUT_TEXCOORD0 = M_Bit(3),
+	CG_OUTPUT_TEXCOORD1 = M_Bit(4),
+	CG_OUTPUT_TEXCOORD2 = M_Bit(5),
+	CG_OUTPUT_TEXCOORD3 = M_Bit(6),
+	CG_OUTPUT_TEXCOORD4 = M_Bit(7),
+	CG_OUTPUT_TEXCOORD5 = M_Bit(8),
+	CG_OUTPUT_TEXCOORD6 = M_Bit(9),
+	CG_OUTPUT_TEXCOORD7 = M_Bit(10),
+	CG_OUTPUT_FOG = M_Bit(11),
+	CG_OUTPUT_CLIP0 = M_Bit(12),
+	CG_OUTPUT_CLIP1 = M_Bit(13),
+	CG_OUTPUT_CLIP2 = M_Bit(14),
+	CG_OUTPUT_CLIP3 = M_Bit(15),
+	CG_OUTPUT_CLIP4 = M_Bit(16),
+	CG_OUTPUT_CLIP5 = M_Bit(17),
 };
 
 // Valid expression for this is r0.xyz,r11.w, r1;
@@ -223,6 +223,7 @@ CStr ConvertVPToCG(CStr _VP)
 
 void CRenderContextGL::VP_Load(const char* _pProgram, const CRC_VPFormat::CProgramFormat& _Format)
 {
+#if 0
 //	TArray<uint8> lData;
 //	lData = CDiskUtil::ReadFileToArray(_pProgram, CFILE_READ);
 //	CGprogram cgprog = cgCreateProgram(m_CGContext, CG_BINARY, (const char*)lData.GetBasePtr(), CG_PROFILE_SCE_VP_TYPEC, NULL, NULL);
@@ -241,6 +242,7 @@ void CRenderContextGL::VP_Load(const char* _pProgram, const CRC_VPFormat::CProgr
 	m_bDirtyVPCache = 1;
 
 	GLErr("VP_Load (Post)");
+#endif
 }
 
 void CRenderContextGL::VP_Bind(const CRC_VPFormat& _Format)
@@ -316,11 +318,13 @@ void CRenderContextGL::VP_Bind(const CRC_VPFormat& _Format)
 		Internal_VA_Disable();
 	}
 
+#if 0
 	cgGLBindProgram(pProg->m_Program);
 	GLErr("VP_Bind");
 
 	cgGLEnableProfile(CG_PROFILE_SCE_VP_TYPEC);
 	GLErr("VP_Bind");
+#endif
 
 	m_pCurrentVPProgram = pProg;
 	m_nStateVP++;
@@ -328,11 +332,13 @@ void CRenderContextGL::VP_Bind(const CRC_VPFormat& _Format)
 
 void CRenderContextGL::VP_Disable()
 {
+#if 0
 	cgGLDisableProfile(CG_PROFILE_SCE_VP_TYPEC);
 	GLErr("VP_Disable");
 
 	cgGLUnbindProgram(CG_PROFILE_SCE_VP_TYPEC);
 	GLErr("VP_Disable");
+#endif
 
 	m_pCurrentVPProgram = NULL;
 	m_nStateVP++;
@@ -346,9 +352,12 @@ void CRenderContextGL::VP_DeleteAllObjects()
 	while((pProg = m_ProgramTree.GetRoot()))
 	{
 		m_ProgramTree.f_Remove(pProg);
+#if 0
 		cgDestroyProgram(pProg->m_Program);
 		GLErr("VP_DeleteAllObjects");
+#endif
 		delete pProg;
+
 	}
 }
 
@@ -359,8 +368,10 @@ void CRenderContextGL::VP_Init()
 void CRenderContextGL::VP_Update()
 {
 	DebugNop();
+#if 0
 	cgGLSetParameterArray4f(m_pCurrentVPProgram->m_Parameter, 0, m_nUpdateVPConst, (const float*)m_VPConstRegisters);
 	GLErr("VP_Update");
+#endif
 	m_bUpdateVPConst = 0;
 }
 
@@ -416,6 +427,7 @@ void CRenderContextGL::VP_LoadCache()
 
 void CRenderContextGL::VP_LoadBinary(const uint8* _pProgram, const CRC_VPFormat::CProgramFormat& _Format)
 {
+#if 0
 	CGprogram cgprog = cgCreateProgram(m_CGContext, CG_BINARY, (const char*)_pProgram, CG_PROFILE_SCE_VP_TYPEC, NULL, NULL);
 	GLErr("VP_LoadBinary (cgCreateProgram)");
 	CGparameter constants = cgGetNamedParameter(cgprog, "c");
@@ -428,6 +440,7 @@ void CRenderContextGL::VP_LoadBinary(const uint8* _pProgram, const CRC_VPFormat:
 	m_ProgramTree.f_Insert(pProg);
 
 	GLErr("VP_LoadBinary (Post)");
+#endif
 }
 
 

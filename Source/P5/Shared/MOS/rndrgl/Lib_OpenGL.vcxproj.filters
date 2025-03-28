@@ -22,6 +22,9 @@
     <Filter Include="Render">
       <UniqueIdentifier>{903d2de2-a672-432f-8867-2160b11e72aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GLAD">
+      <UniqueIdentifier>{c80ef753-09e7-41cf-84fb-9f8e618b2074}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCH\Pch.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="MRenderGL_VertexProgram.cpp">
       <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDK\glad\src\glad.c">
+      <Filter>GLAD</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

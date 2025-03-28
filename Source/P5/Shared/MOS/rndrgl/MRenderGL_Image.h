@@ -48,15 +48,6 @@ throw CCExceptionGLES(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
 //		M_BREAKPOINT;
 	}
 
-	#define GLCGErr(_functionname)									\
-	{																\
-		CGerror err = cgGetError();								\
-		if (err != CG_NO_ERROR)										\
-		{															\
-			MRTC_SystemInfo::OS_Trace((CStrF("GLCGERROR: 0x%x(%s) - ", err, aGLCGErrorMessages[err]) + _functionname + "\n").Str());\
-			GLESBreakPoint();											\
-		}															\
-	}
 
 	#define GLESErr(_functionname)									\
 	{																\
@@ -82,7 +73,6 @@ throw CCExceptionGLES(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
 	{\
 		/*glFlush();*/\
 		GLESErr(_functionname);\
-		GLCGErr(_functionname);\
 	}
 #endif
 

@@ -73,8 +73,8 @@ enum
 	CRCGL_RESIDENTVB						= 0x00020000,
 	CRCGL_EXT_TEXTURE_LOD_BIAS				= 0x00040000,
 	CRCGL_EXT_VERTEXPROGRAM					= 0x00080000,
-//	CRCGL_EXT_ATI_VERTEXARRAYOBJECT			= 0x00100000,
-//	CRCGL_EXT_ATI_VERTEXATTRIBARRAYOBJECT	= 0x00200000,
+	CRCGL_EXT_ATI_VERTEXARRAYOBJECT			= 0x00100000,
+	CRCGL_EXT_ATI_VERTEXATTRIBARRAYOBJECT	= 0x00200000,
 	CRCGL_ARB_TEXTURE_ENV_DOT3				= 0x00400000,
 	CRCGL_EXT_NV_REGCOMBINERS2				= 0x00800000,
 	CRCGL_EXT_FRAGMENTPROGRAM				= 0x01000000,
@@ -170,13 +170,13 @@ public:
 			return 0;
 		}
 	};
-	CCGFPProgram() : m_Hash(0), m_Program(0), m_ConstParam(0), m_bWrongNumberOfParameters(false) {}
+	CCGFPProgram() : m_Hash(0) {}//, m_Program(0), m_ConstParam(0), m_bWrongNumberOfParameters(false) {}
 
 	DAVLAligned_Link(CCGFPProgram, m_Link, const uint32, CTreeCompare);
 
 	uint32 m_Hash;
-	CGprogram m_Program;
-	CGparameter m_ConstParam;
+	//CGprogram m_Program;
+	//CGparameter m_ConstParam;
 	CStr m_Name;
 	bool	m_bWrongNumberOfParameters;
 };
@@ -197,13 +197,13 @@ public:
 		}
 	};
 
-	CCGVPProgram() : m_Program(0), m_Parameter(0) {}
+	CCGVPProgram() {}// m_Program(0), m_Parameter(0) {}
 
 	DAVLAligned_Link(CCGVPProgram, m_Link, const CRC_VPFormat::CProgramFormat, CTreeCompare);
 
 	CRC_VPFormat::CProgramFormat m_Format;
-	CGprogram	m_Program;
-	CGparameter	m_Parameter;	// constant parameter
+	//CGprogram	m_Program;
+	//CGparameter	m_Parameter;	// constant parameter
 };
 
 class CRCGL_VBInfo : public CReferenceCount, public TLinkSP<CRCGL_VBInfo>
@@ -269,17 +269,13 @@ class CRenderContextGL : public CRC_Core
 	friend class CDisplayContextGL;
 	MRTC_DECLARE;
 public:
-	static CRenderContextGL ms_This;
-	PSGLcontext*	m_pContext;
-	CGcontext	m_CGContext;
-
 	int m_bLog:1;
 	int m_bLogUsage:1;
 	int m_bLogVP:1;
 
 protected:
-
-/*	class CRCGL_VBInfo
+	/*
+	class CRCGL_VBInfo
 	{
 	public:
 		int m_nTri;
@@ -295,9 +291,12 @@ protected:
 		{
 			Clear();
 		}
-	};*/
+	};
+	*/
 
 	TArray<TPtr<CRCGL_VBInfo> > m_lspVB;
+
+	CDisplayContextGL* m_pDC;
 
 	virtual CDisplayContext *GetDC();
 	

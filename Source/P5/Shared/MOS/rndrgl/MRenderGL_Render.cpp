@@ -13,7 +13,7 @@
 
 void CRenderContextGL::Geometry_Color(CPixel32 _Col)
 {
-	if (_Col != CRenderContextGL::ms_This.m_GeomColor)
+	if (_Col != m_GeomColor)
 	{
 		m_VPConstRegisters[m_VP_iConstantColor] = CVec4Dfp32(fp32(_Col.GetR()) / 255.0f, fp32(_Col.GetG()) / 255.0f, fp32(_Col.GetB()) / 255.0f, fp32(_Col.GetA()) / 255.0f);
 		m_bUpdateVPConst = true;
@@ -48,7 +48,7 @@ void CRenderContextGL::Internal_RenderPolygon(int _nV, const CVec3Dfp32* _pV, co
 											  const CVec4Dfp32* _pSpec, //const fp32* _pFog,
 		const CVec4Dfp32* _pTV0, const CVec4Dfp32* _pTV1, const CVec4Dfp32* _pTV2, const CVec4Dfp32* _pTV3, int _Color)
 {
-	DebugBreak();
+	//DebugBreak();
 };
 
 void CRenderContextGL::Internal_IndxTriangles(uint16* _pIndices, int _nTriangles, const CRC_VertexBuffer& _VB, int _bAllUsed)
@@ -218,23 +218,23 @@ void CRenderContextGL::Render_VertexBuffer(int _VBID)
 //----------------------------------------------------------------
 void CRenderContextGL::Render_Wire(const CVec3Dfp32& _v0, const CVec3Dfp32& _v1, CPixel32 _Color)
 {
-	DebugBreak();
+	//DebugBreak();
 }
 
 void CRenderContextGL::Render_WireStrip(const CVec3Dfp32* _pV, const uint16* _piV, int _nVertices, CPixel32 _Color)
 {
-	DebugBreak();
+	//DebugBreak();
 }
 
 void CRenderContextGL::Render_WireLoop(const CVec3Dfp32* _pV, const uint16* _piV, int _nVertices, CPixel32 _Color)
 {
-	DebugBreak();
+	//DebugBreak();
 }
 
 
 bool CRenderContextGL::ReadDepthPixels(int _x, int _y, int _w, int _h, fp32* _pBuffer)
 {
-	DebugBreak();
+	//DebugBreak();
 	return false;
 }
 
@@ -259,7 +259,7 @@ void CRenderContextGL::RenderTarget_Clear(CRct _ClearRect, int _WhatToClear, CPi
 	if (_WhatToClear & CDC_CLEAR_ZBUFFER)
 	{
 		ClearFlags |= GL_DEPTH_BUFFER_BIT;
-		glClearDepthf(_ZBufferValue);
+		glClearDepth(_ZBufferValue);
 		glDepthMask(1);
 	}
 	if (_WhatToClear & CDC_CLEAR_STENCIL)
@@ -270,17 +270,18 @@ void CRenderContextGL::RenderTarget_Clear(CRct _ClearRect, int _WhatToClear, CPi
 	}
 	glClear(ClearFlags);
 
+#if 0
 	{
-		int w = CRenderContextGL::ms_This.m_CurrentAttrib.m_Scissor.m_Max[0] - CRenderContextGL::ms_This.m_CurrentAttrib.m_Scissor.m_Min[0];
-		int h = CRenderContextGL::ms_This.m_CurrentAttrib.m_Scissor.m_Max[1] - CRenderContextGL::ms_This.m_CurrentAttrib.m_Scissor.m_Min[1];
+		int w = m_CurrentAttrib.m_Scissor.m_Max[0] - m_CurrentAttrib.m_Scissor.m_Min[0];
+		int h = m_CurrentAttrib.m_Scissor.m_Max[1] - m_CurrentAttrib.m_Scissor.m_Min[1];
 		if (w < 0)
 			w = 0;
 		if (h < 0)
 			h = 0;
-		glScissor(CRenderContextGL::ms_This.m_CurrentAttrib.m_Scissor.m_Min[0], CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Height - CRenderContextGL::ms_This.m_CurrentAttrib.m_Scissor.m_Max[1], w, h);
+		glScissor(m_CurrentAttrib.m_Scissor.m_Min[0], m_CurrentBackbufferContext.m_Setup.m_Height - m_CurrentAttrib.m_Scissor.m_Max[1], w, h);
 
 		if (_WhatToClear & CDC_CLEAR_STENCIL)
-			glStencilMask(CRenderContextGL::ms_This.m_CurrentAttrib.m_StencilWriteMask);
+			glStencilMask(m_CurrentAttrib.m_StencilWriteMask);
 		if (_WhatToClear & CDC_CLEAR_COLOR)
 		{
 			int ColorMask = (Flags & CRC_FLAGS_COLORWRITE) ? 1 : 0;
@@ -292,12 +293,13 @@ void CRenderContextGL::RenderTarget_Clear(CRct _ClearRect, int _WhatToClear, CPi
 		if(!(Flags & CRC_FLAGS_SCISSOR))
 			glDisable(GL_SCISSOR_TEST);
 	}
+#endif
 }
 
 
 void CRenderContextGL::RenderTarget_Copy(CRct _SrcRect, CPnt _Dest, int _CopyType)
 {
-	DebugBreak();
+	//DebugBreak();
 }
 
 void CRenderContextGL::RenderTarget_CopyToTexture(int _TextureID, CRct _SrcRect, CPnt _Dest, bint _bContinueTiling, uint16 _Slice)
@@ -335,8 +337,8 @@ void CRenderContextGL::RenderTarget_CopyToTexture(int _TextureID, CRct _SrcRect,
 
 	int w = _SrcRect.GetWidth();
 	int h = _SrcRect.GetHeight();
-	int ww = CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Width;
-	int wh = CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Height;
+	int ww = m_pDC->m_CurrentBackbufferContext.m_Setup.m_Width;
+	int wh = m_pDC->m_CurrentBackbufferContext.m_Setup.m_Height;
 	Swap(_SrcRect.p0.y, _SrcRect.p1.y);
 	_SrcRect.p0.y = wh - _SrcRect.p0.y;
 	_SrcRect.p1.y = wh - _SrcRect.p1.y;

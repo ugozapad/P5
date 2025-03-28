@@ -49,7 +49,7 @@ void CRenderContextGL::OcclusionQuery_Begin(int _QueryID)
 	if (m_AttribChanged) Attrib_Update();
 	if (m_MatrixChanged) Matrix_Update();
 
-	glBeginQueryARB(GL_SAMPLES_PASSED_ARB, OCID);
+	glBeginQuery(GL_SAMPLES_PASSED, OCID);
 	GLESErr("OcclusionQuery_Begin");
 }
 
@@ -57,7 +57,7 @@ void CRenderContextGL::OcclusionQuery_End()
 {
 	// Fix: _QueryID not necessary
 
-	glEndQueryARB(GL_SAMPLES_PASSED_ARB);
+	glEndQuery(GL_SAMPLES_PASSED);
 	GLESErr("OcclusionQuery_End");
 }
 
@@ -67,11 +67,11 @@ int CRenderContextGL::OcclusionQuery_GetVisiblePixelCount(int _QueryID)
 	if (OCID < 0)
 		return 0;
 
-	if (!glIsQueryARB(OCID))
+	if (!glIsQuery(OCID))
 		return 0;
 
 	int bIsQueryAvail = 0;
-	glGetQueryivARB(OCID, GL_QUERY_RESULT_AVAILABLE_ARB, &bIsQueryAvail);
+	glGetQueryiv(OCID, GL_QUERY_RESULT_AVAILABLE, &bIsQueryAvail);
 	if (!bIsQueryAvail)
 	{
 		CMTime T;
@@ -79,7 +79,7 @@ int CRenderContextGL::OcclusionQuery_GetVisiblePixelCount(int _QueryID)
 
 		while(!bIsQueryAvail)
 		{
-			glGetQueryivARB(OCID, GL_QUERY_RESULT_AVAILABLE_ARB, &bIsQueryAvail);
+			glGetQueryiv(OCID, GL_QUERY_RESULT_AVAILABLE, &bIsQueryAvail);
 		}
 
 		TStop(T);
@@ -89,7 +89,7 @@ int CRenderContextGL::OcclusionQuery_GetVisiblePixelCount(int _QueryID)
 	}
 
 	int nPixels = 0;
-	glGetQueryivARB(OCID, GL_QUERY_RESULT_ARB, &nPixels);
+	glGetQueryiv(OCID, GL_QUERY_RESULT, &nPixels);
 //ConOut(CStrF("Query %d, VisPixels %d", _QueryID, nPixels));
 	return nPixels;
 }

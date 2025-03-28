@@ -63,7 +63,7 @@ void CImageGL::GetRAWData(CPnt pos, int bytecount, uint8* _pData)
 	bytecount /= m_Pixelsize;
 //	glnReadBuffer(GL_FRONT);
 //	GLErr("GetRawData");
-	glnReadPixels(pos.x, (m_Height-pos.y-1), bytecount, 1, GL_ABGR, GL_UNSIGNED_BYTE, _pData);
+	glnReadPixels(pos.x, (m_Height-pos.y-1), bytecount, 1, GL_BGRA, GL_UNSIGNED_BYTE, _pData);
 
 	GLErr("GetRawData");
 }

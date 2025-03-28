@@ -293,7 +293,7 @@ void* CDisplayContextSokol::Win32_GethWnd(int _iWnd /*= 0*/)
 	return nullptr;
 }
 
-CDisplayContext* gf_CreateDisplayContextSokol()
+CDisplayContext* gf_CreateDisplayContextSokolStatic()
 {
 	return (CDisplayContext*)MRTC_GetObjectManager()->CreateObject("CDisplayContextSokol");
 }

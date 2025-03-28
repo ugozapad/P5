@@ -520,7 +520,7 @@ void CRenderContextGL::FP_Bind( CRC_ExtAttributes_FragmentProgram20* _pExtAttr )
 
 		M_ASSERT(pProg, "!");
 	}
-
+#if 0
 	if(pProg != m_pCurrentFPProgram)
 	{
 		cgGLBindProgram(pProg->m_Program);
@@ -548,15 +548,18 @@ void CRenderContextGL::FP_Bind( CRC_ExtAttributes_FragmentProgram20* _pExtAttr )
 			pProg->m_bWrongNumberOfParameters = true;
 		}
 	}
+#endif
 }
 
 void CRenderContextGL::FP_Disable()
 {
+#if 0
 	cgGLDisableProfile(CG_PROFILE_SCE_FP_TYPEC);
 	GLErr("FP_Disable");
 
 	cgGLUnbindProgram(CG_PROFILE_SCE_FP_TYPEC);
 	GLErr("FP_Disable");
+#endif
 
 	m_pCurrentFPProgram = NULL;
 	m_nStateFP++;
@@ -568,6 +571,7 @@ void CRenderContextGL::FP_Init()
 
 void CRenderContextGL::FP_Load( const char* _pProgram, uint32 _Hash )
 {
+#if 0
 //	TArray<uint8> lData;
 //	lData = CDiskUtil::ReadFileToArray(_pProgram, CFILE_READ);
 //	CGprogram cgprog = cgCreateProgram(m_CGContext, CG_BINARY, (const char*)lData.GetBasePtr(), CG_PROFILE_SCE_FP_TYPEC, NULL, NULL);
@@ -586,6 +590,7 @@ void CRenderContextGL::FP_Load( const char* _pProgram, uint32 _Hash )
 	m_bDirtyFPCache = 1;
 
 	GLErr("FP_Load (Post)");
+#endif
 }
 
 int CRenderContextGL::FP_LoadFile(CStr _Name, int _ID)
@@ -646,6 +651,7 @@ void CRenderContextGL::FP_LoadCache()
 
 void CRenderContextGL::FP_LoadBinary(const uint8* _pProgram, uint32 _Hash)
 {
+#if 0
 	CGprogram cgprog = cgCreateProgram(m_CGContext, CG_BINARY, (const char*)_pProgram, CG_PROFILE_SCE_FP_TYPEC, NULL, NULL);
 	GLErr("FP_LoadBinary (cgCreateProgram)");
 	CGparameter constants = cgGetNamedParameter(cgprog, "c");
@@ -658,6 +664,7 @@ void CRenderContextGL::FP_LoadBinary(const uint8* _pProgram, uint32 _Hash)
 	m_FPProgramTree.f_Insert(pProg);
 
 	GLErr("FP_LoadBinary (Post)");
+#endif
 }
 
 void CRenderContextGL::FP_SaveCache()

@@ -211,7 +211,7 @@ static int IsTexGenEqual(const CRC_Attributes& _A0, const CRC_Attributes& _A1)
 class CGetNewRegsEmpty
 {
 public:
-	static int NewRegisterBatch(CVec4Dfp32* &_pRegisters, int &_nRegsNeeded)
+	static uint32 NewRegisterBatch(CVec4Dfp32* &_pRegisters, uint32&_nRegsNeeded)
 	{
 		return 256;
 	}
@@ -238,7 +238,9 @@ void CRenderContextGL::Attrib_SetVPPipeline(CRC_Attributes* _pAttrib)
 		}
 	}
 
-	CRC_VPFormat VPFormat(false, 8);
+	// RC TODO: VPFORMAT !!!
+	//CRC_VPFormat VPFormat(false, 8);
+	CRC_VPFormat VPFormat;
 	VPFormat.m_iConstant_Base = 0;	//TEMP
 
 	VPFormat.SetAttrib(_pAttrib, lpTexMat);
@@ -267,10 +269,11 @@ void CRenderContextGL::Attrib_SetVPPipeline(CRC_Attributes* _pAttrib)
 			if (lpTexMat[t]) 
 				VPFormat.SetTexMatrix(t);
 	}
-	int iRegFirst = CRC_VPFormat::GetFirstFreeRegister();
-	int iReg = iRegFirst;
+	uint32 iRegFirst = CRC_VPFormat::GetFirstFreeRegister();
+	uint32 iReg = iRegFirst;
 	{
-		iReg += VPFormat.SetRegisters_Init(&(m_VPConstRegisters[iReg]), 0, iReg);
+		//iReg += VPFormat.SetRegisters_Init(&(m_VPConstRegisters[iReg]), 0, iReg);
+		iReg += VPFormat.SetRegisters_Init(&(m_VPConstRegisters[iReg]), iReg);
 		if (Clip_IsEnabled())
 		{
 			CRC_ClipStackEntry& Clip = m_lClipStack[m_iClipStack];
@@ -453,11 +456,12 @@ void CRenderContextGL::Attrib_Set(CRC_Attributes* _pAttrib)
 	}
 
 	// -------------------------------------------------------------------
-	if (AttrChg & CRC_ATTRCHG_RASTERMODE)
-	{
-		Attrib_SetRasterMode(_pAttrib, _pAttrib->m_RasterMode);
-		m_CurrentAttrib.m_RasterMode = _pAttrib->m_RasterMode;
-	}
+	// RC TODO: RASTER MODE REMOVED !!!
+	//if (AttrChg & CRC_ATTRCHG_RASTERMODE)
+	//{
+	//	Attrib_SetRasterMode(_pAttrib, _pAttrib->m_RasterMode);
+	//	m_CurrentAttrib.m_RasterMode = _pAttrib->m_RasterMode;
+	//}
 
 	int Changed = (m_CurrentAttrib.m_Flags ^ _pAttrib->m_Flags);
 
@@ -580,7 +584,7 @@ void CRenderContextGL::Attrib_Set(CRC_Attributes* _pAttrib)
 
 			if (Changed & CRC_FLAGS_LIGHTING)
 			{
-				DebugBreak();
+			//	DebugBreak();
 			}
 
 			if (Changed & CRC_FLAGS_SCISSOR)
@@ -708,6 +712,8 @@ void CRenderContextGL::Attrib_Set(CRC_Attributes* _pAttrib)
 			Attrib_SetStencil( _pAttrib );
 		}
 
+		// RC TODO: SCISSORS !!!
+#if 0
 		if (_pAttrib->m_Flags & CRC_FLAGS_SCISSOR)
 		{
 			m_CurrentAttrib.m_Scissor = _pAttrib->m_Scissor;
@@ -720,6 +726,7 @@ void CRenderContextGL::Attrib_Set(CRC_Attributes* _pAttrib)
 			glnScissor(_pAttrib->m_Scissor.m_Min[0], CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Height - _pAttrib->m_Scissor.m_Max[1], w, h);
 			GLErr("Attrib_Set (Scissor)");
 		}
+#endif
 	}
 
 	// Set texture
@@ -938,7 +945,8 @@ void CRenderContextGL::Attrib_SetAbsolute(CRC_Attributes* _pAttrib)
 
 	m_nAttribSet++;
 
-	Attrib_SetRasterMode(_pAttrib, _pAttrib->m_RasterMode);
+	// RC TODO: RASTER !!!
+	//Attrib_SetRasterMode(_pAttrib, _pAttrib->m_RasterMode);
 
 	// Flags
 	int f = _pAttrib->m_Flags;
@@ -1026,6 +1034,8 @@ void CRenderContextGL::Attrib_SetAbsolute(CRC_Attributes* _pAttrib)
 	}
 
 	// Scissor
+	// RC TODO: !!!
+#if 0
 	if (f & CRC_FLAGS_SCISSOR)
 	{
 		int w = _pAttrib->m_Scissor.m_Max[0] - _pAttrib->m_Scissor.m_Min[0];
@@ -1040,6 +1050,7 @@ void CRenderContextGL::Attrib_SetAbsolute(CRC_Attributes* _pAttrib)
 	}
 	else
 		glnDisable(GL_SCISSOR_TEST);
+#endif
 
 	// Stencil
 	if (!(m_Mode.m_Flags & CRC_GLOBALFLAGS_WIRE))

@@ -4,8 +4,8 @@
 #include "MRenderGL_Context.h"
 #include "MRenderGL_Def.h"
 
-#define IDINFO_CUBEMAP DBit(1)
-#define IDINFO_BUILT DBit(2)
+#define IDINFO_CUBEMAP M_Bit(1)
+#define IDINFO_BUILT M_Bit(2)
 
 class CTextureGL
 {
@@ -139,17 +139,17 @@ bool CRenderContextGL::LoadTexture(int _GLImageTarget, int _TextureID, CTextureC
 			{
 			case IMAGE_FORMAT_BGR5: InternalFormat = GL_RGB5; GLFmt = GL_BGR; Size = GL_UNSIGNED_SHORT; break;
 			case IMAGE_FORMAT_BGR8: InternalFormat = GL_RGB8; GLFmt = GL_BGR; Size = GL_UNSIGNED_BYTE; break;
-			case IMAGE_FORMAT_BGRA8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
-			case IMAGE_FORMAT_BGRX8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+			//case IMAGE_FORMAT_BGRA8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+			//case IMAGE_FORMAT_BGRX8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_RGBA8: InternalFormat = GL_RGBA8; GLFmt = GL_RGBA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_A8: InternalFormat = GL_ALPHA8; GLFmt = GL_ALPHA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_I8A8: InternalFormat = GL_LUMINANCE8_ALPHA8; GLFmt = GL_LUMINANCE_ALPHA; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_I8: InternalFormat = GL_LUMINANCE8; GLFmt = GL_LUMINANCE; Size = GL_UNSIGNED_BYTE; break;
 			case IMAGE_FORMAT_RGB16: InternalFormat = GL_RGB16; GLFmt = GL_BGR; Size = GL_UNSIGNED_SHORT; break;
 			case IMAGE_FORMAT_RGBA16: InternalFormat = GL_RGBA16; GLFmt = GL_BGRA; Size = GL_UNSIGNED_SHORT; break;
-			case IMAGE_FORMAT_RGBA16_F: InternalFormat = GL_RGBA16F_ARB; GLFmt = GL_BGRA; Size = GL_UNSIGNED_SHORT; break;
-			case IMAGE_FORMAT_RGB32_F: InternalFormat = GL_RGB32F_ARB; GLFmt = GL_BGR; Size = GL_FLOAT; break;
-			case IMAGE_FORMAT_RGBA32_F: InternalFormat = GL_RGBA32F_ARB; GLFmt = GL_BGRA; Size = GL_FLOAT; break;
+			//case IMAGE_FORMAT_RGBA16_F: InternalFormat = GL_RGBA16F_ARB; GLFmt = GL_BGRA; Size = GL_UNSIGNED_SHORT; break;
+			//case IMAGE_FORMAT_RGB32_F: InternalFormat = GL_RGB32F_ARB; GLFmt = GL_BGR; Size = GL_FLOAT; break;
+			//case IMAGE_FORMAT_RGBA32_F: InternalFormat = GL_RGBA32F_ARB; GLFmt = GL_BGRA; Size = GL_FLOAT; break;
 			case IMAGE_FORMAT_BGRA4: InternalFormat = GL_RGBA4; GLFmt = GL_RGBA; Size = GL_UNSIGNED_BYTE; break;
 			default: Error("CRenderContextGL::LoadTexture", CStrF("Unsupported texture format: %d", Fmt)); break;
 			}
@@ -183,27 +183,27 @@ bool CRenderContextGL::LoadTextureRender(int _GLImageTarget, int _TextureID, CTe
 	{
 	case IMAGE_FORMAT_ZBUFFER: InternalFormat = GL_DEPTH_COMPONENT24; GLFmt = GL_DEPTH_COMPONENT; Size = GL_UNSIGNED_SHORT; break;
 	case IMAGE_FORMAT_BGR8: InternalFormat = GL_RGB8; GLFmt = GL_BGR; Size = GL_UNSIGNED_BYTE; break;
-	case IMAGE_FORMAT_BGRA8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
-	case IMAGE_FORMAT_BGRX8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+	//case IMAGE_FORMAT_BGRA8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+	//case IMAGE_FORMAT_BGRX8: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_RGBA8: InternalFormat = GL_RGBA8; GLFmt = GL_RGBA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_A8: InternalFormat = GL_ALPHA8; GLFmt = GL_ALPHA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_I8A8: InternalFormat = GL_LUMINANCE8_ALPHA8; GLFmt = GL_LUMINANCE_ALPHA; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_I8: InternalFormat = GL_LUMINANCE8; GLFmt = GL_LUMINANCE; Size = GL_UNSIGNED_BYTE; break;
 	case IMAGE_FORMAT_RGB16: InternalFormat = GL_RGB16; GLFmt = GL_BGR; Size = GL_UNSIGNED_SHORT; break;
 	case IMAGE_FORMAT_RGBA16: InternalFormat = GL_RGBA16; GLFmt = GL_BGRA; Size = GL_UNSIGNED_SHORT; break;
-	case IMAGE_FORMAT_RGBA16_F: InternalFormat = GL_RGBA16F_ARB; GLFmt = GL_BGRA; Size = GL_UNSIGNED_SHORT; break;
-	case IMAGE_FORMAT_RGB32_F: InternalFormat = GL_RGB32F_ARB; GLFmt = GL_BGR; Size = GL_FLOAT; break;
-	case IMAGE_FORMAT_RGBA32_F: InternalFormat = GL_RGBA32F_ARB; GLFmt = GL_BGRA; Size = GL_FLOAT; break;
+	//case IMAGE_FORMAT_RGBA16_F: InternalFormat = GL_RGBA16F_ARB; GLFmt = GL_BGRA; Size = GL_UNSIGNED_SHORT; break;
+	//case IMAGE_FORMAT_RGB32_F: InternalFormat = GL_RGB32F_ARB; GLFmt = GL_BGR; Size = GL_FLOAT; break;
+	//case IMAGE_FORMAT_RGBA32_F: InternalFormat = GL_RGBA32F_ARB; GLFmt = GL_BGRA; Size = GL_FLOAT; break;
 	case IMAGE_FORMAT_BGRA4: InternalFormat = GL_RGBA4; GLFmt = GL_RGBA; Size = GL_UNSIGNED_BYTE; break;
 
-	default: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
-//	default: Error("CRenderContextGL::LoadTextureRender", CStrF("Unsupported texture format: %d", Fmt)); break;
+	//default: InternalFormat = GL_ARGB_SCE; GLFmt = GL_BGRA; Size = GL_UNSIGNED_BYTE; break;
+	default: Error("CRenderContextGL::LoadTextureRender", CStrF("Unsupported texture format: %d", Fmt)); break;
 	}
 
 	int w = _Width;
 	int h = _Height;
-	int ww = CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Width;
-	int wh = CDisplayContextGL::ms_This.m_CurrentBackbufferContext.m_Setup.m_Height;
+	int ww = m_pDC->m_CurrentBackbufferContext.m_Setup.m_Width;
+	int wh = m_pDC->m_CurrentBackbufferContext.m_Setup.m_Height;
 
 	if(_TxtDesc.GetFormat() == IMAGE_FORMAT_ZBUFFER)
 	{
@@ -307,7 +307,7 @@ void CRenderContextGL::GL_BuildTexture2D(int _RCID, int _TextureID, int _GLObjec
 	int TxtFmt = TxtDesc.GetFormat();
 	
 	int iPicMip = MinMT(MaxMT(0, Properties.m_iPicMipGroup), CRC_MAXPICMIPS - 1);
-	int PicMip = (PropFlags & CTC_TEXTUREFLAGS_NOPICMIP) ? 0 : MaxMT(0, CRenderContextGL::ms_This.m_lPicMips[iPicMip] + Properties.GetPicMipOffset());
+	int PicMip = (PropFlags & CTC_TEXTUREFLAGS_NOPICMIP) ? 0 : MaxMT(0, m_lPicMips[iPicMip] + Properties.GetPicMipOffset());
 
 	w = Max(w >> PicMip, 1);
 	h = Max(h >> PicMip, 1);
@@ -1023,7 +1023,7 @@ void CRenderContextGL::GL_UpdateAllTextureParameters()
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
-	CRenderContextGL::ms_This.m_CurrentAttrib.m_TextureID[0] = 0;
+	m_CurrentAttrib.m_TextureID[0] = 0;
 	GLErr("GL_UpdateAllTextureParameters");
 }
 
@@ -1172,7 +1172,7 @@ void CRenderContextGL::GL_SetTexture(int _TextureID, int _iTexChannel, bool _bPr
 		GLErr("GL_SetTexture (glSelectTexture)");
 	}
 
-	CRC_IDInfo* pIDInfoCurrent = &m_spTCIDInfo->m_pTCIDInfo[CRenderContextGL::ms_This.m_CurrentAttrib.m_TextureID[_iTexChannel]];
+	CRC_IDInfo* pIDInfoCurrent = &m_spTCIDInfo->m_pTCIDInfo[m_CurrentAttrib.m_TextureID[_iTexChannel]];
 	CRC_IDInfo* pIDInfoNew = &m_spTCIDInfo->m_pTCIDInfo[_TextureID];
 	int OldTarget = (pIDInfoCurrent->m_Fresh & IDINFO_CUBEMAP) ? GL_TEXTURE_CUBE_MAP : GL_TEXTURE_2D;
 	int NewTarget = (pIDInfoNew->m_Fresh & IDINFO_CUBEMAP) ? GL_TEXTURE_CUBE_MAP : GL_TEXTURE_2D;
@@ -1207,7 +1207,7 @@ void CRenderContextGL::GL_SetTexture(int _TextureID, int _iTexChannel, bool _bPr
 			else
 			{
 				M_TRACEALWAYS("GL: Unbuilt texture %s (%d)\n", m_pTC->GetName(_TextureID).Str(), _TextureID );
-				CRenderContextGL::ms_This.m_CurrentAttrib.m_TextureID[_iTexChannel] = _TextureID;
+				m_CurrentAttrib.m_TextureID[_iTexChannel] = _TextureID;
 
 				GL_BuildTexture(_TextureID, _TextureID, Properties);
 

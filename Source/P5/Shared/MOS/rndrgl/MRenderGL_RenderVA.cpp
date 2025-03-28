@@ -95,17 +95,17 @@ void CRenderContextGL::VB_Create(int _VBID)
 //----------------------------------------------------------------
 void CRenderContextGL::Internal_VA_Disable()
 {
-	cgGLDisableAttrib(GL_ATTR_POSITION);
-	cgGLDisableAttrib(GL_ATTR_BLENDWEIGHT);
-	cgGLDisableAttrib(GL_ATTR_NORMAL);
-	cgGLDisableAttrib(GL_ATTR_COLOR0);
-	cgGLDisableAttrib(GL_ATTR_COLOR1);		// Also MatrixIndex2
-	cgGLDisableAttrib(GL_ATTR_FOGCOORD);	// Also MatrixWeight2
-	cgGLDisableAttrib(GL_ATTR_PSIZE);
-	cgGLDisableAttrib(GL_ATTR_BLENDINDICES);
+	//cgGLDisableAttrib(GL_ATTR_POSITION);
+	//cgGLDisableAttrib(GL_ATTR_BLENDWEIGHT);
+	//cgGLDisableAttrib(GL_ATTR_NORMAL);
+	//cgGLDisableAttrib(GL_ATTR_COLOR0);
+	//cgGLDisableAttrib(GL_ATTR_COLOR1);		// Also MatrixIndex2
+	//cgGLDisableAttrib(GL_ATTR_FOGCOORD);	// Also MatrixWeight2
+	//cgGLDisableAttrib(GL_ATTR_PSIZE);
+	//cgGLDisableAttrib(GL_ATTR_BLENDINDICES);
 	for(int i = 0; i < 8; i++)
 	{
-		cgGLDisableAttrib(GL_ATTR_TEXCOORD0 + i);
+		//cgGLDisableAttrib(GL_ATTR_TEXCOORD0 + i);
 	}
 
 	m_VAEnable = 0;
@@ -124,11 +124,11 @@ void CRenderContextGL::Internal_VA_NormalPtr(const CVec3Dfp32* _pN, int _Stride)
 	// Normal
 	if (_pN)
 	{
-		cgGLAttribPointer(GL_ATTR_NORMAL, 3, GL_FLOAT, GL_TRUE, _Stride, _pN);
+		//cgGLAttribPointer(GL_ATTR_NORMAL, 3, GL_FLOAT, GL_TRUE, _Stride, _pN);
 		GLErr("Internal_VA_NormalPtr (cgGLAttribPointer)");
 		if (!(m_VAEnable & CRCGL_VA_NORMAL))
 		{
-			cgGLEnableAttrib(GL_ATTR_NORMAL);
+			//cgGLEnableAttrib(GL_ATTR_NORMAL);
 			GLErr("Internal_VA_NormalPtr (cgGLEnableAttrib)");
 			m_VAEnable |= CRCGL_VA_NORMAL;
 		}
@@ -139,7 +139,7 @@ void CRenderContextGL::Internal_VA_NormalPtr(const CVec3Dfp32* _pN, int _Stride)
 	else
 		if (m_VAEnable & CRCGL_VA_NORMAL)
 		{
-			cgGLDisableAttrib(GL_ATTR_NORMAL);
+			//cgGLDisableAttrib(GL_ATTR_NORMAL);
 			GLErr("Internal_VA_NormalPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~CRCGL_VA_NORMAL;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -153,11 +153,11 @@ void CRenderContextGL::Internal_VA_ColorPtr(const CPixel32* _pCol, int _Stride)
 	// Color
 	if (_pCol)
 	{
-		cgGLAttribPointer(GL_ATTR_COLOR0, 4, GL_UNSIGNED_BYTE, GL_TRUE, _Stride, _pCol);
+	//	cgGLAttribPointer(GL_ATTR_COLOR0, 4, GL_UNSIGNED_BYTE, GL_TRUE, _Stride, _pCol);
 		GLErr("Internal_VA_ColorPtr (cgGLAttribPointer)");
 		if (!(m_VAEnable & CRCGL_VA_COLOR))
 		{
-			cgGLEnableAttrib(GL_ATTR_COLOR0);
+			//cgGLEnableAttrib(GL_ATTR_COLOR0);
 			GLErr("Internal_VA_ColorPtr (cgGLEnableAttrib)");
 			m_VAEnable |= CRCGL_VA_COLOR;
 		}
@@ -168,7 +168,7 @@ void CRenderContextGL::Internal_VA_ColorPtr(const CPixel32* _pCol, int _Stride)
 	else
 		if (m_VAEnable & CRCGL_VA_COLOR)
 		{
-			cgGLDisableAttrib(GL_ATTR_COLOR0);
+			//cgGLDisableAttrib(GL_ATTR_COLOR0);
 			GLErr("Internal_VA_ColorPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~CRCGL_VA_COLOR;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -244,11 +244,11 @@ void CRenderContextGL::Internal_VA_TexCoordPtr(const fp32* _pTV, int _nComp, int
 	int VAMask = CRCGL_VA_TEXCOORD0 << _iTxt;
 	if(_pTV)
 	{
-		cgGLAttribPointer(GL_ATTR_TEXCOORD0 + _iTxt, _nComp, GL_FLOAT, GL_FALSE, _Stride, _pTV);
+		//cgGLAttribPointer(GL_ATTR_TEXCOORD0 + _iTxt, _nComp, GL_FLOAT, GL_FALSE, _Stride, _pTV);
 		GLErr("Internal_VA_TexCoordPtr (cgGLAttribPointer)");
 		if(!(m_VAEnable & VAMask))
 		{
-			cgGLEnableAttrib(GL_ATTR_TEXCOORD0 + _iTxt);
+			//cgGLEnableAttrib(GL_ATTR_TEXCOORD0 + _iTxt);
 			GLErr("Internal_VA_TexCoordPtr (cgGLEnableAttrib)");
 			m_VAEnable |= VAMask;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -260,7 +260,7 @@ void CRenderContextGL::Internal_VA_TexCoordPtr(const fp32* _pTV, int _nComp, int
 	{
 		if(m_VAEnable & VAMask)
 		{
-			cgGLDisableAttrib(GL_ATTR_TEXCOORD0 + _iTxt);
+			//cgGLDisableAttrib(GL_ATTR_TEXCOORD0 + _iTxt);
 			GLErr("Internal_VA_TexCoordPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~VAMask;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -277,11 +277,11 @@ void CRenderContextGL::Internal_VA_MatrixIndexPtr(const uint32* _piMatrices, int
 	if(_piMatrices)
 	{
 		//UNSUPPORTED
-		cgGLAttribPointer(GL_ATTR_BLENDINDICES, 4, GL_UNSIGNED_BYTE, GL_TRUE, _Stride, _piMatrices);
+		//cgGLAttribPointer(GL_ATTR_BLENDINDICES, 4, GL_UNSIGNED_BYTE, GL_TRUE, _Stride, _piMatrices);
 		GLErr("Internal_VA_MatrixIndexPtr (cgGLAttribPointer)");
 		if(!(m_VAEnable & CRCGL_VA_MATRIXINDEX))
 		{
-			cgGLEnableAttrib(GL_ATTR_BLENDINDICES);
+			//cgGLEnableAttrib(GL_ATTR_BLENDINDICES);
 			GLErr("Internal_VA_MatrixIndexPtr (cgGLEnableAttrib)");
 			m_VAEnable |= CRCGL_VA_MATRIXINDEX;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -293,7 +293,7 @@ void CRenderContextGL::Internal_VA_MatrixIndexPtr(const uint32* _piMatrices, int
 	{
 		if(m_VAEnable & CRCGL_VA_MATRIXINDEX)
 		{
-			cgGLDisableAttrib(GL_ATTR_BLENDINDICES);
+			//cgGLDisableAttrib(GL_ATTR_BLENDINDICES);
 			GLErr("Internal_VA_MatrixIndexPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~CRCGL_VA_MATRIXINDEX;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -305,11 +305,11 @@ void CRenderContextGL::Internal_VA_MatrixIndexPtr(const uint32* _piMatrices, int
 	if(_piMatrices && nComp1 > 0)
 	{
 		//UNSUPPORTED
-		cgGLAttribPointer(GL_ATTR_BLENDINDICES2, 4, GL_UNSIGNED_BYTE, GL_TRUE, _Stride, _piMatrices + 1);
+		//cgGLAttribPointer(GL_ATTR_BLENDINDICES2, 4, GL_UNSIGNED_BYTE, GL_TRUE, _Stride, _piMatrices + 1);
 		GLErr("Internal_VA_MatrixIndexPtr (cgGLAttribPointer)");
 		if(!(m_VAEnable & CRCGL_VA_MATRIXINDEX2))
 		{
-			cgGLEnableAttrib(GL_ATTR_BLENDINDICES2);
+			//cgGLEnableAttrib(GL_ATTR_BLENDINDICES2);
 			GLErr("Internal_VA_MatrixIndexPtr (cgGLEnableAttrib)");
 			m_VAEnable |= CRCGL_VA_MATRIXINDEX2;
 		}
@@ -318,7 +318,7 @@ void CRenderContextGL::Internal_VA_MatrixIndexPtr(const uint32* _piMatrices, int
 	{
 		if(m_VAEnable & CRCGL_VA_MATRIXINDEX2)
 		{
-			cgGLDisableAttrib(GL_ATTR_BLENDINDICES2);
+			//cgGLDisableAttrib(GL_ATTR_BLENDINDICES2);
 			GLErr("Internal_VA_MatrixIndexPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~CRCGL_VA_MATRIXINDEX2;
 		}
@@ -332,11 +332,11 @@ void CRenderContextGL::Internal_VA_MatrixWeightPtr(const fp32* _pMatrixWeights, 
 	if(_pMatrixWeights)
 	{
 		//UNSUPPORTED
-		cgGLAttribPointer(GL_ATTR_BLENDWEIGHT, nComp0, GL_FLOAT, GL_FALSE, _Stride, _pMatrixWeights);
+		//cgGLAttribPointer(GL_ATTR_BLENDWEIGHT, nComp0, GL_FLOAT, GL_FALSE, _Stride, _pMatrixWeights);
 		GLErr("Internal_VA_MatrixWeightPtr (cgGLAttribPointer)");
 		if(!(m_VAEnable & CRCGL_VA_MATRIXWEIGHT))
 		{
-			cgGLEnableAttrib(GL_ATTR_BLENDWEIGHT);
+			//cgGLEnableAttrib(GL_ATTR_BLENDWEIGHT);
 			GLErr("Internal_VA_MatrixWeightPtr (cgGLEnableAttrib)");
 			m_VAEnable |= CRCGL_VA_MATRIXWEIGHT;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -348,7 +348,7 @@ void CRenderContextGL::Internal_VA_MatrixWeightPtr(const fp32* _pMatrixWeights, 
 	{
 		if(m_VAEnable & CRCGL_VA_MATRIXWEIGHT)
 		{
-			cgGLDisableAttrib(GL_ATTR_BLENDWEIGHT);
+			//cgGLDisableAttrib(GL_ATTR_BLENDWEIGHT);
 			GLErr("Internal_VA_MatrixWeightPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~CRCGL_VA_MATRIXWEIGHT;
 #ifdef CRCGL_VADEBUG_ENABLE
@@ -360,11 +360,11 @@ void CRenderContextGL::Internal_VA_MatrixWeightPtr(const fp32* _pMatrixWeights, 
 	if(_pMatrixWeights && nComp1 > 0)
 	{
 		//UNSUPPORTED
-		cgGLAttribPointer(GL_ATTR_BLENDWEIGHT2, nComp1, GL_FLOAT, GL_FALSE, _Stride, _pMatrixWeights + 4);
+		//cgGLAttribPointer(GL_ATTR_BLENDWEIGHT2, nComp1, GL_FLOAT, GL_FALSE, _Stride, _pMatrixWeights + 4);
 		GLErr("Internal_VA_MatrixWeightPtr (cgGLAttribPointer)");
 		if(!(m_VAEnable & CRCGL_VA_MATRIXWEIGHT2))
 		{
-			cgGLEnableAttrib(GL_ATTR_BLENDWEIGHT2);
+			//cgGLEnableAttrib(GL_ATTR_BLENDWEIGHT2);
 			GLErr("Internal_VA_MatrixWeightPtr (cgGLEnableAttrib)");
 			m_VAEnable |= CRCGL_VA_MATRIXWEIGHT2;
 		}
@@ -373,7 +373,7 @@ void CRenderContextGL::Internal_VA_MatrixWeightPtr(const fp32* _pMatrixWeights, 
 	{
 		if(m_VAEnable & CRCGL_VA_MATRIXWEIGHT2)
 		{
-			cgGLDisableAttrib(GL_ATTR_BLENDWEIGHT2);
+			//cgGLDisableAttrib(GL_ATTR_BLENDWEIGHT2);
 			GLErr("Internal_VA_MatrixWeightPtr (cgGLDisableAttrib)");
 			m_VAEnable &= ~CRCGL_VA_MATRIXWEIGHT2;
 		}
@@ -387,12 +387,12 @@ void CRenderContextGL::Internal_VA_VertexPtr(const CVec3Dfp32* _pV, int _Stride)
 	// Vertex
 	m_nStateVAAddress++;
 
-	cgGLAttribPointer(GL_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, _Stride, _pV);
+//	cgGLAttribPointer(GL_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, _Stride, _pV);
 	GLErr("Internal_VA_VertexPtr (cgGLAttribPointer)");
 	if (!(m_VAEnable & CRCGL_VA_VERTEX))
 	{
 		m_nStateVAEnable++;
-		cgGLEnableAttrib(GL_ATTR_POSITION);
+	//	cgGLEnableAttrib(GL_ATTR_POSITION);
 
 		GLErr("Internal_VA_VertexPtr (cgGLEnableAttrib)");
 		m_VAEnable |= CRCGL_VA_VERTEX;
