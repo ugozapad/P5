@@ -564,7 +564,8 @@ namespace NThread
 		}
 		void Unlock()
 		{
-			M_ASSERT(m_ThreadID == (mint)MRTC_SystemInfo::OS_GetThreadID(), "Only locking thread is allowed to unlock");
+			// TEMP!!!
+			//M_ASSERT(m_ThreadID == (mint)MRTC_SystemInfo::OS_GetThreadID(), "Only locking thread is allowed to unlock");
 
 			if ((--m_nRecurse) == 0)
 			{

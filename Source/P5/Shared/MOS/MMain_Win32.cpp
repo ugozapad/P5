@@ -43,6 +43,8 @@ int Win32_Main(void* this_inst, void* prev_inst, char* cmdline, int cmdshow, con
 		{
 			ILogFile* pLog = TDynamicCast<ILogFile>((CReferenceCount*)spObj);
 			if (!pLog) Error_static("Win32_Main", "Unable to create logfile object.");
+
+			pLog->Create("SBZ");
 		}
 	}
 	M_CATCH(

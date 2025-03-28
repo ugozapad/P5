@@ -1236,6 +1236,7 @@ void CSystemWin32::DC_InitList()
 	m_lspDC.Add(MNew4(CDisplayContextDesc, "", "Xbox", "Xbox DisplayContext", "CDisplayContextXbox") );
 #else
 	m_lspDC.Add(MNew4(CDisplayContextDesc, "RndrGL.DLL", "OpenGL", "OpenGL DisplayContext", "CDisplayContextGL") );
+	m_lspDC.Add(MNew4(CDisplayContextDesc, "RndrSokol.DLL", "Sokol", "Sokol DisplayContext", "CDisplayContextSokol") );
 	m_lspDC.Add(MNew4(CDisplayContextDesc, "", "XDF", "XDF DisplayContext", "CDisplayContextXDF") );
 	m_lspDC.Add(MNew4(CDisplayContextDesc, "", "NULL", "NULL DisplayContext", "CDisplayContextNULL") );
 #endif

@@ -3921,7 +3921,7 @@ void CXRealityApp::InitWorld()
 
 	
 	CStr Path = m_pSystem->GetEnvironment()->GetValue("DEFAULTGAMEPATH", "Content\\");
-	CStr Game = m_pSystem->GetEnvironment()->GetValue("DEFAULTGAME", "PB");
+	CStr Game = m_pSystem->GetEnvironment()->GetValue("DEFAULTGAME", "P5");
 
 	if(Game == "P6")
 		m_spGame = MNew(CGameContext_P6);

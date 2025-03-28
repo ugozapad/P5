@@ -3300,6 +3300,9 @@ void CXR_VBManager::Internal_Render(CXR_VBMScope* _pScope, CRenderContext* _pRC,
 #else
 			CXR_VertexBuffer* pVB = lpVB[i].m_pVB;
 #endif
+			if (!pVB)
+				return;
+
 			{
 				int i = iVB++;
 				if(i < _iVB)

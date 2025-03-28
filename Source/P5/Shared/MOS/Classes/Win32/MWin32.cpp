@@ -127,7 +127,7 @@ void CWin32_Window::Create(CRct _Pos, int _WS, int _ExWS, HWND _hWndParent)
 	{
 		_ExWS, 
 		m_WindowClassName,
-		NULL,
+		"Win32Window",
 		_WS,
 		_Pos.p0.x, _Pos.p0.y, _Pos.GetWidth(), _Pos.GetHeight(),
 		_hWndParent,				/* parent window */
