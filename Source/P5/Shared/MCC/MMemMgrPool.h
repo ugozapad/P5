@@ -593,7 +593,7 @@ namespace NIds
 			}
 
 			template <typename t_CParam0>
-			t_CData *New(t_CParam0 &_Param0)
+			t_CData *New(const t_CParam0 &_Param0)
 			{
 				void *pMem;
 				{
@@ -605,7 +605,7 @@ namespace NIds
 			}
 
 			template <typename t_CParam0, typename t_CParam1>
-			t_CData *New(t_CParam0 &_Param0, t_CParam1 &_Param1)
+			t_CData *New(const t_CParam0 &_Param0, const t_CParam1 &_Param1)
 			{
 				void *pMem;
 				{
@@ -617,7 +617,7 @@ namespace NIds
 			}
 
 			template <typename t_CParam0, typename t_CParam1, typename t_CParam2>
-			t_CData *New(t_CParam0 &_Param0, t_CParam1 &_Param1, t_CParam2 &_Param2)
+			t_CData *New(const t_CParam0 &_Param0, const t_CParam1 &_Param1, const t_CParam2 &_Param2)
 			{
 				void *pMem;
 				{
@@ -629,7 +629,7 @@ namespace NIds
 			}
 
 			template <typename t_CParam0, typename t_CParam1, typename t_CParam2, typename t_CParam3>
-			t_CData *New(t_CParam0 &_Param0, t_CParam1 &_Param1, t_CParam2 &_Param2, t_CParam3 &_Param3)
+			t_CData *New(const t_CParam0 &_Param0, const t_CParam1 &_Param1, const t_CParam2 &_Param2, const t_CParam3 &_Param3)
 			{
 				void *pMem;
 				{
@@ -637,19 +637,6 @@ namespace NIds
 					pMem = GetBlock();
 				}
 				t_CData *pObject = new(pMem) t_CData(_Param0, _Param1, _Param2, _Param3);
-				return pObject;
-			}
-
-			// MCC Changes: Added variadic templated new function
-			template <class... Args>
-			t_CData *New(Args&&... args)
-			{
-				void* pMem;
-				{
-					DLockTyped_FromTemplate(t_CLockType, m_Lock);
-					pMem = GetBlock();
-				}
-				t_CData* pObject = new(pMem) t_CData(std::forward<Args>(args)...);
 				return pObject;
 			}
 
