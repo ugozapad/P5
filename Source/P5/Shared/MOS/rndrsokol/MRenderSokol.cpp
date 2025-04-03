@@ -171,6 +171,294 @@ void CRenderContextSokol::Render_IndexedTriangles(uint16* _pTriVertIndices, int 
 	//m_nTriTotal += _nTriangles;
 }
 
+// Geometry and Vertex Buffer:
+
+void CRenderContextSokol::Geometry_PrecacheFlush()
+{
+	VB_DeleteAll();
+}
+
+void CRenderContextSokol::Geometry_PrecacheBegin(int _Count)
+{
+	ConOutL("(CRenderContextSokol::Geometry_PrecacheBegin) to precache %i", _Count);
+}
+
+void CRenderContextSokol::Geometry_PrecacheEnd()
+{
+}
+
+void CRenderContextSokol::Geometry_Precache(int _VBID)
+{
+	if (m_pVBCtx->VB_GetFlags(_VBID) & CXR_VBFLAGS_ALLOCATED)
+	{
+		CRC_VBIDInfo& IDInfo = m_lVBIDInfo[_VBID];
+		if (!(IDInfo.m_Fresh & 1))
+			VB_Create(_VBID);
+	}
+}
+
+// Vertex Buffer operations:
+
+void GetMinMax(const uint16* _pIndices, int _nCount, uint16& _Min, uint16& _Max)
+{
+	// Starting on a primitive restart index is not valid (i.e. first index cannot be 0xffff)
+	_Min = _pIndices[0];
+	_Max = _pIndices[0];
+	for (int i = 1; i < _nCount; i++)
+	{
+		uint16 Idx = _pIndices[i];
+		if (Idx != 0xffff)
+		{
+			_Min = Min(_Min, Idx);
+			_Max = Max(_Min, Idx);
+		}
+	}
+}
+
+static bool IsSinglePrimType(const uint16* _piIndices, int _nPrim)
+{
+	CRCPrimStreamIterator StreamIterate(_piIndices, _nPrim);
+	if (StreamIterate.IsValid())
+	{
+		int CurrentType = StreamIterate.GetCurrentType();
+		do
+		{
+			if (CurrentType != StreamIterate.GetCurrentType())
+				return false;
+		} while (StreamIterate.Next());
+	}
+
+	return true;
+}
+
+static void GetPrimStats(const uint16* _piIndices, int _nPrim, int& _PrimCount, int& _IndexCount)
+{
+	CRCPrimStreamIterator StreamIterate(_piIndices, _nPrim);
+	if (StreamIterate.IsValid())
+	{
+		int CurrentType = StreamIterate.GetCurrentType();
+		do
+		{
+			_PrimCount++;
+			const uint16* pPrim = StreamIterate.GetCurrentPointer();
+			_IndexCount += *pPrim;
+		} while (StreamIterate.Next());
+	}
+}
+
+static void AssemblePrimStream(CRC_SokolBuffer& _VBI, const uint16* _piIndices, int _nPrim)
+{
+	int nPrimCount = 0;
+	int nIndexCount = 0;
+	GetPrimStats(_piIndices, _nPrim, nPrimCount, nIndexCount);
+	_VBI.m_liPrim.SetLen(nIndexCount + nPrimCount - 1);
+
+	CRCPrimStreamIterator StreamIterate(_piIndices, _nPrim);
+	if (StreamIterate.IsValid())
+	{
+		int CurrentType = StreamIterate.GetCurrentType();
+		uint16* pStream = _VBI.m_liPrim.GetBasePtr();
+		int iP = 0;
+		int nTri = 0;
+		do
+		{
+			if (iP > 0)
+			{
+				// Insert prim restart token
+				pStream[iP++] = 0xffff;
+			}
+			const uint16* pPrim = StreamIterate.GetCurrentPointer();
+			int nV = *pPrim;
+			memcpy(pStream + iP, pPrim + 1, nV * 2);
+			iP += nV;
+			nTri += (nV - 2);
+		} while (StreamIterate.Next());
+		int nPrim = _VBI.m_liPrim.Len();
+		GetMinMax(_VBI.m_liPrim.GetBasePtr(), _VBI.m_liPrim.Len(), _VBI.m_Min, _VBI.m_Max);
+		_VBI.m_VB.m_PrimType = CurrentType;
+		_VBI.m_VB.m_nPrim = nPrim;
+		_VBI.m_nTri = nTri;
+	}
+}
+
+void CRenderContextSokol::VB_DeleteAll()
+{
+	for (int i = 0; i < m_lpVB.Len(); i++)
+	{
+		if (m_lpVB[i] != NULL)
+			VB_Delete(i);
+	}
+
+	m_lpVB.Destroy();
+}
+
+void CRenderContextSokol::VB_Delete(int _VBID)
+{
+	if (!m_lpVB.ValidPos(_VBID)) return;
+	if (!m_lpVB[_VBID]) return;
+
+	delete m_lpVB[_VBID];
+	m_lpVB[_VBID] = NULL;
+
+	CRC_VBIDInfo& IDInfo = m_lVBIDInfo[_VBID];
+	IDInfo.m_Fresh &= ~1;
+}
+
+void CRenderContextSokol::VB_Create(int _VBID)
+{
+	m_lpVB.SetLen(m_lVBIDInfo.Len());
+
+	// Make sure it isn't created already
+	VB_Delete(_VBID);
+	if (!m_lpVB[_VBID])
+		m_lpVB[_VBID] = DNew(CRC_SokolBuffer) CRC_SokolBuffer();
+	
+	CRC_SokolBuffer* pVB = m_lpVB[_VBID];
+	pVB->Clear();
+
+	CRC_BuildVertexBuffer VBB;
+	VBB.Clear();
+	m_pVBCtx->VB_Get(_VBID, VBB, VB_GETFLAGS_BUILD);
+
+	// Lets create a temporary buffer
+	CRC_VertexBuffer _VB;
+	TThinArray<uint8> Temp;
+	Temp.SetLen(VBB.CRC_VertexBuffer_GetSize());
+	VBB.CRC_VertexBuffer_ConvertTo(Temp.GetBasePtr(), _VB);
+
+	CRC_SokolBuffer& VBI = *pVB;
+
+	int iVtxCollectFunc;
+	int VtxStride;	// This might be bogus cause it will always add 4 for color, regardless of presence of a color array in _VB
+	{
+		// GL does not support 1D texcoords, patch patch
+		Geometry_GetVertexFormat(_VB, VBI.m_VtxFmt, VtxStride, iVtxCollectFunc);
+	}
+
+	int nV = _VB.m_nV;
+
+	// Calculate vertex size (stride)
+	int Stride = sizeof(CVec3Dfp32);
+
+	{
+		for (int i = 0; i < CRC_MAXTEXCOORDS; i++)
+			if (_VB.m_pTV[i]) Stride += sizeof(fp32) * _VB.m_nTVComp[i];
+	}
+
+	if (_VB.m_pN) Stride += sizeof(CVec3Dfp32);
+	if (_VB.m_pCol) Stride += sizeof(CPixel32);
+	if (_VB.m_pSpec) Stride += sizeof(CPixel32);
+	if (_VB.m_pMI) Stride += sizeof(uint32); // MIFIXME
+	if (_VB.m_pMW) Stride += sizeof(fp32) * _VB.m_nMWComp;
+
+	VBI.m_Stride = Stride;
+	int Size = Stride * nV;
+
+	void* pBuffer = M_ALLOC(Size);
+	if (!pBuffer)
+	{
+		VB_Delete(_VBID);
+		MemError("VB_CreateVB");
+		return;
+	}
+
+	{
+		uint8* pWrite = (uint8*)pBuffer;
+		CVec3Dfp32* pV = _VB.m_pV;
+		CVec3Dfp32* pN = _VB.m_pN;
+		fp32* lpTV[CRC_MAXTEXCOORDS];
+		memcpy(&lpTV, &_VB.m_pTV, sizeof(lpTV));
+
+		CPixel32* pCol = _VB.m_pCol;
+		CPixel32* pSpec = _VB.m_pSpec;
+		uint32* pMI = _VB.m_pMI;
+		fp32* pMW = _VB.m_pMW;
+
+		for (int iV = 0; iV < nV; iV++)
+		{
+			*((CVec3Dfp32*)pWrite) = *pV++; pWrite += sizeof(CVec3Dfp32);
+			if (pN) { *((CVec3Dfp32*)pWrite) = *pN++; pWrite += sizeof(CVec3Dfp32); }
+			if (pCol) { *((CPixel32*)pWrite) = *pCol++; pWrite += sizeof(CPixel32); }
+			if (pSpec) { *((CPixel32*)pWrite) = *pSpec++; pWrite += sizeof(CPixel32); }
+			for (int iTV = 0; iTV < CRC_MAXTEXCOORDS; iTV++)
+			{
+				if (lpTV[iTV])
+				{
+					for (int i = 0; i < _VB.m_nTVComp[iTV]; i++) { *((fp32*)pWrite) = *((lpTV[iTV])++); pWrite += sizeof(fp32); }
+				}
+			}
+			if (pMI) { *((uint32*)pWrite) = *pMI++; ::SwapLE((uint32&)*pWrite); pWrite += sizeof(uint32); }
+			if (pMW) { for (int i = 0; i < _VB.m_nMWComp; i++) { *((fp32*)pWrite) = *pMW++; pWrite += sizeof(fp32); } }
+		}
+
+		M_ASSERT((pWrite - (uint8*)pBuffer) == nV * Stride, "!");
+	}
+
+	pVB->Create(pBuffer, Size, CRC_BUFFER_TYPE_VERTEX, CRC_BUFFER_ACCESS_IMMUTABLE);
+
+	VBI.m_pVB = (void*)-1;	// Indicate it's not empty
+
+	// Copy primitives?
+	if (_VB.m_piPrim)
+	{
+		if (_VB.m_PrimType == CRC_RIP_STREAM)
+		{
+			if (IsSinglePrimType(_VB.m_piPrim, _VB.m_nPrim))
+			{
+				AssemblePrimStream(VBI, _VB.m_piPrim, _VB.m_nPrim);
+			}
+			else
+			{
+				// Convert to triangles
+				VBI.m_liPrim.Clear();
+
+				uint16 lTriIndices[1024 * 3];
+
+				CRCPrimStreamIterator StreamIterate(_VB.m_piPrim, _VB.m_nPrim);
+
+				while (StreamIterate.IsValid())
+				{
+					int nTriIndices = 1024 * 3;
+					bool bDone = Geometry_BuildTriangleListFromPrimitives(StreamIterate, lTriIndices, nTriIndices);
+					if (nTriIndices)
+					{
+						int iDst = VBI.m_liPrim.Len();
+						VBI.m_liPrim.SetLen(iDst + nTriIndices);
+						memcpy(&VBI.m_liPrim[iDst], lTriIndices, nTriIndices * 2);
+						//					Internal_VAIndxTriangles(lTriIndices, nTriIndices/3, 0);
+					}
+
+					if (bDone) break;
+				}
+
+				VBI.m_VB.m_nPrim = VBI.m_liPrim.Len() / 3;
+				VBI.m_VB.m_PrimType = CRC_RIP_TRIANGLES;
+				VBI.m_nTri = VBI.m_VB.m_nPrim;
+			}
+		}
+		else
+		{
+			VBI.m_liPrim.SetLen((_VB.m_PrimType == CRC_RIP_TRIANGLES) ? _VB.m_nPrim * 3 : _VB.m_nPrim);
+			VBI.m_VB.m_nPrim = _VB.m_nPrim;
+			VBI.m_VB.m_PrimType = _VB.m_PrimType;
+			VBI.m_nTri = _VB.m_nPrim;
+			memcpy(VBI.m_liPrim.GetBasePtr(), _VB.m_piPrim, VBI.m_liPrim.Len() * 2);
+		}
+
+		// Storage for Primitives
+		pVB->m_pIB = DNew(CRC_SokolBuffer) CRC_SokolBuffer();
+		pVB->m_pIB->Create(VBI.m_liPrim.GetBasePtr(), VBI.m_liPrim.ListSize(), CRC_BUFFER_TYPE_ELEMENT, CRC_BUFFER_ACCESS_IMMUTABLE);
+
+		GetMinMax(VBI.m_liPrim.GetBasePtr(), VBI.m_liPrim.Len(), VBI.m_Min, VBI.m_Max);
+		VBI.m_liPrim.Destroy();
+	}
+
+	m_pVBCtx->VB_Release(_VBID);
+
+	CRC_VBIDInfo& IDInfo = m_lVBIDInfo[_VBID];
+	IDInfo.m_Fresh |= 1;
+}
+
 // Console commands:
 
 void CRenderContextSokol::Con_ChangePicMip(int _Level, int _iPicMip)
@@ -281,23 +569,23 @@ void CRenderContextSokol::Internal_VA_SetArrays(const CRC_VertexBuffer& _VB)
 
 /*************************************************************************************************\
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-| CRC_VertexBufferSokol
+| CRC_SokolBuffer
 |__________________________________________________________________________________________________
 \*************************************************************************************************/
-CVertexBufferSokol::CVertexBufferSokol()
+CRC_SokolBuffer::CRC_SokolBuffer()
 {
-	memset(&m_VertexBuffer, 0, sizeof(m_VertexBuffer));
-	m_Access = 0;
+	Clear();
 }
 
-CVertexBufferSokol::~CVertexBufferSokol()
+CRC_SokolBuffer::~CRC_SokolBuffer()
 {
 	Destroy();
 }
 
-void CVertexBufferSokol::Create(void* _pData, uint _Size, uint _Access)
+void CRC_SokolBuffer::Create(void* _pData, uint _Size, uint _Type, uint _Access)
 {
 	m_Access = _Access;
+	m_Type = _Type;
 
 	// fill buffer data structure
 	sg_range BufferRange;
@@ -308,11 +596,17 @@ void CVertexBufferSokol::Create(void* _pData, uint _Size, uint _Access)
 	// describe buffer
 	sg_buffer_desc BufferDesc;
 	memset(&BufferDesc, 0, sizeof(BufferDesc));
-	BufferDesc.type = SG_BUFFERTYPE_INDEXBUFFER;
 
-	if (m_Access == CRC_SOKOL_BUFFER_ACCESS_IMMUTABLE)
+	if (m_Access == CRC_BUFFER_TYPE_VERTEX)
+		BufferDesc.type = SG_BUFFERTYPE_VERTEXBUFFER;
+	else if (m_Access == CRC_BUFFER_TYPE_ELEMENT)
+		BufferDesc.type = SG_BUFFERTYPE_INDEXBUFFER;
+	else if (m_Access == CRC_BUFFER_TYPE_UNIFORM)
+		BufferDesc.type = SG_BUFFERTYPE_STORAGEBUFFER;
+
+	if (m_Access == CRC_BUFFER_ACCESS_IMMUTABLE)
 		BufferDesc.usage = SG_USAGE_IMMUTABLE;
-	else if (m_Access == CRC_SOKOL_BUFFER_ACCESS_DYNAMIC)
+	else if (m_Access == CRC_BUFFER_ACCESS_DYNAMIC)
 		BufferDesc.usage = SG_USAGE_DYNAMIC;
 
 	// #TODO: if we want to create immutable buffer we should pass sg_range, 
@@ -329,17 +623,23 @@ void CVertexBufferSokol::Create(void* _pData, uint _Size, uint _Access)
 	if (BufferState == SG_RESOURCESTATE_INVALID)
 	{
 		// ERROR: No more free space in buffer pool
-		Error_static("CVertexBufferSokol::Create", "ERROR: No more free space in buffer pool");
+		Error_static("CRC_SokolBuffer::Create", "ERROR: No more free space in buffer pool");
 	}
 	else if (BufferState == SG_RESOURCESTATE_FAILED)
 	{
 		// ERROR: failed to create buffer (reason is why should be prints in log)
-		Error_static("CVertexBufferSokol::Create", "ERROR: failed to create buffer. (see log)");
+		Error_static("CRC_SokolBuffer::Create", "ERROR: failed to create buffer. (see log)");
 	}
 }
 
-void CVertexBufferSokol::Destroy()
+void CRC_SokolBuffer::Destroy()
 {
+	if (m_pIB)
+	{
+		delete m_pIB;
+		m_pIB = NULL;
+	}
+
 	if (IsValid())
 	{
 		sg_destroy_buffer(m_VertexBuffer);
@@ -347,18 +647,40 @@ void CVertexBufferSokol::Destroy()
 
 		m_Access = 0;
 	}
+
+	Clear();
 }
 
-bool CVertexBufferSokol::IsValid()
+void CRC_SokolBuffer::Clear()
+{
+	memset(&m_VertexBuffer, 0, sizeof(m_VertexBuffer));
+	m_Access = 0;
+	m_Type = 0;
+	m_VBID = -1;
+	m_nTri = 0;
+	m_Stride = 0;
+	m_pVB = NULL;
+	m_VB.Clear();
+	m_liPrim.Clear();
+	m_Min = 0xfffe;
+	m_Max = 0;
+	m_pScaler = NULL;
+	m_pTransform = NULL;
+	m_nTransform = 0;
+
+	m_pIB = NULL;
+}
+
+bool CRC_SokolBuffer::IsValid()
 {
 	sg_resource_state BufferState = sg_query_buffer_state(m_VertexBuffer);
 	return (BufferState != SG_RESOURCESTATE_INVALID) || (BufferState != SG_RESOURCESTATE_FAILED);
 }
 
-void CVertexBufferSokol::UpdateData(void* _pData, uint _Size)
+void CRC_SokolBuffer::UpdateData(void* _pData, uint _Size)
 {
-	if (m_Access == CRC_SOKOL_BUFFER_ACCESS_IMMUTABLE)
-		Error_static("CVertexBufferSokol::UpdateData", "Failed to update immutable buffer.");
+	if (m_Access == CRC_BUFFER_ACCESS_IMMUTABLE)
+		Error_static("CRC_SokolBuffer::UpdateData", "Failed to update immutable buffer.");
 
 	sg_range Range = {};
 	Range.ptr = _pData;

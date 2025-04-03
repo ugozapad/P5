@@ -2350,6 +2350,7 @@
     </ClCompile>
     <ClCompile Include="Sound\LipSync\LipSyncTalkBack.cpp" />
     <ClCompile Include="Sound\LipSync\LipSyncTalkbackAndFaceFX.cpp" />
+    <ClCompile Include="Sound\MiniAudio\MSound_MiniAudio.cpp" />
     <ClCompile Include="Sound\MSound.cpp" />
     <ClCompile Include="Sound\MSound_Codec.cpp" />
     <ClCompile Include="Sound\MSound_Core.cpp" />
@@ -2478,6 +2479,7 @@
     <ClInclude Include="Script\MScript_RegisterContext.h" />
     <ClInclude Include="Sound\ASIO\MSound_ASIO.h" />
     <ClInclude Include="Sound\LipSync\LipSync.h" />
+    <ClInclude Include="Sound\MiniAudio\MSound_MiniAudio.h" />
     <ClInclude Include="Sound\MSound.h" />
     <ClInclude Include="Sound\MSound_Codec.h" />
     <ClInclude Include="Sound\MSound_Core.h" />

@@ -442,7 +442,8 @@ spCInputContext MCreateInputContext()
 	spCInputContext spIC = (CInputContext*) MRTC_GetObjectManager()->CreateObject("CInputContext_Xenon");
 
 #elif defined PLATFORM_WIN
-	spCInputContext spIC = (CInputContext*) MRTC_GetObjectManager()->CreateObject("CInputContext_DInput");
+	//spCInputContext spIC = (CInputContext*) MRTC_GetObjectManager()->CreateObject("CInputContext_DInput");
+	spCInputContext spIC = (CInputContext*) MRTC_GetObjectManager()->CreateObject("CInputContext_Win32");
 
 #elif defined PLATFORM_DOLPHIN
 	spCInputContext spIC = (CInputContext*) MRTC_GetObjectManager()->CreateObject("CInputContext_Dolphin");

@@ -216,6 +216,18 @@ aint CInputContext_Win32::OnMessage(const CSS_Msg& _Msg)
 		}
 	}
 	break;
+
+	case CSS_MSG_WIN32_NEWMAINWINDOW:
+	{
+		if (m_iMainWindow >= 0 && _Msg.m_Params[1] == m_iMainWindow)
+		{
+			MACRO_GetRegisterObject(CSystem, pSys, "SYSTEM");
+			m_hMainWnd = (HWND)pSys->m_spDisplay->Win32_GethWnd(m_iMainWindow);
+			WindowAttach(m_hMainWnd);
+		}
+	}
+	break;
+
 	}
 
 	return CSubSystem::OnMessage(_Msg);

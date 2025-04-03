@@ -112,6 +112,9 @@
     <Filter Include="Source\Input\Win32">
       <UniqueIdentifier>{6d8a6cae-2c48-4355-858d-2f7538e62464}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Sound\Sound Contexts\MiniAudio">
+      <UniqueIdentifier>{1a2fcc15-6c54-4dce-aece-066dea0144e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCH\PCH.cpp">
@@ -615,6 +618,9 @@
     <ClCompile Include="Input\MInput.cpp">
       <Filter>Source\Input</Filter>
     </ClCompile>
+    <ClCompile Include="Sound\MiniAudio\MSound_MiniAudio.cpp">
+      <Filter>Source\Sound\Sound Contexts\MiniAudio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PCH\PCH.h">
@@ -934,6 +940,9 @@
     </ClInclude>
     <ClInclude Include="Input\Win32\MInputWin32.h">
       <Filter>Source\Input\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MiniAudio\MSound_MiniAudio.h">
+      <Filter>Source\Sound\Sound Contexts\MiniAudio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

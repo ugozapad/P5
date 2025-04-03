@@ -12,6 +12,80 @@
 #define ERROR_INVALID_VERSION_ARB         0x2095
 typedef HGLRC(WINAPI* PFNWGLCREATECONTEXTATTRIBSARBPROC) (HDC hDC, HGLRC hShareContext, const int* attribList);
 
+#define WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB 0x00000002
+#define WGL_CONTEXT_CORE_PROFILE_BIT_ARB 0x00000001
+#define WGL_CONTEXT_PROFILE_MASK_ARB     0x9126
+#define WGL_ERROR_INVALID_PROFILE_ARB    0x2096
+
+#ifndef GL_ARB_debug_output
+#define GL_ARB_debug_output 1
+#define GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB   0x8242
+#define GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB 0x8243
+#define GL_DEBUG_CALLBACK_FUNCTION_ARB    0x8244
+#define GL_DEBUG_CALLBACK_USER_PARAM_ARB  0x8245
+#define GL_DEBUG_SOURCE_API_ARB           0x8246
+#define GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB 0x8247
+#define GL_DEBUG_SOURCE_SHADER_COMPILER_ARB 0x8248
+#define GL_DEBUG_SOURCE_THIRD_PARTY_ARB   0x8249
+#define GL_DEBUG_SOURCE_APPLICATION_ARB   0x824A
+#define GL_DEBUG_SOURCE_OTHER_ARB         0x824B
+#define GL_DEBUG_TYPE_ERROR_ARB           0x824C
+#define GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB 0x824D
+#define GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB 0x824E
+#define GL_DEBUG_TYPE_PORTABILITY_ARB     0x824F
+#define GL_DEBUG_TYPE_PERFORMANCE_ARB     0x8250
+#define GL_DEBUG_TYPE_OTHER_ARB           0x8251
+#define GL_MAX_DEBUG_MESSAGE_LENGTH_ARB   0x9143
+#define GL_MAX_DEBUG_LOGGED_MESSAGES_ARB  0x9144
+#define GL_DEBUG_LOGGED_MESSAGES_ARB      0x9145
+#define GL_DEBUG_SEVERITY_HIGH_ARB        0x9146
+#define GL_DEBUG_SEVERITY_MEDIUM_ARB      0x9147
+#define GL_DEBUG_SEVERITY_LOW_ARB         0x9148
+typedef void (APIENTRYP PFNGLDEBUGMESSAGECONTROLARBPROC) (GLenum source, GLenum type, GLenum severity, GLsizei count, const GLuint* ids, GLboolean enabled);
+typedef void (APIENTRYP PFNGLDEBUGMESSAGEINSERTARBPROC) (GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* buf);
+typedef void (APIENTRYP PFNGLDEBUGMESSAGECALLBACKARBPROC) (GLDEBUGPROCARB callback, const GLvoid* userParam);
+typedef GLuint(APIENTRYP PFNGLGETDEBUGMESSAGELOGARBPROC) (GLuint count, GLsizei bufsize, GLenum* sources, GLenum* types, GLuint* ids, GLenum* severities, GLsizei* lengths, GLchar* messageLog);
+#endif
+
+
+// GL_ARB_debug_output
+PFNGLDEBUGMESSAGECONTROLARBPROC glDebugMessageControlARB;
+PFNGLDEBUGMESSAGEINSERTARBPROC glDebugMessageInsertARB;
+PFNGLDEBUGMESSAGECALLBACKARBPROC glDebugMessageCallbackARB;
+PFNGLGETDEBUGMESSAGELOGARBPROC glGetDebugMessageLogARB;
+
+void APIENTRY R_GLDebugOutput(GLenum source,
+	GLenum type,
+	unsigned int id,
+	GLenum severity,
+	GLsizei length,
+	const char* message,
+	const void* userParam)
+{
+	M_TRACEALWAYS("OpenGL: %stype = 0x%i, severity = 0x%i, message = %s\n",
+		(type == GL_DEBUG_TYPE_ERROR_ARB ? "** GL ERROR ** " : ""),
+		type, severity, message);
+
+	if (type == GL_DEBUG_TYPE_ERROR_ARB && IsDebuggerPresent())
+		DebugBreak();
+}
+
+void Init_GL_ARB_debug_output()
+{
+	glDebugMessageControlARB = (PFNGLDEBUGMESSAGECONTROLARBPROC)wglGetProcAddress("glDebugMessageControlARB");
+	glDebugMessageInsertARB = (PFNGLDEBUGMESSAGEINSERTARBPROC)wglGetProcAddress("glDebugMessageInsertARB");
+	glDebugMessageCallbackARB = (PFNGLDEBUGMESSAGECALLBACKARBPROC)wglGetProcAddress("glDebugMessageCallbackARB");
+	glGetDebugMessageLogARB = (PFNGLGETDEBUGMESSAGELOGARBPROC)wglGetProcAddress("glGetDebugMessageLogARB");
+
+	if (glDebugMessageCallbackARB)
+	{
+		M_TRACEALWAYS("found GL_ARB_debug_output\n");
+
+		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
+		glDebugMessageCallbackARB(R_GLDebugOutput, 0);
+	}
+}
+
 #pragma comment(lib, "opengl32.lib")
 
 #ifdef GL_FUNCTIMING
@@ -206,6 +280,8 @@ void CDisplayContextGL::InitRC()
 	m_pRenderContext->Create(this, NULL);
 }
 
+#define DISABLE_ARB_WGL_CONTEXT_ATTRIBS
+
 void CDisplayContextGL::InitGLRC()
 {
 	PIXELFORMATDESCRIPTOR pfd =
@@ -232,6 +308,7 @@ void CDisplayContextGL::InitGLRC()
 	int pixelFormat = ChoosePixelFormat(m_hDC, &pfd);
 	SetPixelFormat(m_hDC, pixelFormat, &pfd);
 
+#ifndef DISABLE_ARB_WGL_CONTEXT_ATTRIBS
 	HGLRC tempContext = wglCreateContext(m_hDC);
 	wglMakeCurrent(m_hDC, tempContext);
 
@@ -242,7 +319,7 @@ void CDisplayContextGL::InitGLRC()
 	{
 		WGL_CONTEXT_MAJOR_VERSION_ARB, 3,
 		WGL_CONTEXT_MINOR_VERSION_ARB, 2,
-		WGL_CONTEXT_FLAGS_ARB, 0,
+		WGL_CONTEXT_FLAGS_ARB, WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB | WGL_CONTEXT_DEBUG_BIT_ARB,
 		0
 	};
 
@@ -250,8 +327,15 @@ void CDisplayContextGL::InitGLRC()
 	wglMakeCurrent(NULL, NULL);
 	wglDeleteContext(tempContext);
 	wglMakeCurrent(m_hDC, m_hGLRC);
+#else
+	m_hGLRC = wglCreateContext(m_hDC);
+	wglMakeCurrent(m_hDC, m_hGLRC);
+#endif // !DISABLE_ARB_WGL_CONTEXT_ATTRIBS
 
 	gladLoadGL();
+
+	// Initialize debug output
+	Init_GL_ARB_debug_output();
 }
 
 
@@ -591,7 +675,7 @@ void CDisplayContextGL::Win32_ProcessMessages()
 
 void* CDisplayContextGL::Win32_GethWnd(int _iWnd)
 {
-	return nullptr;
+	return m_Window.GethWnd();
 }
 
 CPnt CDisplayContextGL::GetMaxWindowSize()

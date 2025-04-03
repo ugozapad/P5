@@ -48,7 +48,7 @@ void CRenderContextGL::Internal_RenderPolygon(int _nV, const CVec3Dfp32* _pV, co
 											  const CVec4Dfp32* _pSpec, //const fp32* _pFog,
 		const CVec4Dfp32* _pTV0, const CVec4Dfp32* _pTV1, const CVec4Dfp32* _pTV2, const CVec4Dfp32* _pTV3, int _Color)
 {
-	//DebugBreak();
+	DebugBreak();
 };
 
 void CRenderContextGL::Internal_IndxTriangles(uint16* _pIndices, int _nTriangles, const CRC_VertexBuffer& _VB, int _bAllUsed)

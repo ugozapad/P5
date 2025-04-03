@@ -21,31 +21,54 @@
 \*************************************************************************************************/
 enum
 {
-	CRC_SOKOL_BUFFER_ACCESS_IMMUTABLE,
-	CRC_SOKOL_BUFFER_ACCESS_DYNAMIC,
+	// Buffer access
+	CRC_BUFFER_ACCESS_IMMUTABLE,
+	CRC_BUFFER_ACCESS_DYNAMIC,
+
+	// Buffer type
+	CRC_BUFFER_TYPE_VERTEX,
+	CRC_BUFFER_TYPE_ELEMENT,
+	CRC_BUFFER_TYPE_UNIFORM,
 };
 
 /*************************************************************************************************\
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-| CRC_VertexBufferSokol
+| CRC_SokolBuffer
 |__________________________________________________________________________________________________
 \*************************************************************************************************/
-class CVertexBufferSokol
+class CRC_SokolBuffer
 {
 public:
-	CVertexBufferSokol();
-	~CVertexBufferSokol();
+	CRC_SokolBuffer();
+	~CRC_SokolBuffer();
 
-	void Create(void* _pData, uint _Size, uint _Access);
+	void Create(void* _pData, uint _Size, uint _Type, uint _Access);
 	void Destroy();
+	void Clear();
 
 	bool IsValid();
 
 	void UpdateData(void* _pData, uint _Size);
 
-private:
+public:
 	sg_buffer m_VertexBuffer;
 	uint m_Access;
+	uint m_Type;
+	int m_VBID;
+	int m_nTri;
+	int m_VtxFmt;
+	int m_Stride;
+	uint16 m_Min, m_Max;
+	void* m_pVB;
+	CRC_VertexBuffer m_VB;
+	TArray<uint16> m_liPrim;
+
+	fp32* m_pScaler;
+	CRC_VRegTransform* m_pTransform;
+	uint32 m_nTransform;
+
+	// Weird but i don't want to refactor
+	CRC_SokolBuffer* m_pIB;
 };
 
 /*************************************************************************************************\
@@ -112,6 +135,24 @@ public:
 	virtual int Texture_GetBackBufferTextureID() { return 0; }
 	virtual int Texture_GetFrontBufferTextureID() { return 0; }
 	virtual int Texture_GetZBufferTextureID() { return 0; }
+
+	// -------------------------------------------------------------------
+	// Internal vertexbuffer-management functions
+	void VB_DeleteAll();
+	void VB_Delete(int _VBID);
+	void VB_Create(int _VBID);
+
+	//void VBO_CreateVB(int _VBID, CRC_BuildVertexBuffer& _VB);
+	//void VBO_DestroyVB(int _VBID);
+
+	//void VBO_Begin(int _VBID);
+	//void VBO_Disable();
+
+	//void VBO_RenderVB(int _VBID);
+	//void VBO_RenderVB_IndexedTriangles(int _VBID, uint16* _piPrim, int _nTri);
+	//void VBO_RenderVB_IndexedPrimitives(int _VBID, uint16* _piPrim, int _nPrim);
+
+
 	virtual int Geometry_GetVBSize(int _VBID) { return 0; }
 
 	virtual void RenderTarget_SetRenderTarget(const CRC_RenderTargetDesc& _RenderTarget);
@@ -127,10 +168,10 @@ public:
 	void Render_WireStrip(const CVec3Dfp32* _pV, const uint16* _piV, int _nVertices, CPixel32 _Color) {}
 	void Render_WireLoop(const CVec3Dfp32* _pV, const uint16* _piV, int _nVertices, CPixel32 _Color) {}
 
-	virtual void Geometry_PrecacheFlush() {}
-	virtual void Geometry_PrecacheBegin(int _Count) {}
-	virtual void Geometry_PrecacheEnd() {}
-	virtual void Geometry_Precache(int _VBID) {}
+	virtual void Geometry_PrecacheFlush();
+	virtual void Geometry_PrecacheBegin(int _Count);
+	virtual void Geometry_PrecacheEnd();
+	virtual void Geometry_Precache(int _VBID);
 	virtual CDisplayContext* GetDC() { return m_pDisplayContext; }
 	
 	// Console commands:
@@ -183,6 +224,9 @@ private:
 
 	// -------------------------------------------------------------------
 	// Sokol stuff
+
+	TArray<CRC_SokolBuffer*> m_lpVB;
+	//TArray<CRC_SokolBuffer*> m_lpIB;
 };
 
 

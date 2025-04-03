@@ -58,6 +58,7 @@ public:
 //			MRTC_REFERENCE(CSoundContext_DSound);
 			//MRTC_REFERENCE(CSoundContext_DSound2); DSound2 is missing
 			MRTC_REFERENCE(CSoundContext_ASIO);
+			MRTC_REFERENCE(CSoundContext_MiniAudio);
 //			MRTC_REFERENCE(CSoundContext_GCXDF);
 //			MRTC_REFERENCE(CSoundContext_PS2XDF);
 //			MRTC_REFERENCE(CSoundContext_Xbox); // For xdf

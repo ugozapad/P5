@@ -16,23 +16,23 @@ class				CImageGLES							960901  -				CImage for OpenGLES
 
 #include "MGLGlobalFunctions.h"
 
-extern const char* aGLESErrorMessages[];
+extern const char* aGLErrorMessages[];
 extern const char* aGLCGErrorMessages[];
 
 // -------------------------------------------------------------------
-//  OpenGLES exception class
+//  OpenGL exception class
 // -------------------------------------------------------------------
-class CCExceptionGLES : public CCExceptionGraphicsHAL
+class CCExceptionGL : public CCExceptionGraphicsHAL
 {
 public:
-	CCExceptionGLES(const CObj* pObj, char* _functionname, char* _sourceposstr, int GLESerr);
+	CCExceptionGL(const CObj* pObj, char* _functionname, char* _sourceposstr, int GLESerr);
 
 	static CStr GLESErrToStr(int GLESErr);
 };
 
 // -------------------------------------------------------------------
 #define GLESThrowErr(err, _functionname) \
-throw CCExceptionGLES(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
+throw CCExceptionGL(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
 
 #ifdef M_RTM
 #define GLESNoErrorChecking
@@ -43,9 +43,9 @@ throw CCExceptionGLES(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
 #define GLESErr(_functionname) ((void)(0))
 #define GLESErrStatic(_functionname) ((void)(0))
 #else
-	__inline void GLESBreakPoint()
+	__inline void GLBreakPoint()
 	{
-//		M_BREAKPOINT;
+		M_BREAKPOINT;
 	}
 
 
@@ -54,8 +54,8 @@ throw CCExceptionGLES(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
 		GLenum err = glnGetError();									\
 		if (err != GL_NO_ERROR)										\
 		{															\
-			MRTC_SystemInfo::OS_Trace((CStrF("GLESERROR: 0x%x(%s) - ", err, (err >= 0x0500 && err <= 0x0506)?aGLESErrorMessages[err - 0x500]:"Unknown") + _functionname + "\n").Str());\
-			GLESBreakPoint();											\
+			MRTC_SystemInfo::OS_Trace((CStrF("GLERROR: 0x%x(%s) - ", err, (err >= 0x0500 && err <= 0x0506)?aGLErrorMessages[err - 0x500]:"Unknown") + _functionname + "\n").Str());\
+			GLBreakPoint();											\
 		}															\
 	}
 
@@ -64,8 +64,8 @@ throw CCExceptionGLES(this, _functionname, MACRO_EXCEPT_SOURCE_POS, err);
 		GLenum err = glnGetError();									\
 		if (err != GL_NO_ERROR)										\
 		{															\
-			MRTC_SystemInfo::OS_Trace((CStrF("GLESERROR: 0x%x(%s) - ", err, (err >= 0x0500 && err <= 0x0506)?aGLESErrorMessages[err - 0x500]:"Unknown") + _functionname + "\n").Str());\
-			GLESBreakPoint();											\
+			MRTC_SystemInfo::OS_Trace((CStrF("GLERROR: 0x%x(%s) - ", err, (err >= 0x0500 && err <= 0x0506)?aGLErrorMessages[err - 0x500]:"Unknown") + _functionname + "\n").Str());\
+			GLBreakPoint();											\
 		}															\
 	}
 

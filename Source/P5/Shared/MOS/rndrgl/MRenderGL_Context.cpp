@@ -6,7 +6,7 @@
 #include "../../XR/XRVBContext.h"
 
 // 0x500 offsetted
-const char* aGLESErrorMessages[] = 
+const char* aGLErrorMessages[] = 
 {
 	"GL_INVALID_ENUM",
 	"GL_INVALID_VALUE",

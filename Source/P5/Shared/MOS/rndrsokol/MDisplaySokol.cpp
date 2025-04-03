@@ -290,7 +290,7 @@ void CDisplayContextSokol::Win32_ProcessMessages()
 
 void* CDisplayContextSokol::Win32_GethWnd(int _iWnd /*= 0*/)
 {
-	return nullptr;
+	return m_Window.GethWnd();
 }
 
 CDisplayContext* gf_CreateDisplayContextSokolStatic()

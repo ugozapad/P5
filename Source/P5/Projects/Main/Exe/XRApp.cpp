@@ -3768,9 +3768,12 @@ void CXRealityApp::Create()
 #elif defined(PLATFORM_PS2)
 			CStr SoundContext = m_pSystem->GetEnvironment()->GetValue("SND_CLASS", "PS2", 0);
 #else
+// #TODO: Implement sometimes...
 //			CStr SoundContext = m_pSystem->GetEnvironment()->GetValue("SND_CLASS", "DSound", 0);
-			CStr SoundContext = m_pSystem->GetEnvironment()->GetValue("SND_CLASS", "DSound2", 0);
+//			CStr SoundContext = m_pSystem->GetEnvironment()->GetValue("SND_CLASS", "DSound2", 0);
 //			CStr SoundContext = m_pSystem->GetEnvironment()->GetValue("SND_CLASS", "OpenAL", 0);
+//			Current uses MiniAudio on Windows
+			CStr SoundContext = m_pSystem->GetEnvironment()->GetValue("SND_CLASS", "MiniAudio", 0);
 #endif
 			M_TRY
 			{
